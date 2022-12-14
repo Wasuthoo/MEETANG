@@ -6,10 +6,8 @@
 
         <v-col>
 
-            <h2 class="pa-5">
-
+            <h2 class="pa-5 bg-pink-lighten-4">
                 Meetang
-
             </h2> 
 
         </v-col>
@@ -18,7 +16,7 @@
 
         <v-form>
 
-            <v-container>           
+            <v-container class="mx-auto">           
 
                 <v-text-field 
                     solo
@@ -60,7 +58,7 @@
         </v-card-subtitle>
 
         <v-card-subtitle class="my-2">
-            <v-icon>
+            <v-icon color="orange">
                 mdi-star
             </v-icon>
             4.9
@@ -153,7 +151,7 @@
     <v-img
         class="white--text align-end"
         height="200px"
-        src="/shop/Shop1BG.png"
+        src="/shop/Shop4BG.png"
     >
     </v-img>
 
@@ -186,7 +184,7 @@
     <v-img
         class="white--text align-end"
         height="200px"
-        src="/shop/Shop2BG.png"
+        src="/shop/Shop5BG.png"
     >
     </v-img>
 
@@ -220,7 +218,7 @@
     <v-img
         class="white--text align-end"
         height="200px"
-        src="/shop/Shop3BG.png"
+        src="/shop/Shop6BG.png"
     >
     </v-img>
 
@@ -259,7 +257,7 @@
 <v-img
     class="white--text align-end"
     height="200px"
-    src="/shop/Shop1BG.png"
+    src="/shop/Shop7BG.png"
 >
 </v-img>
 
@@ -292,7 +290,7 @@
 <v-img
     class="white--text align-end"
     height="200px"
-    src="/shop/Shop2BG.png"
+    src="/shop/Shop8BG.png"
 >
 </v-img>
 
@@ -326,7 +324,7 @@
 <v-img
     class="white--text align-end"
     height="200px"
-    src="/shop/Shop3BG.png"
+    src="/shop/Shop9BG.png"
 >
 </v-img>
 
