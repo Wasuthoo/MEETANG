@@ -12,14 +12,14 @@
         outlined
         tile
       >
+      <v-icon color="yellow darken-2">
+        mdi-star
+      </v-icon>
+        4.9
       <v-icon>
-                mdi-star
-            </v-icon>
-            4.9
-            <v-icon>
-                mdi-walk
-            </v-icon>
-            0.3 km เวลาเปิดให้บริการ 14.00 น. - 18.00 น. 
+        mdi-walk
+      </v-icon>
+        0.3 km เวลาเปิดให้บริการ 14.00 น. - 18.00 น. 
       </v-card>
 
     </v-card>
@@ -41,14 +41,15 @@
       ของหวาน
     </v-tab>
   </v-tabs>
+
 <!-- โปรโมชั่นพิเศษ -->
   <h1 class="d-flex justify-start mb-4">โปรโมชั่นพิเศษ</h1>
   <v-row>
     <v-col>
       <v-card
       class="pa-2"
-      max-width="344"
-      variant="outlined"
+      max-width="361"
+      
     >
       <v-card-item>
         <div>
@@ -64,48 +65,23 @@
           <div class="text-caption d-flex justify-center "> 60 บาท</div>
         </div>
       </v-card-item>
+
       <v-card-actions class="d-flex justify-end mb-6">
-        <v-btn variant="tonal" >
+        <v-btn color = "green darken-3" variant="tonal" >
           <v-icon icon="mdi-plus" size="large"></v-icon>
         </v-btn>
       </v-card-actions>
     </v-card>
       </v-col>
-      <v-col>
-      <v-card
-      class="pa-2"
-      max-width="344"
-      variant="outlined"
-      >
-        <v-card-item>
-          <div>
-            <div class="text-h6 mb-2">
-              ข้าวมันไก่+โค๊ก
-          </div>
-            <v-img
-              class="white--text align-end"
-              height="200px"
-              src="/shop/maxresdefault.jpg"
-          >
-            </v-img>
-            <div class="text-caption d-flex justify-center "> 60 บาท</div>
-          </div>
-        </v-card-item>
-      <v-card-actions class="d-flex justify-end mb-6">
-      <v-btn variant="tonal" >
-        <v-icon icon="mdi-plus" size="large"></v-icon>
-      </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-col>
-</v-row>
+  </v-row>
 
-
+<!-- เมนูแนะนำ -->
   <h1 class="d-flex justify-start mb-4">เมนูแนะนำ</h1>
+  <v-row>
+    <v-col>
     <v-card
     class="pa-2"
-    max-width="344"
-    variant="outlined"
+    max-width="361"
   >
     <v-card-item>
       <div>
@@ -122,17 +98,79 @@
       </div>
     </v-card-item>
     <v-card-actions class="d-flex justify-end mb-6">
-      <v-btn variant="tonal">
+      <v-btn color = "green darken-3" variant="tonal">
+        <v-icon icon="mdi-plus" size="large"></v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+  </v-col>
+    
+
+  <v-col>
+    <v-card
+    class="pa-2"
+    max-width="361"
+  >
+    <v-card-item>
+      <div>
+        <div class="text-h6 mb-2">
+            ข้าวมันไก่ทอด
+        </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/shop2BG.png"
+        >
+        </v-img>
+        <div class="text-caption d-flex justify-center "> 50 บาท</div>
+      </div>
+    </v-card-item>
+    <v-card-actions class="d-flex justify-end mb-6">
+      <v-btn color = "green darken-3" variant="tonal">
         <v-icon icon="mdi-plus" size="large"></v-icon>
       </v-btn>
     </v-card-actions>
   </v-card>
 
+  </v-col>
+
+  <v-col>
+    <v-card
+    class="pa-2"
+    max-width="361"
+  >
+    <v-card-item>
+      <div>
+        <div class="text-h6 mb-2">
+            ข้าวขาหมู
+        </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/ข้าวขาหมู-ดิ-เอมเมอรัลด์-02.jpg"
+        >
+        </v-img>
+        <div class="text-caption d-flex justify-center "> 50 บาท</div>
+      </div>
+    </v-card-item>
+    <v-card-actions class="d-flex justify-end mb-6">
+      <v-btn color = "green darken-3" variant="tonal">
+        <v-icon icon="mdi-plus" size="large"></v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+
+  </v-col>
+
+
+</v-row>
+
+<!-- เครื่องดื่ม -->
   <h1 class="d-flex justify-start mb-4">เครื่องดื่ม</h1>
     <v-card
     class="pa-2"
-    max-width="344"
-    variant="outlined"
+    max-width="361"
+    
   >
     <v-card-item>
       <div>
@@ -149,17 +187,18 @@
       </div>
     </v-card-item>
     <v-card-actions class="d-flex justify-end mb-6">
-      <v-btn variant="tonal">
+      <v-btn color = "green darken-3" variant="tonal">
         <v-icon icon="mdi-plus" size="large"></v-icon>
       </v-btn>
     </v-card-actions>
   </v-card>
 
+<!-- ของหวาน -->
   <h1 class="d-flex justify-start mb-4">ของหวาน</h1>
     <v-card
     class="pa-2"
-    max-width="344"
-    variant="outlined"
+    max-width="361"
+    
   >
     <v-card-item>
       <div>
@@ -176,7 +215,7 @@
       </div>
     </v-card-item>
     <v-card-actions class="d-flex justify-end mb-6">
-      <v-btn variant="tonal">
+      <v-btn color = "green darken-3" variant="tonal">
         <v-icon icon="mdi-plus" size="large"></v-icon>
       </v-btn>
     </v-card-actions>
