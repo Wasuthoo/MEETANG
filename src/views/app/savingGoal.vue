@@ -1,6 +1,6 @@
 <template>
-    <h1>This is SavingGoal</h1>
-    <!-- add a horizontal line -->
+    <h1 class="pa-5">Saving Goal</h1>
+    <hr/>
     <v-divider></v-divider>
 
     <v-card @click="onClickCard" v-for="goal in savingGoal" :key="goal.id">
