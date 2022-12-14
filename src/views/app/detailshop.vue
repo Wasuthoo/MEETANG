@@ -26,6 +26,7 @@
     <v-tabs
     fixed-tabs
     bg-color="indigo-darken-2"
+    class ="mb-5"
   >
     <v-tab>
       โปรโมชั่นพิเศษ
@@ -40,33 +41,65 @@
       ของหวาน
     </v-tab>
   </v-tabs>
-
+<!-- โปรโมชั่นพิเศษ -->
   <h1 class="d-flex justify-start mb-4">โปรโมชั่นพิเศษ</h1>
-    <v-card
-    class="pa-2"
-    max-width="344"
-    variant="outlined"
-  >
-    <v-card-item>
-      <div>
-        <div class="text-h6 mb-2">
-            ข้าวมันไก่+โค๊ก
+  <v-row>
+    <v-col>
+      <v-card
+      class="pa-2"
+      max-width="344"
+      variant="outlined"
+    >
+      <v-card-item>
+        <div>
+          <div class="text-h6 mb-2">
+              ข้าวมันไก่+โค๊ก
+          </div>
+          <v-img
+              class="white--text align-end"
+              height="200px"
+              src="/shop/maxresdefault.jpg"
+          >
+          </v-img>
+          <div class="text-caption d-flex justify-center "> 60 บาท</div>
         </div>
-        <v-img
-            class="white--text align-end"
-            height="200px"
-            src="/shop/maxresdefault.jpg"
-        >
-        </v-img>
-        <div class="text-caption d-flex justify-center "> 60 บาท</div>
-      </div>
-    </v-card-item>
-    <v-card-actions class="d-flex justify-end mb-6">
+      </v-card-item>
+      <v-card-actions class="d-flex justify-end mb-6">
+        <v-btn variant="tonal" >
+          <v-icon icon="mdi-plus" size="large"></v-icon>
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+      </v-col>
+      <v-col>
+      <v-card
+      class="pa-2"
+      max-width="344"
+      variant="outlined"
+      >
+        <v-card-item>
+          <div>
+            <div class="text-h6 mb-2">
+              ข้าวมันไก่+โค๊ก
+          </div>
+            <v-img
+              class="white--text align-end"
+              height="200px"
+              src="/shop/maxresdefault.jpg"
+          >
+            </v-img>
+            <div class="text-caption d-flex justify-center "> 60 บาท</div>
+          </div>
+        </v-card-item>
+      <v-card-actions class="d-flex justify-end mb-6">
       <v-btn variant="tonal" >
         <v-icon icon="mdi-plus" size="large"></v-icon>
       </v-btn>
-    </v-card-actions>
-  </v-card>
+      </v-card-actions>
+    </v-card>
+  </v-col>
+</v-row>
+
 
   <h1 class="d-flex justify-start mb-4">เมนูแนะนำ</h1>
     <v-card
@@ -130,7 +163,7 @@
   >
     <v-card-item>
       <div>
-        <div class="text-h6 mb-16">
+        <div class="text-h6 mb-2">
             หัวใจคราเค่น
         </div>
         <v-img
@@ -139,7 +172,7 @@
             src="/shop/u2_14.jpg"
         >
         </v-img>
-        <div class="text-caption d-flex justify-center "> 20 บาท</div>
+        <div class="text-caption d-flex justify-center"> 20 บาท</div>
       </div>
     </v-card-item>
     <v-card-actions class="d-flex justify-end mb-6">
