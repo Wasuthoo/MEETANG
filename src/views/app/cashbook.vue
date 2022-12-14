@@ -1,10 +1,49 @@
 <template>
-    <div class="heading">
-        <h1 class="title valgin-text-middle heading">CashBook</h1>
-    </div>
-    <div class="content">
-        <div class="overlap-group17">
-            <img class="user-1" src="/icon/user 1.png" alt="user 1"/>
+    <!-- divใหญ่ -->
+    <v-container fluid fill-heigth class="bg-deep-purple-lighten-5">
+        <h1>CashBook</h1>
+        <hr />
+
+        <v-card class="pa-5 ma-5 bg-blue d-flex justify-center ">
+            <v-img class="user-1" src="/icon/user 1.png" alt="user 1" height="100" />
+            <div ma-n5>
+                <h1>สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
+                <a>คุณธนวรรณ ณ กรุงเทพมหานคร</a><br />
+                <a>64050138@kmitl.ac.th</a>
+            </div>
+        </v-card>
+        
+        <div class="pa-5">
+            <v-row>
+                <v-col>
+                    <v-card>
+                        1
+                    </v-card>
+                </v-col>
+                <v-col>
+                    <v-card>
+                        2
+                    </v-card>
+                </v-col>
+            </v-row>
+        </div>
+       
+        <br/>
+        <v-card class="bg-blue pa-5 ma-5">
+            สรุปรายการความเคลื่อนไหวบัญชีประจำเดือนธันวาคม
+        </v-card>
+    </v-container>
+</template>
+
+
+
+<!-- <template>
+    <div class="bg-blue-lighten-4">
+        <div class="heading">
+            <h1 class="title valgin-text-middle heading">CashBook</h1>
+        </div>
+        <div class="content">
+            <v-img class="user-1" src="/icon/user 1.png" alt="user 1" height="50" />
             <div class="flex-col">
                 <h1 class="text-28 valign-text-middle heading">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
                 <div class="text-29 valign-text-middle">คุณธนวรรณ ณ กรุงเทพมหานคร</div>
@@ -61,30 +100,34 @@
                                     <div class="rectangle-13-5"></div>
                                     <div class="regtangle-14-5"></div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
+
     </div>
+
 </template>
 
 <style>
-    .heading {
-        display: flex;
-        flex-direction: column;
-        height: 99px;
-        width: 1337px;
-    }
-    
-    .titile {
-        color: var(--black);
-        font-weight: 800;
-        height: 99px;
-        line-height: normal;
-        text-align: center;
-        width: 234px;
-    }
-</style>
+.heading {
+    display: flex;
+    flex-direction: column;
+    height: 99px;
+    width: 1337px;
+}
+
+.titile {
+    color: var(--black);
+    font-weight: 800;
+    height: 99px;
+    line-height: normal;
+    text-align: center;
+    width: 234px;
+}
+</style> -->
