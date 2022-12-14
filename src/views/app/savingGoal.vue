@@ -3,11 +3,16 @@
     <!-- add a horizontal line -->
     <v-divider></v-divider>
 
+    <v-card @click="onClickCard" v-for="goal in savingGoal" :key="goal.id">
+        <v-card-title>{{ goal.name }}</v-card-title>
+        <v-card-subtitle>{{ goal.amount }}</v-card-subtitle>
+        <v-card-text>{{ goal.description }}</v-card-text>
+    </v-card>
+
     <!-- add a circle button to bottom right-->
     <v-btn @click="addForm = !addForm" style="position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="primary" size="large">
     </v-btn>
 
-    <!-- add a form to add a new saving goal -->
     <v-dialog v-model="addForm" max-width="500px">
         <v-card>
             <v-card-title>
@@ -77,13 +82,10 @@ export default {
         };
     },
     methods: {
-        handleCardClick() {
+        onClickCard() {
             console.log("card clicked");
-        },
-        // add a method to add a new saving goal
-        handleAddSavingGoal() {
-            
         }
+        
     }
 };
 </script>
