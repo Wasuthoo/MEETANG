@@ -43,13 +43,13 @@
     <v-card-item>
       <div>
         <div class="text-h6 mb-16">
-            "ข้าวมันไก่+โค๊ก"
+            ข้าวมันไก่+โค๊ก
         </div>
-        <div class="text-caption "> 60 บาท</div>
+        <div class="text-caption d-flex justify-center "> 60 บาท</div>
       </div>
     </v-card-item>
-    <v-card-actions>
-      <v-btn variant="tonal">
+    <v-card-actions class="d-flex justify-end mb-6">
+      <v-btn variant="tonal" >
         <v-icon icon="mdi-plus" size="large"></v-icon>
       </v-btn>
     </v-card-actions>
@@ -64,12 +64,12 @@
     <v-card-item>
       <div>
         <div class="text-h6 mb-16">
-            "ข้าวมันไก่"
+            ข้าวมันไก่
         </div>
-        <div class="text-caption "> 50 บาท</div>
+        <div class="text-caption d-flex justify-center "> 50 บาท</div>
       </div>
     </v-card-item>
-    <v-card-actions>
+    <v-card-actions class="d-flex justify-end mb-6">
       <v-btn variant="tonal">
         <v-icon icon="mdi-plus" size="large"></v-icon>
       </v-btn>
@@ -85,12 +85,12 @@
     <v-card-item>
       <div>
         <div class="text-h6 mb-16">
-            "เลือดมมาดาม"
+            เลือดมาดาม
         </div>
-        <div class="text-caption "> 20 บาท</div>
+        <div class="text-caption d-flex justify-center"> 20 บาท</div>
       </div>
     </v-card-item>
-    <v-card-actions>
+    <v-card-actions class="d-flex justify-end mb-6">
       <v-btn variant="tonal">
         <v-icon icon="mdi-plus" size="large"></v-icon>
       </v-btn>
@@ -106,12 +106,12 @@
     <v-card-item>
       <div>
         <div class="text-h6 mb-16">
-            "หังใจคราเค่น"
+            หัวใจคราเค่น
         </div>
-        <div class="text-caption "> 20 บาท</div>
+        <div class="text-caption d-flex justify-center "> 20 บาท</div>
       </div>
     </v-card-item>
-    <v-card-actions>
+    <v-card-actions class="d-flex justify-end mb-6">
       <v-btn variant="tonal">
         <v-icon icon="mdi-plus" size="large"></v-icon>
       </v-btn>
