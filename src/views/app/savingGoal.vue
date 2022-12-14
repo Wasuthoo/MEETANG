@@ -1,16 +1,23 @@
 <template>
     <h1 class="pa-5">Saving Goal</h1>
-    <hr/>
+    <hr />
     <v-divider></v-divider>
 
-    <v-card @click="onClickCard" v-for="goal in savingGoal" :key="goal.id">
+    <!-- <v-card @click="onClickCard" v-for="goal in savingGoal" :key="goal.id">
         <v-card-title>{{ goal.name }}</v-card-title>
         <v-card-subtitle>{{ goal.amount }}</v-card-subtitle>
         <v-card-text>{{ goal.description }}</v-card-text>
-    </v-card>
+    </v-card> -->
+
+    <goalCard v-if="Goals.length>0" :savingGoal="Goals" ></goalCard>
+    <div v-else class="bg-purple-darken-2" style="display:absolute; margin:auto; top:0px; bottom:0px; left:0px; right:0px;">
+        <h1 class="pa-5 text-medium-emphasis ">No aGoals</h1>
+    </div>
+
 
     <!-- add a circle button to bottom right-->
-    <v-btn @click="addForm = !addForm" style="position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="primary" size="large">
+    <v-btn @click="addForm = !addForm" style="position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="primary"
+        size="large">
     </v-btn>
 
     <v-dialog v-model="addForm" max-width="500px">
@@ -48,12 +55,16 @@
 </template>
 
 <script>
+import goalCard from "..//..//components//savinggoal//goalCard.vue";
 export default {
     name: "SavingGoal",
+    components: {
+        goalCard,
+    },
     data() {
         return {
             // add a variable to store the data from the database
-            savingGoal: [
+            Goals: [
                 {
                     id: 1,
                     name: "Saving Goal 1",
@@ -76,7 +87,7 @@ export default {
                     description: "This is a description",
                 },
             ],
-            
+
             addForm: false,
 
         };
@@ -92,17 +103,17 @@ export default {
             let description = document.getElementById("description").value;
             console.log(name, amount, date, description);
             let newGoal = {
-                id: this.savingGoal.length + 1,
+                id: this.Goals.length + 1,
                 name: name,
                 amount: amount,
                 date: date,
                 description: description,
             };
-            this.savingGoal.push(newGoal);
-            
+            this.Goals.push(newGoal);
+
             this.addForm = false;
         }
-        
+
     }
 };
 </script>
