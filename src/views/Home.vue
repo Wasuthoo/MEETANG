@@ -9,10 +9,10 @@
             <v-btn>
                 About
             </v-btn>
-            <v-btn color="#77ADFF" style="color:#FFFFFF;">
+            <v-btn color="#77ADFF" style="color:#FFFFFF;" to="/login">
                 Log in
             </v-btn>
-            <v-btn color="#274DD5" style="color:#FFFFFF;">
+            <v-btn color="#274DD5" style="color:#FFFFFF;" to="/login">
                 Sign up
             </v-btn>
         </div>
