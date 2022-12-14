@@ -4,16 +4,35 @@
       <br />
       <v-row>
          <v-col>
-            <v-card class="ma-2 pa-5">
-               <h1>Summary1</h1>
-               <img class="Oo-1" src="/icon/o.png" alt="O" height="100" />
+            <v-card class="ma-5 pa-5">
+               <h1>Summary</h1>
+               <div class="d-flex" > 
+                  <img class="Oo-1" src="/icon/o.png" alt="O" height="200" /> 
+                     <v-card class="ml-lg-auto bg-green lighten-3" height="60" to width="120px">
+                        <div class="ml-2" >
+                           <h5> Income </h5>
+                              <div class="ml-lg-auto"> 
+                                 <h3> 15,000 baht </h3> 
+                              </div>
+                        </div>
+                     </v-card>
+                     <br/>
+                  <v-card class="ml-lg-auto bg-red lighten-3" height="60" to width="120px">
+                        <div class="ml-2" >
+                           <h5> Expense </h5>
+                              <div class="ml-lg-auto"> 
+                                 <h3> 3,000 baht </h3> 
+                              </div>
+                        </div>
+                     </v-card>
+                  </div>
             </v-card>
          </v-col>
 
          <v-col>
             <v-card class="ma-2 pa-5">
-               <h1>Summary2</h1>
-               <img class="Oo-1" src="/icon/o.png" alt="O" height="100" />
+               <h1>Income</h1>
+
             </v-card>
          </v-col>
       </v-row>
@@ -22,78 +41,23 @@
 
          <v-col>
             <v-card class="ma-2 pa-5">
-               <h1>Summary3</h1>
-               <img class="Oo-1" src="/icon/o.png" alt="O" height="100" />
+               <h1>Accounts</h1>
+
             </v-card>
          </v-col>
 
          <v-col>
             <v-card class="ma-2 pa-5">
-               <h1>Summary4</h1>
-               <img class="Oo-1" src="/icon/o.png" alt="O" height="100" />
+               <h1>Expense</h1>
+
             </v-card>
          </v-col>
 
       </v-row>
       <v-card class="mt-5 mx-2 pa-5">
-               <h1>Summary5</h1>
-               <img class="Oo-1" src="/icon/o.png" alt="O" height="100" />
+               <h1>Today</h1>
+
             </v-card>
 
    </v-container>
 </template>
-
-
-
-
-
-<!-- 
-<style>
-.summary-1 {
-   rowor: var(--black);
-   font-weight: 600;
-   height: 30px;
-   line-height: normal;
-}
-
-.flex-row {
-   align-items: center;
-   background-rowor: var(--white);
-   border-radius: 20px;
-   box-shadow: 0px 4px 4px #00000040;
-   display: flex;
-   flex-direction: rowumn;
-   gap: 21px;
-   min-height: 257px;
-   padding: 13px 0;
-   width: 257px;
-}
-
-.flex-row-1 {
-   align-items: flex-start;
-   display: flex;
-   flex-direction: rowumn;
-   gap: 8px;
-   min-height: 39px;
-   width: 594px;
-}
-
-.flex-row {
-   align-items: flex-start;
-   display: flex;
-   height: 171px;
-   margin-right: 6px;
-   min-width: 550px;
-
-}
-
-.Oo-1 {}
-
-.rectangle-152 {
-   background-rowor: var(--white);
-   border-radius: 20px;
-   box-shadow: 0px 4px 4px #000000;
-   height: 257px;
-   width: 594px;
-}
-</style> -->
