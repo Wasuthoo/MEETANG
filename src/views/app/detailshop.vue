@@ -12,7 +12,14 @@
         outlined
         tile
       >
-      4.9 • 0.3 km เวลาเปิดให้บริการ 14.00 น. - 18.00 น. 
+      <v-icon>
+                mdi-star
+            </v-icon>
+            4.9
+            <v-icon>
+                mdi-walk
+            </v-icon>
+            0.3 km เวลาเปิดให้บริการ 14.00 น. - 18.00 น. 
       </v-card>
 
     </v-card>
@@ -42,9 +49,15 @@
   >
     <v-card-item>
       <div>
-        <div class="text-h6 mb-16">
+        <div class="text-h6 mb-2">
             ข้าวมันไก่+โค๊ก
         </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/maxresdefault.jpg"
+        >
+        </v-img>
         <div class="text-caption d-flex justify-center "> 60 บาท</div>
       </div>
     </v-card-item>
@@ -63,9 +76,15 @@
   >
     <v-card-item>
       <div>
-        <div class="text-h6 mb-16">
+        <div class="text-h6 mb-2">
             ข้าวมันไก่
         </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/maxresdefault.jpg"
+        >
+        </v-img>
         <div class="text-caption d-flex justify-center "> 50 บาท</div>
       </div>
     </v-card-item>
@@ -84,9 +103,15 @@
   >
     <v-card-item>
       <div>
-        <div class="text-h6 mb-16">
+        <div class="text-h6 mb-2">
             เลือดมาดาม
         </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/1590466225.jpg"
+        >
+        </v-img>
         <div class="text-caption d-flex justify-center"> 20 บาท</div>
       </div>
     </v-card-item>
@@ -108,6 +133,12 @@
         <div class="text-h6 mb-16">
             หัวใจคราเค่น
         </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/u2_14.jpg"
+        >
+        </v-img>
         <div class="text-caption d-flex justify-center "> 20 บาท</div>
       </div>
     </v-card-item>
