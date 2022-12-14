@@ -41,7 +41,7 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="addForm = false">Cancel</v-btn>
-                <v-btn color="blue darken-1" text @click="addForm = false">Save</v-btn>
+                <v-btn color="blue darken-1" text @click="onSaveGoal">Save</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -84,6 +84,23 @@ export default {
     methods: {
         onClickCard() {
             console.log("card clicked");
+        },
+        onSaveGoal() {
+            let name = document.getElementById("name").value;
+            let amount = document.getElementById("amount").value;
+            let date = document.getElementById("date").value;
+            let description = document.getElementById("description").value;
+            console.log(name, amount, date, description);
+            let newGoal = {
+                id: this.savingGoal.length + 1,
+                name: name,
+                amount: amount,
+                date: date,
+                description: description,
+            };
+            this.savingGoal.push(newGoal);
+            
+            this.addForm = false;
         }
         
     }
