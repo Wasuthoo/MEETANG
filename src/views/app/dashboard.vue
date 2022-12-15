@@ -45,7 +45,6 @@
               <h1 class="text-green my-n3">500 Baht</h1>
             </div>
           </v-card>
-          <!-- end of AccountCard -->
 
           <!-- TodayCard -->
           <v-card class="mt-6 pa-2 px-5 rounded-xl ">
@@ -71,7 +70,6 @@
               <h1 class="text-red ">0 Baht</h1>
             </v-card>
           </v-card>
-          
         </v-col>
         
 
@@ -80,17 +78,12 @@
           <v-card class="pa-2 px-5 rounded-xl ">
             <h1>Income</h1>
             <hr class="solid">
-
-            <!-- component income card -->
             <v-card class="my-3 d-flex " flat>
-              <!-- picture  -->
               <img class="ma-2 mx-3" src="/imageDash/hand-money.png" height="50" />
-
               <div class="pa-2 mr-auto">
                 <h3>ฝากเงิน</h3>
                 <a>wallet</a>
               </div>
-
               <div class="align-center d-flex">
                 <div class="px-2">
                   <a>5,000</a><br />
