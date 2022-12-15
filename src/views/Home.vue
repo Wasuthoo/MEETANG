@@ -25,7 +25,7 @@
         <div class="text3">
           <div class="text-9">ตัวช่วยวางแผนสำหรับคุณ</div>
         </div>
-        <router-link to="/app">
+        <router-link class="routerLink" to="/login">
           <img class="btn-start" src="/home/btnstart.png" alt="btnStart"/>
         </router-link>
         <div class="text2">
@@ -55,7 +55,7 @@
           <div class="place">Home</div>
           <div class="about">About</div>
           <div class="overlap-group1">
-            <router-link to="/login">
+            <router-link class="routerLink" to="/login">
               <div class="login">log in</div>
             </router-link>
           </div>
@@ -340,7 +340,7 @@
     height: 30px;
     letter-spacing: 0;
     line-height: normal;
-    width: 300px;
+    width: 350px;
   }
 
   .text1 {
@@ -687,4 +687,9 @@
     line-height: normal;
     width: 284px;
   }
+
+  .routerLink{
+    text-decoration: none;
+  }
+
 </style>
