@@ -3,22 +3,14 @@
   <div class="content">
     <div class="overlap-group-container">
       <div class="overlap-group-1">
-        <div class="rectangle-15">
-          <div class="text-1-1 valign-text-middle poppins-semi-bold-shark-16px">
-            1,000
-          </div>
+        <div class="rectangle-15"></div>
+          <div class="text-1-1 valign-text-middle poppins-semi-bold-shark-16px">1,000</div>
           <div class="date-1 valign-text-middle normal-text">12/04/22</div>
-          <div class="text-2 valign-text-middle poppins-semi-bold-shark-16px">
-            1,000
-          </div>
+          <div class="text-2 valign-text-middle poppins-semi-bold-shark-16px">1,000</div>
           <div class="date-2 valign-text-middle normal-text">12/04/22</div>
-          <div class="number valign-text-middle poppins-semi-bold-shark-16px">
-            500
-          </div>
+          <div class="number valign-text-middle poppins-semi-bold-shark-16px">500</div>
           <div class="date-3 valign-text-middle normal-text">11/04/22</div>
-          <div class="number-1 valign-text-middle poppins-semi-bold-shark-16px">
-            5000
-          </div>
+          <div class="number-1 valign-text-middle poppins-semi-bold-shark-16px">500</div>
           <div class="date-4 valign-text-middle normal-text">09/04/22</div>
           <div class="ellipse-19"></div>
           <div class="ellipse-20"></div>
@@ -53,47 +45,23 @@
               </div>
               <div class="flex-col">
                 <div class="text-7 valign-text-middle big-text">ฝากเงิน</div>
-                <div class="wallet-4 valign-text-middle normal-text">
-                  Wallet
-                </div>
+                <div class="wallet-4 valign-text-middle normal-text">Wallet</div>
                 <div class="text valign-text-middle big-text">ฝากเงิน</div>
-                <div class="wallet-5 valign-text-middle normal-text">
-                  Wallet
-                </div>
+                <div class="wallet-5 valign-text-middle normal-text">Wallet</div>
                 <div class="text valign-text-middle big-text">ฝากเงิน</div>
-                <div class="wallet-6 valign-text-middle normal-text">
-                  Wallet
-                </div>
+                <div class="wallet-6 valign-text-middle normal-text">Wallet</div>
                 <div class="text valign-text-middle big-text">หนูนาพาโชค</div>
-                <div class="wallet-7 valign-text-middle normal-text">
-                  Wallet
-                </div>
+                <div class="wallet-7 valign-text-middle normal-text">Wallet</div>
               </div>
             </div>
             <div class="flex-col-1">
-              <div
-                class="text-11 valign-text-middle poppins-semi-bold-shark-16px"
-              >
-                5,000
-              </div>
+              <div class="text-11 valign-text-middle poppins-semi-bold-shark-16px">5,000</div>
               <div class="date-5 valign-text-middle normal-text">11/04/22</div>
-              <div
-                class="text-12 valign-text-middle poppins-semi-bold-shark-16px"
-              >
-                5,000
-              </div>
+              <div class="text-12 valign-text-middle poppins-semi-bold-shark-16px">5,000</div>
               <div class="date valign-text-middle normal-text">11/03/22</div>
-              <div
-                class="text-1 valign-text-middle poppins-semi-bold-shark-16px"
-              >
-                2,000
-              </div>
+              <div class="text-1 valign-text-middle poppins-semi-bold-shark-16px">2,000</div>
               <div class="date valign-text-middle normal-text">11/02/22</div>
-              <div
-                class="text-1 valign-text-middle poppins-semi-bold-shark-16px"
-              >
-                3,000
-              </div>
+              <div class="text-1 valign-text-middle poppins-semi-bold-shark-16px">3,000</div>
               <div class="date-6 valign-text-middle normal-text">16/01/22</div>
             </div>
             <div class="line-container">
@@ -118,16 +86,8 @@
             <div class="overlap-group-2">
               <div class="income-2 valign-text-middle">Income</div>
               <div class="rectangle-168"></div>
-              <div
-                class="
-                  address-1
-                  valign-text-middle
-                  poppins-bold-caribbean-green-20px
-                "
-              >
-                <span
-                  ><span class="poppins-bold-caribbean-green-20px">0</span>
-                  <span class="span1 normal-text">baht</span>
+              <div class="address-1 valign-text-middle poppins-bold-caribbean-green-20px">
+                <span><span class="poppins-bold-caribbean-green-20px">0</span><span class="span1 normal-text">baht</span>
                 </span>
               </div>
             </div>
@@ -141,9 +101,7 @@
                 <div class="expense-2 valign-text-middle">Expense</div>
                 <div class="rectangle-169"></div>
                 <div class="address-2 valign-text-middle">
-                  <span
-                    ><span class="poppins-bold-jasper-20px">0</span
-                    ><span class="span1 normal-text">baht</span>
+                  <span><span class="poppins-bold-jasper-20px">0</span><span class="span1-1 normal-text">baht</span>
                   </span>
                 </div>
               </div>
@@ -160,50 +118,23 @@
           <div class="wallet-8">
             <div class="flex-col-2">
               <div class="wallet-9 valign-text-middle big-text">Wallet</div>
-              <div class="last-used-12032022 valign-text-middle normal-text">
-                Last used 12/03/2022
-              </div>
+              <div class="last-used-12032022 valign-text-middle normal-text">Last used 12/03/2022</div>
             </div>
-            <div
-              class="
-                x15000-baht
-                valign-text-middle
-                poppins-bold-caribbean-green-20px
-              "
-            >
-              <span
-                ><span class="poppins-bold-caribbean-green-20px">15,000</span>
-                <span class="span1 normal-text">baht</span>
+            <div class="x15000-baht valign-text-middle poppins-bold-caribbean-green-20px">
+              <span><span class="poppins-bold-caribbean-green-20px">15,000</span><span class="span1 normal-text">baht</span>
               </span>
             </div>
           </div>
           <img class="line-4" src="/imageDash/line-4.png" alt="Line 4" />
           <div class="savings-goal">
             <div class="flex-col-3">
-              <div class="savings-goal-1 valign-text-middle big-text">
-                Savings Goal
-              </div>
-              <p
-                class="
-                  i-phone-16-max-ranger-gucci-belt
-                  valign-text-middle
-                  normal-text
-                "
-              >
-                iPhone 16 Max Ranger <br />
-                Gucci Belt
+              <div class="savings-goal-1 valign-text-middle big-text">Savings Goal</div>
+              <p class="i-phone-16-max-ranger-gucci-belt valign-text-middle normal-text">
+                iPhone 16 Max Ranger <br />Gucci Belt
               </p>
             </div>
-            <div
-              class="
-                address-3
-                valign-text-middle
-                poppins-bold-caribbean-green-20px
-              "
-            >
-              <span
-                ><span class="poppins-bold-caribbean-green-20px">500</span>
-                <span class="span1 normal-text">baht</span>
+            <div class="address-3 valign-text-middle poppins-bold-caribbean-green-20px ">
+              <span><span class="poppins-bold-caribbean-green-20px">500</span><span class="span1 normal-text">baht</span>
               </span>
             </div>
           </div>
@@ -226,16 +157,8 @@
               <div class="overlap-group">
                 <div class="income-3 valign-text-middle">Income</div>
                 <div class="rectangle-168-1"></div>
-                <div
-                  class="
-                    x15000-baht-1
-                    valign-text-middle
-                    poppins-bold-caribbean-green-20px
-                  "
-                >
-                  <span
-                    ><span class="poppins-bold-caribbean-green-20px">0</span>
-                    <span class="span1 normal-text">baht</span>
+                <div class="x15000-baht-1 valign-text-middle poppins-bold-caribbean-green-20px">
+                  <span><span class="poppins-bold-caribbean-green-20px">15,000</span><span class="span1 normal-text">baht</span>
                   </span>
                 </div>
               </div>
@@ -243,37 +166,23 @@
                 <div class="group-255">
                   <div class="group-256">
                     <div class="overlap-group-3">
-                      <div class="address-4 valign-text-middle des-icon">
-                        365 days
-                      </div>
+                      <div class="address-4 valign-text-middle des-icon">365 days</div>
                     </div>
                   </div>
                   <div class="group-253">
                     <div class="rectangle-166"></div>
-                    <div class="income-4 valign-text-middle des-icon">
-                      Income
-                    </div>
+                    <div class="income-4 valign-text-middle des-icon">Income</div>
                   </div>
                   <div class="group-254">
                     <div class="rectangle-167"></div>
-                    <div class="expense-3 valign-text-middle des-icon">
-                      Expense
-                    </div>
+                    <div class="expense-3 valign-text-middle des-icon">Expense</div>
                   </div>
                 </div>
                 <div class="overlap-group">
                   <div class="expense-4 valign-text-middle">Expense</div>
                   <div class="rectangle-169-1"></div>
-                  <div
-                    class="
-                      x3000-baht-2
-                      valign-text-middle
-                      poppins-bold-jasper-20px
-                    "
-                  >
-                    <span
-                      ><span class="poppins-bold-jasper-20px">3000</span>
-                      <span class="span1 normal-text">baht</span>
+                  <div class="x3000-baht-2 valign-text-middle poppins-bold-jasper-20px">
+                    <span><span class="poppins-bold-jasper-20px">3000</span> <span class="span1-1 normal-text">baht</span>
                     </span>
                   </div>
                 </div>
@@ -283,7 +192,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <style>
@@ -291,7 +199,7 @@
     align-items:flex-start;
     display:flex;
     height: 787px;
-    overlap:hidden;
+    overflow:hidden;
     width: 1210px;
   }
 
@@ -536,6 +444,292 @@
     line-height: normal;
     position: absolute;
     top: 103px;
+  }
+
+  .wallet-1{
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    height: 24px;
+    left: 92px;
+    line-height: normal;
+    position: absolute;
+    top: 170px;
+  }
+
+  .wallet-2{
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    height: 24px;
+    left: 92px;
+    line-height: normal;
+    position: absolute;
+    top: 242px;
+  }
+
+  .wallet-3{
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    height: 24px;
+    left: 92px;
+    line-height: normal;
+    position: absolute;
+    top: 312px;
+  }
+
+  .overlap-group-1{
+    height: 364px;
+    left: 630px;
+    position: absolute;
+    top: 0px;
+    width: 594px;
+  }
+
+  .line-3-1{
+    height: 1px;
+    left: 0px;
+    position: absolute;
+    top: 46px;
+    width: 594px;
+  }
+
+  .income{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    height: 27px;
+    left: 20px;
+    line-height: normal;
+    position: absolute;
+    top: 13px;
+    width: 77px;
+  }
+
+  .group-258{
+    align-items: flex-start;
+    display: flex;
+    height: 267px;
+    left: 20px;
+    min-width: 558px;
+    position: absolute;
+    top: 73px;
+  }
+
+  .flex-row{
+    align-items: flex-start;
+    display: flex;
+    gap: 21px;
+    height: 267px;
+    min-width: 173px;
+  }
+
+  .ellipsis-container{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 1px;
+    min-width: 263px;
+    width: 50px;
+  }
+
+  .ellipse{
+    background-color: rgba(11, 11, 232, 0.867);
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .flex--col{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    min-width: 267px;
+    width: 102px;
+  }
+
+  .text-7,.wallet-9,savings-goal-1{
+    color: #000;
+    font-weight: 600;
+    height: 30px;
+    line-height: normal;
+    width: 102px;
+  }
+
+  .wallet-4,.wallet-5,.wallet-6,.wallet-7,.last-used-12032022{
+    color: #000;
+    font-weight: 500;
+    height: 24px;
+    line-height: normal;
+  }
+
+  .text{
+    color: #000;
+    font-weight: 600;
+    height: 30px;
+    line-height: normal;
+    width: 17px;
+  }
+
+  .flex-col-1{
+    align-items: flex-end;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    margin-left: 273px;
+    min-height: 263px;
+    width: 68px;
+  }
+
+  .text-11{
+    height: 24px;
+    letter-spacing: 0em;
+    line-height: normal;
+    min-width: 48px;
+    text-align: right;
+  }
+
+  .date-5{
+    color: #000;
+    font-weight: 500;
+    height: 24px;
+    line-height: normal;
+    margin-right: 1px;
+    margin-top: 2px;
+    min-width: 67px;
+  }
+
+  .text-12{
+    height: 24px;
+    letter-spacing: 0em;
+    line-height: normal;
+    margin-top: 19px;
+    min-width: 46px;
+    text-align: right;
+  }
+
+  .date{
+    color: #000;
+    font-weight: 500;
+    height: 24px;
+    line-height: normal;
+    margin-right: 2px;
+    margin-top: 2px;
+    min-width: 66px;
+  }
+
+  .text-1{
+    height: 24px;
+    letter-spacing: 0em;
+    line-height: normal;
+    margin-right: 1px;
+    margin-top: 21px;
+    min-width: 48px;
+    text-align: right;
+  }
+
+  .date-6{
+    color: #000;
+    font-weight: 500;
+    height: 24px;
+    line-height: normal;
+    margin-right: 1px;
+    margin-top: 2px;
+    min-width: 67px;
+  }
+
+  .line-container{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    margin-left: 12px;
+    margin-top: 1px;
+    min-height: 263px;
+    width: 1px;
+  }
+
+  .line-1{
+    height: 50px;
+    width: 1px;
+  }
+
+  .overlap-group2{
+    height: 696px;
+    left: 0px;
+    position: absolute;
+    top: 83px;
+    width: 694px;
+  }
+
+  .rectangle-151{
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px #ff6ce9;
+    height: 231px;
+    left: 0px;
+    position: absolute;
+    top: 465px;
+    width: 594px;
+  }
+
+  .group-257{
+    display: flex;
+    gap: 318px;
+    height: 30px;
+    left: 20px;
+    position: absolute;
+    top: 477px;
+    width: 562px;
+  }
+
+  .today{
+    color: #000;
+    font-weight: 600;
+    height: 30px;
+    line-height: normal;
+    width: 64px;
+  }
+
+  .address{
+    color: #000;
+    font-weight: 600;
+    height: 30px;
+    line-height: normal;
+    width: 176px;
+  }
+
+  .income-1{
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    left: 20px;
+    min-height: 600px;
+    position: absolute;
+    top: 0px;
+    width: 674px;
+  }
+
+  .item-6,item-5,.item-4,.diet-1{
+    height: 30px;
+    margin-right: 4px;
+    object-fit: cover;
+    width: 30px;
+  }
+
+  .income-item{
+    height: 30px;
+    margin-right: 4px;
+    margin-top: 41px;
+    object-fit: cover;
+    width: 30px;
+  }
+
+  .overlap-group-2{
+    align-items: flex-start;
+    border-radius:10px;
+    height: 70px;
+    margin-top: 288px;
+    position: relative;
+    width: 558px;
   }
 
 </style>
