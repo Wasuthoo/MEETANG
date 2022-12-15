@@ -1,133 +1,294 @@
 <template>
-    <!-- divใหญ่ -->
-    <v-container fluid fill-heigth class="bg-deep-purple-lighten-5">
-        <h1>CashBook</h1>
-        <hr />
-
-        <v-card class="pa-5 ma-5 bg-blue d-flex justify-center ">
-            <v-img class="user-1" src="/icon/user 1.png" alt="user 1" height="100" />
-            <div ma-n5>
-                <h1>สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
-                <a>คุณธนวรรณ ณ กรุงเทพมหานคร</a><br />
-                <a>64050138@kmitl.ac.th</a>
+    <div class="heading">
+        <h1 class="cashbook title">CashBook</h1>
+    </div>
+    <div class="content">
+        <div class="userBar">
+            <img class="user-1" src="/icon/user 1.png" alt="user 1"/>
+            <div class="flex-col">
+                <h1 class="summarizeYearTitle">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
+                <h1 class="userName">คุณธนวรรณ ณ กรุงเทพมหานคร</h1>
+                <h2 class="userEmail">64050138@kmitl.ac.th</h2>
             </div>
-        </v-card>
-        
-        <div class="pa-5">
+        </div>
+        <br>
+
+        <div class="AmountContainer">
+            <!-- add v-row -->
             <v-row>
+                <!-- add v-col -->
                 <v-col>
-                    <v-card>
-                        1
-                    </v-card>
+
+                    <div class="textInputContainer">
+                        <h2 class="inputAmountText">ยอดเงินเข้ารวม</h2>
+                        <div class="inputPriceText">
+                            <!-- <span> -->
+                                <h2 class="inputPrice">326,000 บาท</h2>
+                                <!-- <span class="inputNbsp">&nbsp;</span> -->
+                                <!-- <span class="inputBaht">บาท</span> -->
+                            <!-- </span> -->
+                        </div>
+                    </div>
+
                 </v-col>
                 <v-col>
-                    <v-card>
-                        2
-                    </v-card>
+
+                    <div class="textOutputContainer">
+                        <h2 class="outputAmountText">ยอดเงินออกรวม</h2>
+                        <div class="outputPriceText">
+                            <!-- <span> -->
+                                <h2 class="outputPrice">248,000 บาท</h2>
+                               <!--  <span class="outputNbsp">&nbsp;</span>
+                                <span class="outputBaht">บาท</span>
+                            </span> -->
+                        </div>
+                    </div>
+
                 </v-col>
             </v-row>
+            
         </div>
-       
-        <br/>
-        <v-card class="bg-blue pa-5 ma-5">
-            สรุปรายการความเคลื่อนไหวบัญชีประจำเดือนธันวาคม
-        </v-card>
-    </v-container>
-</template>
+        
+        <!-- Graph Year as an image -->
+        <img class="graphYear" img src="/icon/graphYear.png" alt="graphYear"/>
 
-
-
-<!-- <template>
-    <div class="bg-blue-lighten-4">
-        <div class="heading">
-            <h1 class="title valgin-text-middle heading">CashBook</h1>
+        <div class="summarizeMonthGroup">
+            <h1 class="summarizeMonthTitle">สรุปรายการความเคลื่อนไหวบัญชีประจำเดือนธันวาคม</h1>
         </div>
-        <div class="content">
-            <v-img class="user-1" src="/icon/user 1.png" alt="user 1" height="50" />
-            <div class="flex-col">
-                <h1 class="text-28 valign-text-middle heading">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
-                <div class="text-29 valign-text-middle">คุณธนวรรณ ณ กรุงเทพมหานคร</div>
-                <div class="x64050138kmitlacth valigh-text-middle">64050138@kmitl.ac.th</div>
-            </div>
-        </div>
-        <div class="overlap-group-container heading">
-            <div class="text-container">
-                <div class="text-2 valign-text-middle">ยอดเงินเข้ารวม</div>
-                <div class="text-2-1 valign-text-middle">
-                    <span>
-                        <span class="span0 heading">326,000</span>
-                        <span class="span1 heading">&nbsp;</span>
-                        <span class="span2 heading">บาท</span>
-                    </span>
-                </div>
-            </div>
-            <div class="text-container-1">
-                <div class="text-2-2 valign-text-middle">ยอดเงินออกรวม</div>
-                <div class="text-2-3 valign-text-middle">
-                    <span>
-                        <span class="span0 heading">248,000</span>
-                        <span class="span1 heading">&nbsp;</span>
-                        <span class="span2-1 heading">บาท</span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="overlap-group12 big-text">
-            <div class="view">
-                <div class="rectangle-13-1"></div>
-                <div class="rectangle-14-1"></div>
-                <div class="view-1">
-                    <div class="overlap-group7">
-                        <div class="rectangle-13-2"></div>
-                        <div class="rectangle-14-2"></div>
-                    </div>
-                    <div class="view-2">
-                        <div class="rectangle-13-3"></div>
-                        <div class="rectangle-14-3"></div>
-                        <div class="view-3">
-                            <div class="overlap-group-1">
-                                <div class="rectangle-13-4"></div>
-                                <div class="rectangle-14-4"></div>
-                            </div>
-                        </div>
-                        <div class="view-4">
-                            <div class="overlap-group">
-                                <div class="rectangle-13"></div>
-                                <div class="rectangle-14"></div>
-                            </div>
-                            <div class="view-5">
-                                <div class="overlap-group5">
-                                    <div class="rectangle-13-5"></div>
-                                    <div class="regtangle-14-5"></div>
-                                </div>
+        <br>
+        <div class="AmountContainer">
+            <!-- add v-row -->
+            <v-row>
+                <!-- add v-col -->
+                <v-col>
 
-                            </div>
+                    <div class="textInputContainer">
+                        <h2 class="inputAmountText">ยอดเงินเข้ารวม</h2>
+                        <div class="inputPriceText">
+                            <!-- <span> -->
+                                <h2 class="inputPrice">28,000 บาท</h2>
+                                <!-- <span class="inputNbsp">&nbsp;</span>
+                                <span class="inputBaht">บาท</span>
+                            </span> -->
                         </div>
                     </div>
-                </div>
-            </div>
+
+                </v-col>
+                <v-col>
+
+                    <div class="textOutputContainer">
+                        <h2 class="outputAmountText">ยอดเงินออกรวม</h2>
+                        <div class="outputPriceText">
+                            <!-- <span> -->
+                                <h2 class="outputPrice">23,000 บาท</h2>
+                                <!-- <span class="outputNbsp">&nbsp;</span>
+                                <span class="outputBaht">บาท</span>
+                            </span> -->
+                        </div>
+                    </div>
+
+                </v-col>
+            </v-row>
 
         </div>
-
-
+        <!-- Graph Month as an image -->
+        <img class="graphMonth" img src="/icon/graphMonth.png" alt="graphMonth"/>"
     </div>
-
 </template>
 
 <style>
-.heading {
-    display: flex;
-    flex-direction: column;
-    height: 99px;
-    width: 1337px;
-}
+    .heading {
+        display: flex;
+        flex-direction: column;
+        height: 99px;
+        width: 1337px;
+    }
+    
+    .content {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        min-height: 2091px;
+        padding: 9px 2px;
+        width: 1210px;
+    }
 
-.titile {
-    color: var(--black);
-    font-weight: 800;
-    height: 99px;
-    line-height: normal;
-    text-align: center;
-    width: 234px;
-}
-</style> -->
+    .userBar {
+        align-items: center;
+        background: linear-gradient(180deg, rgb(67, 130, 254) 0%, rgb(129, 172, 255) 100%);
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px #0000001a;
+        display: flex;
+        gap: 21px;
+        height: 184px;
+        min-width: 1172px;
+        padding: 12px 121px;
+    }
+
+    .user-1 {
+        align-self: flex-end;
+        height: 158px;
+        object-fit: cover;
+        width: 158px;
+    }
+
+    .flex-col {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0.44px;
+        min-height: 124px;
+        width: 684px;
+    }
+
+    .summarizeYearTitle {
+        color: var(--deep-sapphire);
+        font-weight: 800;
+        height: 36px;
+        line-height: normal;
+        text-align: center;
+        width: 612px;
+    }
+
+    .userName {
+        color: #FFFFFF;
+        align-self: flex-end;
+        height: 30px;
+        letter-spacing: 0;
+        line-height: normal;
+        margin-top: 0px;
+        width: 628px;
+    }
+
+    .userEmail {
+        color: #FFFFFF;
+        align-self: center;
+        height: 30px;
+        letter-spacing: 0;
+        line-height: normal;
+        margin-right: 102px;
+        margin-top: 22px;
+        width: 280px;
+    }
+
+    .amountContainer {
+        align-items: flex-start;
+        display: flex;
+        gap: 24px;
+        height: 119px;
+        margin-top: 21px;
+        min-width: 1172px;
+    }
+
+    .textInputContainer {
+        align-items: flex-start;
+        background-color: #58B99C;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px #0000001a;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-height: 119px;
+        padding: 17.5px 30.1px;
+        width: 574px;
+    }
+
+    .inputAmountText {
+        color: #CDEAE1;
+        font-weight: 800;
+        height: 30px;
+        line-height: normal;
+        text-align: 0.86px;
+        width: 322px;
+    }
+
+    .inputPriceText {
+        align-self: flex-end;
+        color: transparent;
+        font-weight: 800;
+        height: 30px;
+        line-height: normal;
+        text-align: right;
+        width: 264px;
+    }
+
+    .inputPrice {
+        color: #ffffff;
+    }
+
+    .textOutputContainer {
+        align-items: flex-start;
+        background-color: #B95858;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px #0000001a;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-height: 119px;
+        padding: 17.5px 28px;
+        width: 574px;
+    }
+
+    .outputAmountText {
+        color: #F2CDC8;
+        font-weight: 800;
+        height: 30px;
+        line-height: normal;
+        width: 348px;
+    }
+
+    .outputPriceText {
+        align-self:flex-end;
+        color: transparent;
+        font-weight: 800;
+        height: 30px;
+        line-height: normal;
+        margin-right: 8.25px;
+        text-align: right;
+        width: 243px;
+    }
+
+    .outputPrice {
+        color: #FFFFFF;
+    }
+    
+    .graphYear {
+        align-self: center;
+        height: 643px;
+        margin-left: 26px;
+        margin-top: 52px;
+        object-fit: cover;
+        width: 1074px;
+    }
+
+    .summarizeMonthGroup {
+        align-items: center;
+        background: linear-gradient(180deg, rgb(67, 130, 254) 0%, rgb(129, 172, 255) 100%);
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px #0000001a;
+        display: flex;
+        height: 80px;
+        justify-content: flex-end;
+        margin-top: 153px;
+        min-width: 1172px;
+        padding: 0 182px;
+    }
+
+    .summarizeMonthTitle {
+        color: var(--deep-sapphire);
+        font-weight: 800;
+        height: 36px;
+        line-height: normal;
+        text-align: center;
+        width: 798px;
+    }
+
+    .graphMonth {
+        align-self: center;
+        height: 592px;
+        margin-left: 41px;
+        margin-top: 58px;
+        object-fit: cover;
+        width: 1089px;
+    }
+</style>
