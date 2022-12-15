@@ -29,6 +29,10 @@ const router = createRouter({
         {
           path: 'nearme',
           component: () => import('../views/app/nearme.vue')
+        },
+        {
+          path: 'detailshop',
+          component: () => import('../views/app/detailshop.vue')
         }
       ]
     }
