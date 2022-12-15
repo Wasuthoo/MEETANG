@@ -8,7 +8,7 @@
     <v-dialog v-model="showdialog" max-width="500px">
         <v-card>
             <v-card-title>
-                <span class="headline"> {{ selectedGoal.name }} </span>
+                <span class="headline pa-6"> {{ selectedGoal.name }} </span>
             </v-card-title>
 
             <v-card-text>

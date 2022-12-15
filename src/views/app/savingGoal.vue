@@ -23,7 +23,7 @@
     <v-dialog v-model="addForm" max-width="500px">
         <v-card>
             <v-card-title>
-                <span class="headline">Add a new saving goal</span>
+                <span class="headline ma-6">Add a new saving goal</span>
             </v-card-title>
 
             <v-card-text>
@@ -32,12 +32,15 @@
                         <v-col cols="12">
                             <v-text-field id="name" label="Name" required></v-text-field>
                         </v-col>
+
                         <v-col cols="12">
                             <v-text-field id="amount" label="Amount" required></v-text-field>
                         </v-col>
+
                         <v-col cols="12">
                             <v-text-field id="date" label="Date" required></v-text-field>
                         </v-col>
+
                         <v-col cols="12">
                             <v-text-field id="description" label="Description" required></v-text-field>
                         </v-col>
@@ -56,10 +59,11 @@
 
 <script>
 import goalCard from "..//..//components//savinggoal//goalCard.vue";
+
 export default {
     name: "SavingGoal",
     components: {
-        goalCard,
+        goalCard
     },
     data() {
         return {
