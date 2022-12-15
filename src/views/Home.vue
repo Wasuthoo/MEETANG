@@ -28,26 +28,30 @@
       </div>
     </v-card>
     <!-- end of NavBar -->
-  <v-container fluid>
-    <div class="d-flex justify-center">
-      <v-img class="mx-16" src="../../public/big-wallet.png" style="height : 500px; width:500px;" ></v-img>
-      <div>
-        <h1>วางแผนและจัดการรายรับ-รายจ่าย</h1>
-        <h1>ในชีวิตประจำวันด้วย MEETANG </h1>
-        <a>อำนวยความสะดวกในการจัดทำรายการบัญชีรายรับ-รายจ่าย</a><br/>
-        <a>และเป็นตัวช่วยในการตั้งเป้าหมายในการออมเงินของผู้ใช้ </a><br/>
-        <a>โดยมีจุดมุ่งหมายสูงสุดคือการช่วยส่งเสริมให้ผู้ใช้มีระเบียบวินัย </a><br/>
-        <a>ในการใช้จ่ายต่างๆในชีวิตประจำวัน </a><br/>
 
-
+    <!-- Content1 -->
+    <v-container fluid>
+      <div class="d-flex justify-center">
+        <v-img src="../../public/big-wallet.png" height="400"></v-img>
+        <div class="pa-16 ma-10">
+          <h1>วางแผนและจัดการรายรับ-รายจ่าย</h1>
+          <h1>ในชีวิตประจำวันด้วย MEETANG </h1>
+          <a>อำนวยความสะดวกในการจัดทำรายการบัญชีรายรับ-รายจ่าย</a><br />
+          <a>และเป็นตัวช่วยในการตั้งเป้าหมายในการออมเงินของผู้ใช้ </a><br />
+          <a>โดยมีจุดมุ่งหมายสูงสุดคือการช่วยส่งเสริมให้ผู้ใช้มีระเบียบวินัย </a><br />
+          <a>ในการใช้จ่ายต่างๆในชีวิตประจำวัน </a><br />
+          <v-btn class="mx-2" color="#77ADFF" style="color:#FFFFFF;" to="/login">
+            เริ่มต้นใช้งานฟรี
+          </v-btn>
+        </div>
       </div>
-    </div>
+    </v-container>
+    <!-- end of content1 -->
 
-
-  </v-container>
-
-
-
+    <!-- content2 -->
+    <v-container fluid>
+      <h1 class="text-center">ตัวช่วยวางแผนสำหรับคุณ</h1>
+    </v-container>
 
 
   </v-container>
