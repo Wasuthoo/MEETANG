@@ -8,7 +8,7 @@
                 <v-divider></v-divider>
 
                 <v-list density="compact" nav>
-                    <v-list-item value="cashbook" class="text-center my-5" to="/app/dashboarda" >
+                    <v-list-item value="cashbook" class="text-center my-5" to="/app/dashboard" >
                         <v-img src="/icon/Chart.png" height="20" class="mt-1">
                         </v-img>
                         <a class="text-caption">Dashboard</a>
