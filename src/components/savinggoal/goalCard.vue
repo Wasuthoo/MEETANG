@@ -1,8 +1,9 @@
 <template>
     <v-card class="ma-5 bg-blue-lighten-4" @click="onClickCard(goal)" v-for="goal in savingGoal" :key="goal.id">
-        <v-card-title>{{ goal.name }}</v-card-title>
-        <v-card-subtitle>{{ goal.amount }}</v-card-subtitle>
-        <v-card-text>{{ goal.description }}</v-card-text>
+        <v-card-title >{{ goal.name }}</v-card-title>
+        <v-card-text class="mx-2">{{ goal.amount }}</v-card-text>
+        <v-card-subtitle class="mx-2">{{ goal.date }}</v-card-subtitle>
+        <v-card-text class="mx-2">{{ goal.description }}</v-card-text>
     </v-card>
 
     <v-dialog v-model="showdialog" max-width="500px">

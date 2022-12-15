@@ -63,7 +63,7 @@ import goalCard from "..//..//components//savinggoal//goalCard.vue";
 export default {
     name: "SavingGoal",
     components: {
-        goalCard
+        goalCard,
     },
     data() {
         return {
