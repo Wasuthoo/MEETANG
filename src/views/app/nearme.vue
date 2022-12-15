@@ -1,13 +1,14 @@
 <template>
+    <div class = "bg">
     <h1 class="pa-5">Food near me </h1>
     <hr/>
     
-    <v-row>
-
+    <v-row col = "6">
+        
         <v-col>
 
-            <h2 class="pa-5 bg-pink-lighten-4">
-                Meetang
+            <h2 class="pa-6" style="color: dodgerblue;">
+                Meetang    
             </h2> 
 
         </v-col>
@@ -21,9 +22,13 @@
                 <v-text-field 
                     solo
                     label="กรุณาระบุตำแหน่งปัจจุบันของคุณ"
-                    append-icon="mdi-map-marker"
-            >
-            </v-text-field>
+                >
+
+                    <template v-slot:append>
+                        <v-icon color="red">mdi-map-marker</v-icon>
+                    </template>
+
+                </v-text-field>
 
             </v-container>
 
@@ -54,7 +59,7 @@
         </v-card-title>
 
         <v-card-subtitle>
-            \n
+            <br>
         </v-card-subtitle>
 
         <v-card-subtitle class="my-2">
@@ -62,7 +67,7 @@
                 mdi-star
             </v-icon>
             4.9
-            <v-icon>
+            <v-icon color="black">
                 mdi-walk
             </v-icon>
             0.3 km
@@ -83,22 +88,22 @@
         </v-img>
 
         <v-card-title>
-            มาดามตามสั่ง - วัดปากลมบน
+            ข้าวมันไก่ป้าน้อย
         </v-card-title>
 
         <v-card-subtitle>
-            \n
+            <br>
         </v-card-subtitle>
 
         <v-card-subtitle class="my-2">
-            <v-icon>
+            <v-icon color="orange">
                 mdi-star
             </v-icon>
-            4.9
-            <v-icon>
+            4.4
+            <v-icon color="black">
                 mdi-walk
             </v-icon>
-            0.3 km
+            0.5 km
         </v-card-subtitle>
 
         </v-card>
@@ -117,22 +122,22 @@
         </v-img>
 
         <v-card-title>
-            มาดามตามสั่ง - วัดปากลมบน
+            ก๊วยเตี๋ยวต้มยำเฮียเล้ง
         </v-card-title>
 
         <v-card-subtitle>
-            \n
+            <br>
         </v-card-subtitle>
 
         <v-card-subtitle class="my-2">
-            <v-icon>
+            <v-icon color="orange">
                 mdi-star
             </v-icon>
-            4.9
-            <v-icon>
+            4.6
+            <v-icon color="black">
                 mdi-walk
             </v-icon>
-            0.3 km
+            0.8 km
         </v-card-subtitle>
 
         </v-card>
@@ -156,22 +161,22 @@
     </v-img>
 
     <v-card-title>
-        มาดามตามสั่ง - วัดปากลมบน
+        หมูปิ้งลุงรัง
     </v-card-title>
 
     <v-card-subtitle>
-        \n
+        <br>
     </v-card-subtitle>
 
     <v-card-subtitle class="my-2">
-        <v-icon>
+        <v-icon color="orange">
             mdi-star
         </v-icon>
-        4.9
-        <v-icon>
+        3.9
+        <v-icon color="black">
             mdi-walk
         </v-icon>
-        0.3 km
+        1.0 km
     </v-card-subtitle>
 
     </v-card>
@@ -189,22 +194,22 @@
     </v-img>
 
     <v-card-title>
-        มาดามตามสั่ง - วัดปากลมบน
+        ส้มตำสังค์ทอง
     </v-card-title>
 
     <v-card-subtitle>
-        \n
+        <br>
     </v-card-subtitle>
 
     <v-card-subtitle class="my-2">
-        <v-icon>
+        <v-icon color="orange">
             mdi-star
         </v-icon>
-        4.9
-        <v-icon>
+        3.4
+        <v-icon color="black">
             mdi-walk
         </v-icon>
-        0.3 km
+        1.3 km
     </v-card-subtitle>
 
     </v-card>
@@ -223,22 +228,22 @@
     </v-img>
 
     <v-card-title>
-        มาดามตามสั่ง - วัดปากลมบน
+        สเต็กพี่โตเนื้อแน่น
     </v-card-title>
 
     <v-card-subtitle>
-        \n
+        <br>
     </v-card-subtitle>
 
     <v-card-subtitle class="my-2">
-        <v-icon>
+        <v-icon color="orange">
             mdi-star
         </v-icon>
-        4.9
-        <v-icon>
+        5.0
+        <v-icon color="black">
             mdi-walk
         </v-icon>
-        0.3 km
+        1.4 km
     </v-card-subtitle>
 
     </v-card>
@@ -262,22 +267,22 @@
 </v-img>
 
 <v-card-title>
-    มาดามตามสั่ง - วัดปากลมบน
+    ข้าวแกงกะหรี่พรี่คาซึยะ
 </v-card-title>
 
 <v-card-subtitle>
-    \n
+    <br>
 </v-card-subtitle>
 
 <v-card-subtitle class="my-2">
-    <v-icon>
+    <v-icon color="orange">
         mdi-star
     </v-icon>
-    4.9
-    <v-icon>
+    4.7
+    <v-icon color="black">
         mdi-walk
     </v-icon>
-    0.3 km
+    1.5 km
 </v-card-subtitle>
 
 </v-card>
@@ -295,22 +300,22 @@
 </v-img>
 
 <v-card-title>
-    มาดามตามสั่ง - วัดปากลมบน
+    ซูชิไข่เค็ม
 </v-card-title>
 
 <v-card-subtitle>
-    \n
+    <br>
 </v-card-subtitle>
 
 <v-card-subtitle class="my-2">
-    <v-icon>
+    <v-icon color="orange">
         mdi-star
     </v-icon>
-    4.9
-    <v-icon>
+    4.2
+    <v-icon color="black">
         mdi-walk
     </v-icon>
-    0.3 km
+    1.5 km
 </v-card-subtitle>
 
 </v-card>
@@ -329,22 +334,22 @@
 </v-img>
 
 <v-card-title>
-    มาดามตามสั่ง - วัดปากลมบน
+    ชาชักกระรอกบิน
 </v-card-title>
 
 <v-card-subtitle>
-    \n
+    <br>
 </v-card-subtitle>
 
 <v-card-subtitle class="my-2">
-    <v-icon>
+    <v-icon color="orange">
         mdi-star
     </v-icon>
-    4.9
-    <v-icon>
+    4.8
+    <v-icon color="black">
         mdi-walk
     </v-icon>
-    0.3 km
+    1.7 km
 </v-card-subtitle>
 
 </v-card>
@@ -356,18 +361,22 @@
     </div>
     <!-- จบหน้าร้าน -->
 
-    <v-btn
-      class="mx-auto"
-      size="300"
-      variant="outlined"
-      color="blue"
-    >
-      ดูเพิ่มเติม
-    </v-btn>
+<div class="justify-center align-center">
 
-    <v-container class="d-flex justify-end mb-6">
-        <v-btn to = 'detailshop'>มาดามตามสั่ง</v-btn>
-    </v-container>
+    <v-container class="justify-center align-center">
+        
+<v-btn class="justify-center align-center"
+    size="x-large"
+    variant="outlined"
+    color="blue"
+>
+ดูเพิ่มเติม
+</v-btn>
+
+</v-container>
+
+</div>
+</div>
 </template>
 
 <script>
@@ -379,3 +388,17 @@ export default {
   }
 }
 </script>
+
+<style>
+    .bg{
+        background-color: #EEF7FF;
+    }
+</style>
+
+<style>
+    .ct{
+        align-items: center;
+    }
+</style>
+
+
