@@ -732,6 +732,306 @@
     width: 558px;
   }
 
+  .income-2{
+    color: rgb(51, 198, 73);
+    font-family: poppins;
+    font-size: 1px;
+    font-weight: 700;
+    height: 13px;
+    left: 8px;
+    letter-spacing: 0em;
+    line-height: normal;
+    position: absolute;
+    top: 12px;
+    width: 96px;
+  }
+
+  .rectangle-168{
+    background-color: rgb(41, 86, 48);
+    border-radius: 10px;
+    height: 70px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 558px;
+  }
+
+  .address-1{
+    height: 30px;
+    left: 495px;
+    letter-spacing: 0em;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 19px;
+  }
+
+  .span1{
+    color: rgb(0, 255, 42);
+    font-weight: 500;
+  }
+
+  .expense-1{
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+    left: 20px;
+    min-height: 288px;
+    position: absolute;
+    top: 395px;
+    width: 674px;
+  }
+
+  .flex-row-1{
+    align-items: flex-start;
+    display: flex;
+    gap: 82px;
+    height: 75px;
+    margin-top: 4px;
+    width: 670px;
+  }
+
+  .overlap-group1-1{
+    align-items: flex-end;
+    border-radius:10px;
+    height: 70px;
+    position: relative;
+    width: 558px;
+  }
+
+  .expense-2{
+    height: 13px;
+    left: 9px;
+    letter-spacing: 0em;
+    line-height: normal;
+    position: absolute;
+    top: 10px;
+    width: 95px;
+  }
+
+  .rectangle-169{
+    background-color: rgb(249, 203, 203);
+    border-radius: 10px;
+    height: 70px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 558px;
+  }
+
+  .address-2{
+    height: 30px;
+    left: 495px;
+    letter-spacing: 0em;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 23px;
+  }
+
+  .span1-1{
+    color: rgb(208, 139, 139);
+    font-weight: 500;
+  }
+
+  .dress-1{
+    height: 30px;
+    object-fit: cover;
+    width: 30px;
+  }
+
+  .line-5{
+    height: 1px;
+    left: 0px;
+    position: absolute;
+    top: 516px;
+    width: 594px;
+  }
+
+  .image-34{
+    height: 56px;
+    left: 129px;
+    object-fit: cover;
+    position: absolute;
+    top: 538px;
+    width: 56px;
+  }
+
+  .image-33{
+    height: 65px;
+    left: 125px;
+    object-fit: cover;
+    position: absolute;
+    top: 618px;
+    width: 65px;
+  }
+
+  .overlap-group3{
+    align-items: center;
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px #ff6ce9;
+    display: flex;
+    flex-direction: column;
+    left: 0px;
+    min-height: 231px;
+    padding: 13px 0;
+    position: absolute;
+    top: 287px;
+    width: 594px;
+  }
+
+  .accounts{
+    align-self: flex-start;
+    color: #000;
+    font-weight: 600;
+    height: 30px;
+    line-height: normal;
+    margin-top: 13px;
+    width: 176px;
+  }
+
+  .line-3-2{
+    height: 1px;
+    margin-top: 8px;
+    width: 594px;
+  }
+
+  .wallet-8{
+    align-items: center;
+    display: flex;
+    gap: 249px;
+    height: 54px;
+    margin-right: 17px;
+    margin-top: 7px;
+    min-width: 537px;
+  }
+
+  .flex-col-2{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    min-height: 54px;
+    width: 174px;
+  }
+
+  .x15000-baht{
+    height: 30px;
+    letter-spacing: 0em;
+    line-height: normal;
+    margin-bottom: 8px;
+    min-width: 108px;
+    text-align: right;
+  }
+
+  .line-4{
+    height: 1px;
+    margin-top: 14px;
+    width: 508px;
+  }
+
+  .savings-goal{
+    align-items: center;
+    display: flex;
+    gap: 249px;
+    height: 78px;
+    margin-right: 17px;
+    margin-top: 7px;
+    min-width: 537px;
+  }
+
+  .flex-col-3{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    min-height: 78px;
+    width: 199px;
+  }
+
+  .iphone-16-max-ranger-gucci-belt{
+    color: #000;
+    font-weight: 500;
+    height: 48px;
+    line-height: normal;
+  }
+
+  .address-3{
+    height: 30px;
+    letter-spacing: 0em;
+    line-height: normal;
+    margin-top: 4px;
+    min-width: 82px;
+    text-align: right;
+  }
+
+  .flex-col-4{
+    align-items:center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px #ff6ce9;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    left: 1px;
+    min-height: 257px;
+    padding: 13px 0;
+    position: absolute;
+    top: 0px;
+    width: 594px;
+  }
+
+  .flex-col-5{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 39px;
+    width: 594px;
+  }
+
+  .summary{
+    color: #000;
+    font-weight: 600;
+    height: 30px;
+    line-height: normal;
+    margin-left: 20px;
+  }
+
+  .line-3-3{
+    height: 1px;
+    width: 594px;
+  }
+
+  .flex-row-2{
+    align-item: flex-start;
+    display: flex;
+    height: 171px;
+    margin-right: 6px;
+    min-width: 550px;
+  }
+
+  .overlap-group1-2{
+    height: 156px;
+    position: relative;
+    width:187px;
+  }
+  .ellipse-1{
+    height: 152px;
+    left: 7px;
+    position: absolute;
+    top: 4px;
+    width: 152px;
+  }
+
+  .line-11{
+    height: 21px;
+    left: 122px;
+    position: absolute;
+    top: 93px;
+    width: 65px;
+  }
+
 /* OOO */
   .line-11-1 {
     height: 46px;
