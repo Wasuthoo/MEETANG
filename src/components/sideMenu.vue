@@ -1,7 +1,7 @@
 <template>
     <!-- <v-card fluid class="fill-height bg-blue-lighten-5"> -->
         <!-- <v-layout class="fill-height"> -->
-            <v-navigation-drawer class="bg-blue fill-height" style="width:100px;
+            <v-navigation-drawer class="bg-blue fill-height" style="width:115px;
           background: linear-gradient(180deg, #4181FD 0%, #5A92FF 59.82%, #A3C2FF 100%);" rail permanent>
                 <v-list-item class="pa-4 my-3 mx-4" nav prepend-avatar="../m.png"></v-list-item>
 

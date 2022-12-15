@@ -1,4 +1,34 @@
 <template>
+  <v-container fluid class="bg-red" width="100%">
+    <h1>Dashboard</h1>
+    <hr class="solid">
+    <v-container fluid>
+      <v-row>
+        <v-col>
+          <v-card class="bg-white pa-5">
+            <h1>Summary</h1>
+            <hr class="solid">
+            
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card class="bg-white pa-5">
+            <h1>Summary</h1>
+          </v-card>
+        </v-col>
+      </v-row>
+
+    </v-container>
+
+
+
+  </v-container>
+
+</template>
+
+
+
+<!-- <template>
   <h1>Dashboard</h1>
   <div class="content">
     <div class="overlap-group-container">
@@ -1231,4 +1261,4 @@
   }
 /* OOO */
 
-</style>
+</style> -->
