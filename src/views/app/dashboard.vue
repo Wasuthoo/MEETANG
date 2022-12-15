@@ -732,4 +732,203 @@
     width: 558px;
   }
 
+/* OOO */
+  .line-11-1 {
+    height: 46px;
+    left: 115px;
+    position: absolute;
+    top: 0;
+    width: 40px;
+  }
+
+  .number-2 {
+    color: #fff;
+    font-weight: 600;
+    height: 30px;
+    left: 0;
+    line-height: normal;
+    position: absolute;
+    top: 84px;
+    width: 24px;
+  }
+
+  .number-3 {
+    color: #fff;
+    font-weight: 600;
+    height: 30px;
+    left: 143;
+    line-height: normal;
+    position: absolute;
+    top: 41px;
+    width: 24px;
+  }
+
+  .flex-col-6 {
+    align-items: flex-end;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-height: 167px;
+    width: 363px;
+  }
+
+  .overlap-group {
+    border-radius: 10px;
+    height: 70px;
+    position: relative;
+    width: 280px;
+  }
+
+  .income-3 {
+    color: green;
+    font-family: poppins;
+    font-size: 1px;
+    font-weight: 700;
+    height: 13px;
+    left: 8px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 12px;
+    width: 63px;
+  }
+
+  .rectangle-168-1 {
+    background-color: #000;
+    border-radius: 10px;
+    height: 70px;
+    left: 0;
+    width: 280px
+  }
+
+  .x15000-baht-1 {
+    height: 30px;
+    left: 153px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 19px;
+  }
+
+  .group-container {
+    align-items: flex-start;
+    display: flex;
+    gap: 22px;
+    height: 88px;
+    min-width: 363px;
+  }
+
+  .group-255 {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    height: 53px;
+    width: 61px;
+  }
+
+  .group-256 {
+    align-items: flex-start;
+    display: flex;
+    margin-left: 7px;
+    min-width: 49px;
+  }
+
+  .overlap-group-3 {
+    align-items: flex-start;
+    background-color: #000;
+    border-radius: 2px;
+    display: flex;
+    min-width: 47px;
+    padding: 0 3px
+  }
+
+  .address-4 {
+    color: #000;
+    font-weight: 400;
+    height: 13px;
+    line-height: normal;
+    width: 41px;
+  }
+
+  .group-253 {
+    display: flex;
+    gap: 7px;
+    margin-top: 9px;
+    width: 60px;
+  }
+
+  .rectangle-166 {
+    background-color: #58b99c;
+    border-radius: 2px;
+    height: 13px;
+    width: 13px;
+  }
+
+  .income-4 {
+    color: #000;
+    font-weight: 400;
+    height: 13px;
+    line-height: normal;
+    width: 38px;
+  }
+
+  .group-254 {
+    display: flex;
+    gap: 7px;
+    margin-top: 5px;
+    width: 63px;
+  }
+
+  .rectangle-167 {
+    background-color: #000;
+    border-radius: 2px;
+    height: 13px;
+    width: 13px;
+  }
+
+  .expense-3 {
+    color: #000;
+    font-weight: 400;
+    height: 13px;
+    line-height: normal;
+    width: 41px;
+  }
+
+  .expense-4 {
+    color:#000;
+    font-family: poppins;
+    font-size: 1px;
+    font-weight: 700;
+    height: 13px;
+    left: 9px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 10px;
+    width: 69px;
+  }
+
+  .rectangle-169-1 {
+    background-color: #000;
+    border-radius: 10px;
+    height: 70px;
+    left: 0px;
+    position: absolute;
+    top: 0;
+    width: 280px;
+  }
+
+  .x3000-baht {
+    height: 30px;
+    left: 162px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: right;
+    top: 23px;
+  }
+/* OOO */
+
 </style>
