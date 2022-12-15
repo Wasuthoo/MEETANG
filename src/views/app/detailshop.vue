@@ -1,33 +1,25 @@
 <template>
+  <div class = "bg">
     <h1 class="d-flex justify-start mb-0">มาดามตามสั่ง - วัดปากลมบน</h1>
 
 
-    <v-card
-      class="d-flex justify-start mb-4"
-      flat
-      tile
+    <div
+      class="d-flex justify-start mb-4 bg"
+      max-width = "3000000"
     >
-      <v-card
-        class="pa-2"
-        outlined
-        tile
-      >
-      <v-icon color="yellow darken-2">
-        mdi-star
-      </v-icon>
-        4.9
-      <v-icon>
-        mdi-walk
-      </v-icon>
-        0.3 km เวลาเปิดให้บริการ 14.00 น. - 18.00 น. 
-      </v-card>
+      <v-icon color="yellow darken-2">mdi-star</v-icon>
+      4.9 
+      <v-icon>mdi-walk</v-icon>
+      0.3 km เวลาเปิดให้บริการ 14.00 น. - 18.00 น. 
+    </div>
 
-    </v-card>
+
+    
     <v-tabs
     fixed-tabs
-    bg-color="indigo-darken-2"
+    bg-color="indigo-darken-5"
     class ="mb-5"
-  >
+    >
     <v-tab>
       โปรโมชั่นพิเศษ
     </v-tab>
@@ -161,8 +153,92 @@
   </v-card>
 
   </v-col>
+</v-row>
 
+<v-row>
+    <v-col>
+    <v-card
+    class="pa-2"
+    max-width="361"
+  >
+    <v-card-item>
+      <div>
+        <div class="text-h6 mb-2">
+            ข้าวกระเพราหมูกรอบ
+        </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/307f7a8c980b465630deb20e93d4f1c4.jpg"
+        >
+        </v-img>
+        <div class="text-caption d-flex justify-center "> 50 บาท</div>
+      </div>
+    </v-card-item>
+    <v-card-actions class="d-flex justify-end mb-6">
+      <v-btn color = "green darken-3" variant="tonal">
+        <v-icon icon="mdi-plus" size="large"></v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+  </v-col>
+    
 
+  <v-col>
+    <v-card
+    class="pa-2"
+    max-width="361"
+  >
+    <v-card-item>
+      <div>
+        <div class="text-h6 mb-2">
+            ข้าวกระเพราหมูสับ
+        </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/2e5e936a36586da03e09a4a39375fb0d.jpg"
+        >
+        </v-img>
+        <div class="text-caption d-flex justify-center "> 50 บาท</div>
+      </div>
+    </v-card-item>
+    <v-card-actions class="d-flex justify-end mb-6">
+      <v-btn color = "green darken-3" variant="tonal">
+        <v-icon icon="mdi-plus" size="large"></v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+
+  </v-col>
+
+  <v-col>
+    <v-card
+    class="pa-2"
+    max-width="361"
+  >
+    <v-card-item>
+      <div>
+        <div class="text-h6 mb-2">
+            ข้าวกระเทียมพริกไทย
+        </div>
+        <v-img
+            class="white--text align-end"
+            height="200px"
+            src="/shop/8Garlic-and-Pepper-Pork-with-Rice-590x418.jpg"
+        >
+        </v-img>
+        <div class="text-caption d-flex justify-center "> 50 บาท</div>
+      </div>
+    </v-card-item>
+    <v-card-actions class="d-flex justify-end mb-6">
+      <v-btn color = "green darken-3" variant="tonal">
+        <v-icon icon="mdi-plus" size="large"></v-icon>
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+
+  </v-col>
 </v-row>
 
 <!-- เครื่องดื่ม -->
@@ -221,5 +297,11 @@
     </v-card-actions>
   </v-card>
 
-  
+</div>
 </template>
+
+<style>
+  .bg {
+    background-color: #EEF7FF;
+  }
+</style>
