@@ -82,7 +82,7 @@
             <img class="image-6" src="/imageDash/image-6.png" alt="image 6" />
             <img class="image-item" src="/imageDash/image-6.png" alt="image 7" />
             <img class="image-item" src="/imageDash/image-6.png" alt="image 8" />
-            <img class="image-item" src="/imageDash/image-2.png" alt="image 2" />
+            <img class="image-item" src="/imageDash/bingo-2.png" alt="image 2" />
             <div class="overlap-group-2">
               <div class="income-2 valign-text-middle">Income</div>
               <div class="rectangle-168"></div>
