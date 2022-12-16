@@ -253,7 +253,13 @@
                 <v-container>
                     <v-row>
                       <v-col cols="10">
-                            <v-text-field id="type" label="Income or Expense" required></v-text-field>
+                            <v-text-field id="type" label="Income or Expense" required>
+                              <select id="type" class="form-control" required>
+                                <option value="" disabled selected>Income or Expense</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                              </select>
+                            </v-text-field>
                         </v-col>
                         <v-col cols="10">
                             <v-text-field id="nametransection" label="Name Transection" required></v-text-field>
@@ -277,7 +283,7 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="addForm = false">Cancel</v-btn>
-                <v-btn color="blue darken-1" text @click="onSaveGoal">Save</v-btn>
+                <v-btn color="blue darken-1" text @click="addForm = false">Save</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -285,39 +291,37 @@
   </template>
 
 <script>
-import goalCard from "..//..//components//savinggoal//goalCard.vue";
+import goalCard from "..//..//components//cashbook//cashCard.vue";
 
 export default {
-    name: "SavingGoal",
+    name: "CashGoal",
     components: {
-        goalCard,
+        cashCard,
     },
     data() {
         return {
             // add a variable to store the data from the database
-            // Goals: [
-            //     {
-            //         id: 1,
-            //         name: "Saving Goal 1",
-            //         amount: 1000,
-            //         date: "2021-01-01",
-            //         description: "This is a description",
-            //     },
-            //     {
-            //         id: 2,
-            //         name: "Saving Goal 2",
-            //         amount: 2000,
-            //         date: "2021-01-01",
-            //         description: "This is a description",
-            //     },
-            //     {
-            //         id: 3,
-            //         name: "Saving Goal 3",
-            //         amount: 3000,
-            //         date: "2021-01-01",
-            //         description: "This is a description",
-            //     },
-            // ],
+            
+            // type1, type2
+            Income: [
+                {
+                    id: 1,
+                    // img: "",
+                    type:"income",
+                    name: "Saving Goal 1",
+                    account: "",
+                    amount: 1000,
+                    date: "2021-01-01",
+                },
+                {
+                    id: 2,
+                    type:"income",
+                    name: "Saving Goal 2",
+                    account: "",
+                    amount: 2000,
+                    date: "2021-01-01",
+                },
+            ],
             addForm: false,
         };
     },
@@ -326,24 +330,22 @@ export default {
             console.log("card clicked");
         },
 
-        onSaveGoal() {
+        onSaveTransaction() {
             let type = document.getElementById("type").value;
             let name = document.getElementById("nametransection").value;
             let account = document.getElementById("account").value;
             let amount = document.getElementById("amount").value;
             let date = document.getElementById("date").value;
-            let note = document.getElementById("note").value;
             console.log(name, amount, date, description);
             let newGoal = {
-                id: this.Goals.length + 1,
+                id: this.Income.length + 1,
                 type: type,
                 name: name,
                 account: account,
                 amount: amount,
                 date: date,
-                note: note,
             };
-            this.Goals.push(newGoal);
+            this.Income.push(newGoal);
 
             this.addForm = false;
         }
