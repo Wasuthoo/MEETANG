@@ -9,16 +9,16 @@
           <v-card class="pa-2 px-5 rounded-xl ">
             <h1>Summary</h1>
             <hr class="solid">
-            <div class="d-flex">
-              <v-img src="/imageDash/Graph.png" height="200" width="200" />
+            <div class="d-flex"> 
+              <!--<v-img src="/imageDash/Graph.png" height="200" width="200" />-->
               <div class="pa-3">
-                <v-card class="bg-green-lighten-5 pa-2 ma-3 rounded-lg" width="320">
-                  <h3>income</h3>
-                  <h1 class="text-end px-2">1,000 Baht</h1>
+                <v-card class="bg-green-lighten-5 pa-2 ma-3 rounded-lg" width="510">
+                  <h3>Income</h3>
+                  <h1 class="text-end px-2">{{ totalIncome }} Bath</h1>
                 </v-card>
-                <v-card class="bg-red-lighten-5 pa-2 ma-3 rounded-lg" width="320">
-                  <h3>expense</h3>
-                  <h1 class="text-end px-2">3,000 Baht</h1>
+                <v-card class="bg-red-lighten-5 pa-2 ma-3 rounded-lg" width="510">
+                  <h3>Expense</h3>
+                  <h1 class="text-end px-2">{{ totalExpense }} Bath</h1>
                 </v-card>
               </div>
             </div>
@@ -31,9 +31,11 @@
             <div class="d-flex justify-space-between my-1">
               <div>
                 <h3>Wallet</h3>
-                <p>Last used:12/03/2022</p>
+                <ul class="px-8">
+                  <li>Balance</li>
+                </ul>
               </div>
-              <h1 class="text-green">15,000 Baht</h1>
+              <h1 class="text-green">{{ totalWallet }} Bath</h1>
             </div>
             <hr class="solid">
             <h3 class="">Saving goal</h3>
@@ -42,7 +44,7 @@
                 <li>Iphone 16 Max Ranger</li>
                 <li>Gucci Belt</li>
               </ul>
-              <h1 class="text-green my-n3">500 Baht</h1>
+              <h1 class="text-green my-n3">4500 Baht</h1>
             </div>
           </v-card>
 
@@ -50,7 +52,7 @@
           <v-card class="mt-6 pa-2 px-5 rounded-xl ">
             <div class="d-flex justify-space-between">
               <h1>Today</h1>
-              <h2>5 December 2022</h2>
+              <h2>19 December 2022</h2>
             </div>
             <hr class="solid">
             <v-card class="bg-green-lighten-4 my-3 d-flex justify-space-between">
@@ -80,10 +82,10 @@
             <hr class="solid">
             <div class="parent">
               <v-card class="my-3 d-flex " flat v-for="item in incomes" :key="item.id">
-                <img class="ma-2 mx-3" src="/imageDash/hand-money.png" height="50" />
+                <img class="ma-2 mx-3" src="/imageCash/incomeRise.png" height="50" />
                 <div class="pa-2 mr-auto">
                   <h3>{{ item.name }}</h3>
-                  <a> {{ item.type }}</a>
+                  <a> {{ item.account }}</a>
                 </div>
                 <div class="align-center d-flex">
                   <div class="px-2">
@@ -94,90 +96,89 @@
                 </div>
               </v-card>
             </div>
-
           </v-card>
 
-          <!-- Expense -->
+          <!-- Expense card-->
           <v-card class="my-5 pa-2 px-5 rounded-xl">
             <h1>Expense</h1>
             <hr class="solid">
-
-            <!-- component income card -->
-            <v-card class="my-3 d-flex " flat>
-              <!-- picture  -->
-              <img class="ma-2 mx-3" src="/imageDash/hand-money.png" height="50" />
-
-              <div class="pa-2 mr-auto">
-                <h3>ถอนเงิน</h3>
-                <a>wallet</a>
-              </div>
-
-              <div class="align-center d-flex">
-                <div class="px-2">
-                  <a>5,000</a><br />
-                  <a>11/04/22</a>
+            <div class="parent">
+              <v-card class="my-3 d-flex " flat v-for="item in expenses" :key="item.id">
+                <img class="ma-2 mx-3" src="/imageCash/expenseFall.png" height="50" />
+                <div class="pa-2 mr-auto">
+                  <h3>{{ item.name }}</h3>
+                  <a>{{ item.account }}</a>
                 </div>
-                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
-              </div>
-            </v-card>
 
-            <!-- component income card -->
-            <v-card class="my-3 d-flex " flat>
-              <!-- picture  -->
-              <img class="ma-2 mx-3" src="/imageDash/hand-money.png" height="50" />
-
-              <div class="pa-2 mr-auto">
-                <h3>ถอนเงิน</h3>
-                <a>wallet</a>
-              </div>
-
-              <div class="align-center d-flex">
-                <div class="px-2">
-                  <a>5,000</a><br />
-                  <a>11/04/22</a>
+                <div class="align-center d-flex">
+                  <div class="px-2">
+                    <a>{{ item.amount }}</a><br />
+                    <a>{{ item.date }}</a>
+                  </div>
+                  <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
                 </div>
-                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
-              </div>
-            </v-card>
-
-            <!-- component income card -->
-            <v-card class="my-3 d-flex " flat>
-              <!-- picture  -->
-              <img class="ma-2 mx-3" src="/imageDash/bingo.png" height="50" />
-
-              <div class="pa-2 mr-auto">
-                <h3>หนูนาดับโชค</h3>
-                <a>wallet</a>
-              </div>
-
-              <div class="align-center d-flex">
-                <div class="px-2">
-                  <a>100,000</a><br />
-                  <a>11/04/22</a>
-                </div>
-                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
-              </div>
-            </v-card>
-
-            <!-- component income card -->
-            <v-card class="my-3 d-flex " flat>
-              <!-- picture  -->
-              <img class="ma-2 mx-3" src="/imageDash/bingo.png" height="50" />
-
-              <div class="pa-2 mr-auto">
-                <h3>หนูนาดับโชค</h3>
-                <a>wallet</a>
-              </div>
-
-              <div class="align-center d-flex">
-                <div class="px-2">
-                  <a>100,000</a><br />
-                  <a>11/04/22</a>
-                </div>
-                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
-              </div>
-            </v-card> <!-- end of component income card -->
+              </v-card>
+            </div>
           </v-card>
+
+          <!-- comment old code -->
+            <!-- component income card
+            <v-card class="my-3 d-flex " flat>
+              picture 
+              <img class="ma-2 mx-3" src="/imageDash/hand-money.png" height="50" />
+
+              <div class="pa-2 mr-auto">
+                <h3>ถอนเงิน</h3>
+                <a>wallet</a>
+              </div>
+
+              <div class="align-center d-flex">
+                <div class="px-2">
+                  <a>5,000</a><br />
+                  <a>11/04/22</a>
+                </div>
+                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
+              </div>
+            </v-card>
+
+            component income card
+            <v-card class="my-3 d-flex " flat>
+              picture 
+              <img class="ma-2 mx-3" src="/imageDash/bingo.png" height="50" />
+
+              <div class="pa-2 mr-auto">
+                <h3>หนูนาดับโชค</h3>
+                <a>wallet</a>
+              </div>
+
+              <div class="align-center d-flex">
+                <div class="px-2">
+                  <a>100,000</a><br />
+                  <a>11/04/22</a>
+                </div>
+                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
+              </div>
+            </v-card>
+
+            component income card
+            <v-card class="my-3 d-flex " flat>
+              picture 
+              <img class="ma-2 mx-3" src="/imageDash/bingo.png" height="50" />
+
+              <div class="pa-2 mr-auto">
+                <h3>หนูนาดับโชค</h3>
+                <a>wallet</a>
+              </div>
+
+              <div class="align-center d-flex">
+                <div class="px-2">
+                  <a>100,000</a><br />
+                  <a>11/04/22</a>
+                </div>
+                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
+              </div>
+            </v-card> end of component income card -->
+          
         </v-col> <!-- end of first col -->
       </v-row> <!-- end of first row -->
     </v-container>
@@ -203,10 +204,10 @@
               <v-text-field id="nametransection" label="Name Transection" required></v-text-field>
             </v-col>
             <v-col cols="10">
-              <v-text-field id="account" label="Account" required></v-text-field>
+              <v-select :items="accountType" id="account" label="Account" required></v-select>
             </v-col>
             <v-col cols="10">
-              <v-text-field id="date" label="Date" required></v-text-field>
+              <v-text-field id="date" label="Date (dd/mm/yy)" required></v-text-field>
             </v-col>
             <v-col cols="10">
               <v-text-field id="amount" label="Amount" required></v-text-field>
@@ -232,78 +233,72 @@ export default {
     return {
       addForm: false,
       transactionsType: ['Income', 'Expense'],
+      accountType: ['Wallet', 'Goal'],
+      // total: ['totalIncome', 'totalExpense'],
       transactions: [
         {
           id: 1,
           type: "Income",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: 100000,
+          name: "ฝากเงิน",
+          account: "Wallet",
+          amount: 1000,
           date: "11/04/22",
         },
         {
           id: 2,
-          type: "Expense",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: -50000,
+          type: "Income",
+          name: "ฝากเงิน",
+          account: "Goal",
+          amount: 5000,
           date: "11/04/22",
         },
         {
           id: 3,
-          type: "Expense",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: -50000,
+          type: "Income",
+          name: "ฝากเงิน",
+          account: "Wallet",
+          amount: 7000,
           date: "11/04/22",
         },
         {
           id: 4,
-          type: "Expense",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: -50000,
+          type: "Income",
+          name: "ฝากเงิน",
+          account: "Wallet",
+          amount: 100,
           date: "11/04/22",
         },
         {
           id: 5,
-          type: "Income",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: 100000,
-          date: "11/04/22",
+          type: "Expense",
+          name: "ถอนเงิน",
+          account: "Wallet",
+          amount: 700,
+          date: "16/12/22",
         },
         {
           id: 6,
-          type: "Income",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: 100000,
-          date: "11/04/22",
+          type: "Expense",
+          name: "ถอนเงิน",
+          account: "Wallet",
+          amount: 2300,
+          date: "16/12/22",
         },
         {
           id: 7,
-          type: "Income",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: 100000,
-          date: "11/04/22",
+          type: "Expense",
+          name: "เติมเกม",
+          account: "Goal",
+          amount: 1600,
+          date: "16/12/22",
         },
         {
           id: 8,
           type: "Expense",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: -100000,
-          date: "11/04/22",
-        },
-        {
-          id: 9,
-          type: "Income",
-          name: "หนูนาดับโชค",
-          account: "wallet",
-          amount: 100000,
-          date: "11/04/22",
+          name: "ถอนเงิน",
+          account: "Wallet",
+          amount: 100,
+          date: "16/12/22",
         },
       ]
     };
@@ -330,6 +325,10 @@ export default {
       };
       this.transactions.push(newtransaction);
 
+    //   ลองเพิ่มคำนวณ total ใน computed ดู
+    //   this.totalIncome = computed.totalIncome();
+    //   this.total = computed.totalIncome();
+
       this.addForm = false;
     }
 
@@ -339,8 +338,46 @@ export default {
       return this.transactions.filter((transaction) => {
         return transaction.type === "Income";
       });
-    }
+    },
+    expenses: function () {
+      return this.transactions.filter((transaction) => {
+        return transaction.type === "Expense";
+      });
+    },
+    totalIncome: function () {
+      let total = 0;
+      this.incomes.forEach((incomes) => {
+        total += incomes.amount;
+      });
+      return total;
+    },
+    totalExpense: function () {
+      let total = 0;
+      this.expenses.forEach((expense) => {
+        total += expense.amount;
+      });
+      return total;
+    },
+    totalWallet: function () {
+      let total = 0;
+      this.transactions.forEach((transaction) => {
+        if (transaction.account === "Wallet") {
+          total += transaction.amount;
+        }
+      });
+      return total;
+    },
+    totalGoal: function () {
+      let total = 0;
+      this.transactions.forEach((transaction) => {
+        if (transaction.account === "Goal") {
+          total += transaction.amount;
+        }
+      });
+      return total;
+    },
   }
+
 };
 </script>
 
