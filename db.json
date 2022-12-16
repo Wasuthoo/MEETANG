@@ -1,19 +1,50 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "userId": 1,
+  "name": "John Smith",
+  "email": "xxxx@gmail.ac.th",
+  "password": "xxxx",
+  "cashbook": {
+      "cashbookId": 1,
+      "balance": 400,
+      "transactions": [
+          {
+              "Id": 1,
+              "Date": 2017-01-01,
+              "Description": "Salary",
+              "Type":"income",
+              "Amount": 1000,
+              "Balance": 1000
+          },
+          {
+              "Id": 2,
+              "Date": 2017-01-02,
+              "Description": "Rent",
+              "Type":"expense",
+              "Amount": 500,
+              "Balance": 500
+          },
+          {
+              "Id": 3,
+              "Date": 2017-01-03,
+              "Description": "Groceries",
+              "Type":"expense",
+              "Amount": 100,
+              "Balance": 400
+          }
+      ]
+  },
+  "goals": [
+      {
+          "Id": 1,
+          "Name": "Holiday",
+          "Amount": 1000,
+          "Balance": 600
+      },
+      {
+          "Id": 2,
+          "Name": "Car",
+          "Amount": 10000,
+          "Balance": 5000
+      }
+  ]
 }
