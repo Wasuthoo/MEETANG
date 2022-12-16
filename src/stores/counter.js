@@ -70,3 +70,10 @@ export const store_feedback = defineStore({
 
   },
 });
+
+export const savingGoal = defineStore({
+  id:'username',
+  state: () => ({
+    
+  })
+})
