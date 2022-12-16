@@ -5,7 +5,7 @@
 
         <!-- Card -->
         <v-card class="gradient d-flex justify-center pa-6 my-5" >
-            <img class="ma-1" src="/icon/user 1.png" alt="user 1" height="120" width="120" />
+            <img class="ma-1" src="/icon/user1.png" alt="user 1" height="120" width="120" />
             <div class="ma-1 px-5">
                 <h1 class="text-center">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
                 <h2 class="text-center text-white">คุณธนวรรณ ณ กรุงเทพมหานคร</h2>
