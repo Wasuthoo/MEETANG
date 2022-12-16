@@ -6,6 +6,7 @@
         <v-card-text class="mx-2">{{ transaction.description }}</v-card-text>
     </v-card>
 
+    <!-- show data form -->
     <v-dialog v-model="showdialog" max-width="500px">
         <v-card>
             <v-card-title>
