@@ -5,7 +5,9 @@
     "serve": "vite preview",
     "build": "vite build",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "json-server --watch database.json"
+
   },
   "dependencies": {
     "@mdi/font": "5.9.55",

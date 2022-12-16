@@ -226,8 +226,7 @@
 				</v-col> <!-- end of first col -->
 			</v-row> <!-- end of first row -->
 		</v-container>
-		<v-btn @click="" style="position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="primary"
-        size="large">
-    </v-btn>
+		<v-btn @click="" style="position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="primary" size="large">
+		</v-btn>
 	</v-container>
 </template>

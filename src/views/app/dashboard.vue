@@ -46,9 +46,47 @@
         </div>
       </div>
     </v-card>
+    <v-btn @click="test" >push me</v-btn>
   </v-container>
 </template>
 
+<script>
+import { store_account } from "../../stores/store";
+
+export default {
+  // Declare Vue file (View/Component) is named
+  name: "dashboard",
+
+  // Declare local variables (scoped only this file)
+  data: () => ({
+    modelStore: store_account(),
+    acc: [],
+
+  }),
+
+  // Declare computed for get reactive data/variables
+  // In this case, use to get data from pinia
+  computed: {
+    getAccList() {
+      return this.modelStore.getAcc;
+    },
+  },
+
+  // Declare method/function
+  methods: {
+    QueryAcc() {
+      this.modelStore.getQueryAccount();
+      this.acc = this.getAccList;
+    },
+  },
+
+  // In my understand this is like "Constructur method in java :)
+  mounted() {
+    this.QueryAcc();
+
+  },
+};
+</script>
 <style scoped>
 .gradient {
   background: rgb(129, 172, 255);
