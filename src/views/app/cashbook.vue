@@ -9,19 +9,19 @@
           <v-card class="pa-2 px-5 rounded-xl ">
             <h1>Summary</h1>
             <hr class="solid">
-            <div class="d-flex"> 
-              <!--<v-img src="/imageDash/Graph.png" height="200" width="200" />-->
-              <div class="pa-3">
-                <v-card class="bg-green-lighten-5 pa-2 ma-3 rounded-lg" width="510">
+            <v-card class="bg-green-lighten-4 my-3 d-flex justify-space-between">
+              <div class="d-flex"> 
                   <h3>Income</h3>
-                  <h1 class="text-end px-2">{{ totalIncome }} Bath</h1>
-                </v-card>
-                <v-card class="bg-red-lighten-5 pa-2 ma-3 rounded-lg" width="510">
-                  <h3>Expense</h3>
-                  <h1 class="text-end px-2">{{ totalExpense }} Bath</h1>
-                </v-card>
               </div>
-            </div>
+              <h1 class="text-end px-2">{{ totalIncome }} Bath</h1>
+            </v-card>
+
+            <v-card class="bg-red-lighten-4 my-3 d-flex justify-space-between">
+              <div class="d-flex"> 
+                  <h3>Expense</h3>
+              </div>
+              <h1 class="text-end px-2">{{ totalExpense }} Bath</h1>
+            </v-card>
           </v-card>
 
           <!-- AccountCard -->
