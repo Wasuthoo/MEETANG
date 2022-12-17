@@ -5,14 +5,16 @@
 
         <v-card id="register-form" style="z-index: 2;">
             <v-card-title class="pa-5">
-                <h1 class="text-center my-5">Login to MEETANG</h1>
+                <h1 class="text-center my-5">Create new Account</h1>
             </v-card-title>
             <v-card-text>
-                <v-form ref="form" @submit.prevent="login">
-                    <v-text-field label="Email" v-model="form.email" required />
-                    <v-text-field label="Password" v-model="form.password" required/>
-                    <span>forget password</span>
-                    <v-btn id="summit-btn" type="submit">LOGIN</v-btn>
+                <v-form ref="form" v-model="valid" lazy-validation @submit.prevent="register">
+                    <v-text-field label="Username" v-model="form.name" :rules="rules.name" :counter="25" required />
+                    <v-text-field label="Email" v-model="form.email" :rules="rules.email" required />
+                    <v-text-field label="Password" v-model="form.password" :rules="rules.password" required />
+                    <v-text-field label="Confirm Password" v-model="form.confirmPassword" :rules="rules.confirmPassword"
+                        required />
+                    <v-btn id="summit-btn" type="submit">Register</v-btn>
                 </v-form>
             </v-card-text>
             <div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
@@ -36,7 +38,7 @@
                         <path clip-path="url(#b)" fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z" />
                         <path clip-path="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z" />
                     </svg>
-                    <span> &nbsp;&nbsp; LOGIN WITH GOOGLE </span>
+                    <span> &nbsp;&nbsp; SIGN WITH GOOGLE </span>
                 </v-btn>
                 <v-btn class="another-login" variant="outlined">
                     <svg style="width:33px; height:33px;" xmlns="http://www.w3.org/2000/svg" height="800" width="1200"
@@ -48,7 +50,7 @@
                             d="M948.4 880l30.267-197.333H789.333V554.609C789.333 500.623 815.78 448 900.584 448h86.083V280s-78.124-13.333-152.814-13.333c-155.936 0-257.853 94.506-257.853 265.6v150.4H402.667V880H576v477.04a687.805 687.805 0 00106.667 8.293c36.288 0 71.91-2.84 106.666-8.293V880H948.4"
                             fill="#fff" />
                     </svg>
-                    <span> &nbsp;&nbsp; LOGIN WITH FACEBOOK </span>
+                    <span> &nbsp;&nbsp; SIGN WITH FACEBOOK </span>
                 </v-btn>
             </div>
         </v-card>
@@ -59,38 +61,67 @@
 <script>
 import { ref } from "vue";
 // import form firebase
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'vue-router';
 export default {
     name: 'Register',
     data() {
-
+        
         const DefaultForm = {
+            name: '',
             email: '',
             password: '',
+            confirmPassword: ''
         }
 
         return {
             router: useRouter(),
             valid: true,
             form: Object.assign({}, DefaultForm),
+            rules: {
+                name: [
+                    v => !!v || 'Name is required',
+                    v => (v && v.length <= 25) || 'Name must be less than 25 characters',
+                ],
+                email: [
+                    v => !!v || 'E-mail is required',
+                    v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+                ],
+                password: [
+                    v => !!v || 'Password is required',
+                    v => (v && v.length >= 6) || 'Password must be equal or greater than 6 characters',
+                ],
+                confirmPassword: [
+                    v => (v && v === this.form.password) || 'Confirm password must be equal to password',
+                ],
+            }
         }
     },
     methods: {
-        login() {
-            signInWithEmailAndPassword(getAuth(), this.form.email, this.form.password)
-                .then((userCredential) => {
-                    // Signed in
-                    const user = userCredential.user;
-                    console.log(user);
-                    this.router.push('/app/dashboard');
-                })
-                .catch((error) => {
-                    alert("Email or password is incorrect");
-                });
-        }
+        register() {
+            this.$refs.form.validate()
 
-    },
+            if (!this.valid) {
+                return
+            }else{
+                createUserWithEmailAndPassword(getAuth(), this.form.email, this.form.password)
+                    .then((userCredential) => {
+                        // Signed in
+                        const user = userCredential.user;
+                        console.log(user);
+                        this.router.push('/app/dashboard');
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+
+                        alert(errorMessage);
+                    });
+            }
+
+        },
+    }
 };
 
 </script>
