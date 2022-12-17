@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="bg-red-lighten-5 pa-12" width="100%">
+  <v-container fluid class="bg-red-lighten-5 pa-12" width="100%" height="100%">
     <h1>CashBook</h1>
     <hr class="solid">
     <v-container fluid class="my-6">
@@ -11,16 +11,18 @@
             <hr class="solid">
             <v-card class="bg-green-lighten-4 my-3 d-flex justify-space-between">
               <div class="d-flex"> 
-                  <h3>Income</h3>
+                  <h2 class="text-green px-3 pa-5">Income</h2>
+                  <img class="pa-4 px-7 mx-1" src="/imageDash/moneyIncrease.png" height="80" />
               </div>
-              <h1 class="text-end px-2">{{ totalIncome }} Bath</h1>
+              <h2 class="text-green py-6">{{ totalIncome }} Bath</h2>
             </v-card>
 
             <v-card class="bg-red-lighten-4 my-3 d-flex justify-space-between">
               <div class="d-flex"> 
-                  <h3>Expense</h3>
+                  <h2 class="text-red px-3 pa-5">Expense</h2>
+                  <img class="pa-3 mx-1" src="/imageDash/moneyDecrease.png" height="80" />
               </div>
-              <h1 class="text-end px-2">{{ totalExpense }} Bath</h1>
+              <h2 class="text-red py-6">{{ totalExpense }} Bath</h2>
             </v-card>
           </v-card>
 
@@ -32,10 +34,10 @@
               <div>
                 <h3>Wallet</h3>
                 <ul class="px-8">
-                  <li>Balance</li>
+                  <li class="my-1">Balance</li>
                 </ul>
               </div>
-              <h1 class="text-green">{{ totalWallet }} Bath</h1>
+              <h2 class="text-green py-3">{{ totalWallet }} Bath</h2>
             </div>
             <hr class="solid">
             <h3 class="">Saving goal</h3>
@@ -44,7 +46,7 @@
                 <li>Iphone 16 Max Ranger</li>
                 <li>Gucci Belt</li>
               </ul>
-              <h1 class="text-green my-n3">4500 Baht</h1>
+              <h2 class="text-green">4500 Baht</h2>
             </div>
           </v-card>
 
@@ -57,19 +59,19 @@
             <hr class="solid">
             <v-card class="bg-green-lighten-4 my-3 d-flex justify-space-between">
               <div class="d-flex">
-                <h1 class="text-green px-2">Income</h1>
-                <img class="pa-4 mx-1" src="/imageDash/moneyIncrease.png" height="100" />
+                <h2 class="text-green px-3 pa-5">Income</h2>
+                <img class="pa-4 px-7 mx-1" src="/imageDash/moneyIncrease.png" height="80" />
               </div>
 
-              <h1 class="text-green ">0 Baht</h1>
+              <h2 class="text-green px-2 py-5">0 Baht</h2>
             </v-card>
             <v-card class="bg-red-lighten-4 my-3 d-flex justify-space-between">
               <div class="d-flex">
-                <h1 class="text-red px-2">Expend</h1>
-                <img class="pa-4 mx-1" src="/imageDash/moneyDecrease.png" height="100" />
+                <h2 class="text-red px-3 pa-5">Expense</h2>
+                <img class="pa-3 mx-1" src="/imageDash/moneyDecrease.png" height="80" />
               </div>
 
-              <h1 class="text-red ">0 Baht</h1>
+              <h2 class="text-red py-5 ">0 Baht</h2>
             </v-card>
           </v-card>
         </v-col>
