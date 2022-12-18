@@ -58,9 +58,9 @@
 
           <!-- TodayCard -->
           <v-card class="mt-5 pa-2 px-5 rounded-xl ">
-            <div class="d-flex justify-space-between">
+            <div class="d-flex justify-space-between align-center">
               <h1>Today</h1>
-              <h2>{{ totalGoal }}</h2>
+              <h2>{{ (new Date()).toLocaleDateString('default', {day:'numeric', month: 'short' })}}</h2>
             </div>
             <hr class="solid">
             <v-card class="bg-green-lighten-4 my-3">
@@ -69,7 +69,7 @@
                   <h2 class="text-green px-1 py-6 pa-5">Income</h2>
                   <img class="pa-4 px-7 mx-1" src="/imageDash/moneyIncrease.png" height="80" />
                 </div>
-                <h2 class="text-green py-6 text-right ">0 Baht</h2>
+                <h2 class="text-green py-6 text-right ">{{ todayIncome }} Baht</h2>
               </div>
             </v-card>
 
@@ -79,7 +79,7 @@
                   <h2 class="text-red px-1 py-6 pa-5">Expense</h2>
                   <img class="pa-3 mx-1" src="/imageDash/moneyDecrease.png" height="80" />
                 </div>
-                <h2 class="text-red py-6 text-right ">0 Baht</h2>
+                <h2 class="text-red py-6 text-right ">{{ todayExpense }} Baht</h2>
               </div>
             </v-card>
           </v-card>
@@ -96,12 +96,12 @@
                 <img class="ma-2 mx-3" src="/imageCash/incomeRise.png" height="50" />
                 <div class="pa-2 mr-auto">
                   <h3>{{ item.name }}</h3>
-                  <a> {{ item.account }}</a>
+                  <a> {{ item.type }}</a>
                 </div>
                 <div class="align-center d-flex">
                   <div class="px-2">
                     <a>{{ item.amount }}</a><br />
-                    <a>{{ item.date }}</a>
+                    <a>{{ item.date.toLocaleDateString() }}</a>
                   </div>
                   <v-img src="../../../public/imageDash/greenReg.png" height="65" width="10" />
                 </div>
@@ -118,77 +118,19 @@
                 <img class="ma-2 mx-3" src="/imageCash/expenseFall.png" height="50" />
                 <div class="pa-2 mr-auto">
                   <h3>{{ item.name }}</h3>
-                  <a>{{ item.account }}</a>
+                  <a>{{ item.type }}</a>
                 </div>
 
                 <div class="align-center d-flex">
                   <div class="px-2">
                     <a>{{ item.amount }}</a><br />
-                    <a>{{ item.date }}</a>
+                    <a>{{ item.date.toLocaleDateString() }}</a>
                   </div>
                   <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
                 </div>
               </v-card>
             </div>
           </v-card>
-
-          <!-- comment old code -->
-          <!-- component income card
-            <v-card class="my-3 d-flex " flat>
-              picture 
-              <img class="ma-2 mx-3" src="/imageDash/hand-money.png" height="50" />
-
-              <div class="pa-2 mr-auto">
-                <h3>ถอนเงิน</h3>
-                <a>wallet</a>
-              </div>
-
-              <div class="align-center d-flex">
-                <div class="px-2">
-                  <a>5,000</a><br />
-                  <a>11/04/22</a>
-                </div>
-                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
-              </div>
-            </v-card>
-
-            component income card
-            <v-card class="my-3 d-flex " flat>
-              picture 
-              <img class="ma-2 mx-3" src="/imageDash/bingo.png" height="50" />
-
-              <div class="pa-2 mr-auto">
-                <h3>หนูนาดับโชค</h3>
-                <a>wallet</a>
-              </div>
-
-              <div class="align-center d-flex">
-                <div class="px-2">
-                  <a>100,000</a><br />
-                  <a>11/04/22</a>
-                </div>
-                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
-              </div>
-            </v-card>
-
-            component income card
-            <v-card class="my-3 d-flex " flat>
-              picture 
-              <img class="ma-2 mx-3" src="/imageDash/bingo.png" height="50" />
-
-              <div class="pa-2 mr-auto">
-                <h3>หนูนาดับโชค</h3>
-                <a>wallet</a>
-              </div>
-
-              <div class="align-center d-flex">
-                <div class="px-2">
-                  <a>100,000</a><br />
-                  <a>11/04/22</a>
-                </div>
-                <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
-              </div>
-            </v-card> end of component income card -->
 
         </v-col> <!-- end of first col -->
       </v-row> <!-- end of first row -->
@@ -208,20 +150,18 @@
       <v-card-text>
         <v-container>
           <v-row>
-            <v-col class="d-flex" cols="10">
-              <v-select :items="transactionsType" id="type" label="Type" required></v-select>
+            <v-col cols="12">
+              <label for="date" class="label">Date</label>
+              <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined" placeholder="YYYY-MM-DD"/>
+          </v-col>
+            <v-col class="d-flex" cols="12 py-0">
+              <v-select :items="transactionsType" v-model="form.type" label="Type" variant="outlined" required></v-select>
             </v-col>
-            <v-col cols="10">
-              <v-text-field id="nametransection" label="Name Transection" required></v-text-field>
+            <v-col cols="12 py-0">
+              <v-text-field v-model="form.title" label="Title" variant="outlined" required></v-text-field>
             </v-col>
-            <v-col cols="10">
-              <v-select :items="accountType" id="account" label="Account" required></v-select>
-            </v-col>
-            <v-col cols="10">
-              <v-text-field id="date" label="Date (dd/mm/yy)" required></v-text-field>
-            </v-col>
-            <v-col cols="10">
-              <v-text-field type="number" id="amount" label="Amount" required></v-text-field>
+            <v-col cols="12 py-0">
+              <v-text-field type="number" v-model="form.amount" label="Amount" prefix="฿"  variant="outlined" required></v-text-field>
             </v-col>
           </v-row>
         </v-container>
@@ -238,78 +178,81 @@
 </template>
 
 <script>
+import Datepicker from 'vue3-datepicker';
 export default {
   name: "cashbook",
+  components: {
+    Datepicker
+  },
   data() {
     return {
       addForm: false,
-      transactionsType: ['Income', 'Expense'],
+      transactionsType: ['Income', 'Expense', 'Save to Goal'],
       accountType: ['Wallet', 'Goal'],
+      form:{
+        type: 'Income',
+        title: '',
+        amount: 0,
+        date: new Date(),
+      },
+      
       // total: ['totalIncome', 'totalExpense'],
       transactions: [
         {
           id: 1,
           type: "Income",
           name: "ออมเงิน",
-          account: "Wallet",
           amount: 2000,
-          date: "16/12/22",
+          date: new Date("2022-12-18"),
         },
         {
           id: 2,
           type: "Income",
           name: "ออมเงิน",
-          account: "Wallet",
           amount: 1000,
-          date: "17/12/22",
+          date: new Date("2022-12-18"),
         },
         {
           id: 3,
           type: "Income",
           name: "ออมเงิน",
-          account: "Wallet",
           amount: 500,
-          date: "17/12/22",
+          date: new Date("2022-12-17"),
         },
         {
           id: 4,
           type: "Income",
           name: "ออมเงิน",
-          account: "Wallet",
           amount: 1000,
-          date: "18/12/22",
+          date: new Date("2022-12-17"),
         },
         {
           id: 5,
           type: "Expense",
           name: "ซื้อสลากกินแบ่ง",
-          account: "Wallet",
           amount: 160,
-          date: "17/12/22",
+          date: new Date("2022-12-17"),
         },
         {
           id: 6,
           type: "Expense",
           name: "ซื้อข้าว",
-          account: "Wallet",
           amount: 100,
-          date: "17/12/22",
+          date: new Date("2022-12-17"),
         },
         {
           id: 7,
-          type: "Expense",
+          type: "Save to Goal",
           name: "หักเข้า Goal",
-          account: "Goal",
           amount: 500,
-          date: "17/12/22",
+          date: new Date("2022-12-17"),
         },
         {
           id: 8,
           type: "Expense",
           name: "ซื้อข้าว",
-          account: "Wallet",
           amount: 100,
-          date: "18/12/22",
+          date: new Date("2022-12-18"),
         },
       ]
     };
@@ -320,21 +263,22 @@ export default {
     },
 
     onSaveTransaction() {
-      let type = document.getElementById("type").value;
-      let name = document.getElementById("nametransection").value;
-      let account = document.getElementById("account").value;
-      let amount = parseInt(document.getElementById("amount").value);
-      let date = document.getElementById("date").value;
-      console.log(type, name, account, amount, date);
+      
       let newtransaction = {
         id: this.transactions.length + 1,
-        type: type,
-        name: name,
-        account: account,
-        amount: amount,
-        date: date,
+        type: this.form.type,
+        name: this.form.title,
+        amount: this.form.amount,
+        date: this.form.date,
       };
       this.transactions.push(newtransaction);
+
+      this.form = {
+        type: 'Income',
+        title: '',
+        amount: 0,
+        date: new Date(),
+      }
 
       //   ลองเพิ่มคำนวณ total ใน computed ดู
       //   this.totalIncome = computed.totalIncome();
@@ -352,20 +296,20 @@ export default {
     },
     expenses: function () {
       return this.transactions.filter((transaction) => {
-        return transaction.type === "Expense";
+        return transaction.type === "Expense" || transaction.type === "Save to Goal";
       });
     },
     totalIncome: function () {
       let total = 0;
       this.incomes.forEach((incomes) => {
-        total += incomes.amount;
+        total += parseInt(incomes.amount);
       });
       return total;
     },
     totalExpense: function () {
       let total = 0;
       this.expenses.forEach((expense) => {
-        total += expense.amount;
+        total += parseInt(expense.amount);
       });
       return total;
     },
@@ -373,7 +317,25 @@ export default {
       let total = 0;
       this.transactions.forEach((transaction) => {
         if (transaction.account === "Goal") {
-          total += transaction.amount;
+          total += parseInt(transaction.amount);
+        }
+      });
+      return total;
+    },
+    todayIncome: function () {
+      let total = 0;
+      this.incomes.forEach((incomes) => {
+        if (incomes.date.toDateString() === new Date().toDateString()) {
+          total += parseInt(incomes.amount);
+        }
+      });
+      return total;
+    },
+    todayExpense: function () {
+      let total = 0;
+      this.expenses.forEach((expense) => {
+        if (expense.date.toDateString() === new Date().toDateString()) {
+          total += parseInt(expense.amount);
         }
       });
       return total;
@@ -396,5 +358,24 @@ export default {
 
 .parent::-webkit-scrollbar {
   width: 0px;
+}
+
+.text-field {
+    box-sizing: border-box;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    transition: all 0.2s;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.text-field:focus {
+    border: 2px solid rgb(0, 0, 0);
+    outline: none;
 }
 </style>
