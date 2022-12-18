@@ -109,7 +109,9 @@ export default {
                         // Signed in
                         const user = userCredential.user;
                         console.log(user);
-                        this.router.push('/app/dashboard');
+                        // print uid
+                        console.log(user.uid);
+                        //this.router.push('/app/dashboard');
                     })
                     .catch((error) => {
                         console.log(error);
