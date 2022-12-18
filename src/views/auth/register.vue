@@ -64,6 +64,7 @@ import { ref } from "vue";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { useRouter } from 'vue-router';
+import { store_account } from '/src/stores/store';
 
 export default {
   name: 'Register',
