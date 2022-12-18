@@ -9,7 +9,7 @@
       <div class="ma-1 px-5">
         <h1 class="text-center">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
         <h2 class="text-center text-white">{{fullname}}</h2>
-        <h2 class="text-center text-white">{{this.modelStore.account[0].email}}</h2>
+        <h2 class="text-center text-white">{{this.acc.email}}</h2>
       </div>
     </v-card>
 
@@ -17,13 +17,13 @@
       <v-col>
         <v-card class="pa-6 bg-green-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินเข้ารวม</h1>
-          <h1 class="text-end">{{this.modelStore.account[0].cashbook.balance}}</h1>
+          <h1 class="text-end">{{this.modelStore.user.cashbook.balance}}</h1>
         </v-card>
       </v-col>
       <v-col>
         <v-card class="pa-6 bg-red-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินออกรวม</h1>
-          <h1 class="text-end">{{this.modelStore.account[0].cashbook.balance}}</h1>
+          <h1 class="text-end">{{this.modelStore.user.cashbook.balance}}</h1>
         </v-card>
       </v-col>
     </v-row>
@@ -46,9 +46,6 @@
         </div>
       </div>
     </v-card>
-
-    <v-btn @click="test" >push me</v-btn>
-    
   </v-container>
 </template>
 
@@ -64,14 +61,15 @@ export default {
     modelStore: store_account(),
     fullname : "",
     acc: [],
+    
 
   }),
 
   // Declare computed for get reactive data/variables
   // In this case, use to get data from pinia
   computed: {
-    getAccList() {
-      return this.modelStore.getAcc;
+    getUser() {
+      return this.modelStore.getUser;
     },
   },
 
@@ -79,21 +77,20 @@ export default {
   methods: {
     QueryAcc() {
       this.modelStore.getQueryAccount();
-      this.acc = this.getAccList;
+      this.acc = this.getUser;
+      console.log(this.acc);
     },
     test(){
       console.log(this.acc);
     },
     fetchName(){
-      this.fullname = this.modelStore.account[0].Fname;
-      this.fullname = this.fullname + " " + this.modelStore.account[0].Lname;
+      this.fullname = this.acc.Fname + " " + this.acc.Lname;
     }
   },
-  // In my understand this is like "Constructur method in java :)
+// "Constructur method" for Vue
   mounted() {
     this.QueryAcc();
     this.fetchName();
-
   },
 };
 </script>

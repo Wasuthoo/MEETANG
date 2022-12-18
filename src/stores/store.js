@@ -12,19 +12,49 @@ export const store_account = defineStore({
   // Declare variables
   state: () => ({
     account : [],
+    user: "",
+    uid: "",
+    index: "",
+
   }),
 
   // Declare Getter method
   getters: {
-    getAcc(){
-      console.log(this.account)
-      return this.account[0]
-    },
+    getUser: (state) => {
+      return state.user;
+    }
   },
 
   // Declare actions method 
   actions: {
-    
+    updateAcc(){
+      this.account[this.index] = this.user;
+      this.UpdateDB(this.account);
+    },
+    clearAcc(){
+      this.user = "";
+      this.uid = "";
+    },
+
+    setAcc(){
+      for (let i = 0; i < this.account.length; i++) {
+        if (this.account[i].uid == this.uid) {
+          this.user = this.account[i];
+          console.log("User is :" + " "+this.user.Fname);
+          this.index = i;
+          return this.user;
+        }
+        else 
+          return alert("I am an alert box!");
+      }
+    },
+    setUID(payload){
+      this.uid = payload;
+      console.log("User uid is :" + " "+this.uid);
+      this.setAcc();
+
+    },
+
     // get data from database and set it as variable
     async getQueryAccount() {
       try {
@@ -40,33 +70,14 @@ export const store_account = defineStore({
         console.error(e);
       }
     },
-
-    // //add data to database
-    // async addSug(payload) {
-    //   try {
-    //     const res = await axios.post(apiUrl + subApiFeedback, payload);
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    // },
-    // async updateFeedback() {
-    //   for(let i = 0; i < payload.length; i++){
-    //     try {
-    //       this.feedback[i].timestamp = payload[i].status;
-    //       const res = await axios.put(apiUrl + subApiFeedback + "/" + payload[i].id, payload[i]);
-    //     } catch (e) {
-    //       console.error(e);
-    //     }
-    //   }
-      
-    //   try {
-    //     await axios.patch(apiUrl + subApiFeedback + "/"+ payload.id), {
-    //       status: close,
-    //     };
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    // }
-
+    //add data to database
+    async UpdateDB(payload) {
+      try {
+        const res = await axios.post(apiUrl + subApiAccount, payload);
+      } catch (e) {
+        console.error(e);
+      }
+      this.getQueryAccount();
+    },
   },
 });

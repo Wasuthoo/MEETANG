@@ -1,10 +1,25 @@
 {
   "account": [
     {
-      "Fname": "ณ นนท์",
-      "Lname": "ขาโหด",
-      "email": "nonnon@gmail.ac.th",
-      "password": "1234",
+      "uid" : "",
+      "Fname": "",
+      "Lname": "",
+      "email": "",
+      "cashbook": {
+        "cashbookId": 1,
+        "balance": 0,
+        "transactions": [
+        ]
+      },
+      "goals": [
+      ]
+    }
+    ,
+    {
+      "uid" : "3eDF7XuCrxZUOlML0AxVYRGATx22",
+      "Fname": "admin",
+      "Lname": "admax",
+      "email": "admin@admin.com",
       "cashbook": {
         "cashbookId": 1,
         "balance": 400,
@@ -49,8 +64,8 @@
           "Balance": 5000
         }
       ]
-    },
-    
+    }
+    ,
     {
       "name": "John Smith",
       "email": "xxxx@gmail.ac.th",

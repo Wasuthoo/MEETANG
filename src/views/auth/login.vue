@@ -1,7 +1,7 @@
 <template>
-    <v-container fluid style="height:100%;" class="bg-blue-lighten-5">
-        <img style="position:fixed;top:-300px; left:-470px; height:2500PX; z-index:1;"
-            src="..//..//assets//bgLoginSignup.svg">
+  <v-container fluid style="height:100%;" class="bg-blue-lighten-5">
+    <img style="position:fixed;top:-300px; left:-470px; height:2500PX; z-index:1;"
+      src="..//..//assets//bgLoginSignup.svg">
 
         <v-card id="register-form" style="z-index: 2;">
             <v-card-title class="pa-5">
@@ -62,6 +62,8 @@ import { ref } from "vue";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { useRouter } from 'vue-router';
+import { store_account } from '/src/stores/store';
+
 export default {
     name: 'Register',
     data() {
@@ -72,6 +74,7 @@ export default {
         }
 
         return {
+            modelStore : store_account(),
             router: useRouter(),
             valid: true,
             form: Object.assign({}, DefaultForm),
@@ -84,11 +87,14 @@ export default {
                     // Signed in
                     const user = userCredential.user;
                     console.log(user);
+                    this.modelStore.uid = user.uid;
+                    this.modelStore.setAcc();
                     this.router.push('/app/dashboard');
                 })
                 .catch((error) => {
                     alert("Email or password is incorrect");
                 });
+               
         },
         googleLogin() {
             const provider = new GoogleAuthProvider();
@@ -119,33 +125,33 @@ export default {
 
 <style>
 #register-form {
-    max-width: 600px;
-    margin: 0 auto;
-    margin-top: 100px;
-    left: 0;
-    right: 0;
-    padding: 5px 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+  left: 0;
+  right: 0;
+  padding: 5px 50px;
 }
 
 #summit-btn {
-    margin: 20px auto;
-    left: 0;
-    right: 0;
-    width: 40%;
-    display: block;
-    background-color: #77ADFF;
-    color: white;
+  margin: 20px auto;
+  left: 0;
+  right: 0;
+  width: 40%;
+  display: block;
+  background-color: #77ADFF;
+  color: white;
 }
 
 #another-logins {
-    display: flex;
+  display: flex;
 }
 
 .another-login {
-    margin: 20px auto;
-    padding: 10px auto;
-    display: block;
-    background-color: #77ADFF;
-    color: white;
+  margin: 20px auto;
+  padding: 10px auto;
+  display: block;
+  background-color: #77ADFF;
+  color: white;
 }
 </style>

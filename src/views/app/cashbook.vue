@@ -179,6 +179,8 @@
 
 <script>
 import Datepicker from 'vue3-datepicker';
+import { store_account } from "../../stores/store";
+
 export default {
   name: "cashbook",
   components: {
@@ -186,6 +188,8 @@ export default {
   },
   data() {
     return {
+      modelStore: store_account(),
+      user : "",
       addForm: false,
       transactionsType: ['Income', 'Expense', 'Save to Goal'],
       accountType: ['Wallet', 'Goal'],
@@ -258,6 +262,12 @@ export default {
     };
   },
   methods: {
+    QueryAcc() {
+      this.modelStore.getQueryAccount();
+      this.acc = this.getUser;
+      console.log(this.acc);
+    },
+
     onClickCard() {
       console.log("card clicked");
     },
@@ -289,6 +299,9 @@ export default {
 
   },
   computed: {
+    getUser() {
+      return this.modelStore.getUser;
+    },
     incomes: function () {
       return this.transactions.filter((transaction) => {
         return transaction.type === "Income";
@@ -340,7 +353,12 @@ export default {
       });
       return total;
     },
-  }
+  },
+  mounted() {
+    this.QueryAcc();
+
+  },
+
 };
 
 // var date = moment();
