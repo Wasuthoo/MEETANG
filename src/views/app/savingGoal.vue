@@ -9,8 +9,9 @@
         <v-card-text>{{ goal.description }}</v-card-text>
     </v-card> -->
 
-    <goalCard v-if="Goals.length>0" :savingGoal="Goals" ></goalCard>
-    <div v-else class="bg-purple-darken-2" style="display:absolute; margin:auto; top:0px; bottom:0px; left:0px; right:0px;">
+    <goalCard v-if="Goals.length > 0" :savingGoal="Goals"></goalCard>
+    <div v-else class="bg-purple-darken-2"
+        style="display:absolute; margin:auto; top:0px; bottom:0px; left:0px; right:0px;">
         <h1 class="pa-5 text-medium-emphasis ">No aGoals</h1>
     </div>
 
@@ -30,19 +31,19 @@
                 <v-container>
                     <v-row>
                         <v-col cols="12">
-                            <v-text-field id="name" label="Name" required></v-text-field>
+                            <v-text-field id="name" label="Name" required variant="outlined" v-model="form.name"></v-text-field>
                         </v-col>
 
                         <v-col cols="12">
-                            <v-text-field id="amount" label="Amount" required></v-text-field>
+                            <v-text-field id="amount" label="Amount" required variant="outlined" v-model="form.amount"></v-text-field>
                         </v-col>
 
                         <v-col cols="12">
-                            <v-text-field id="date" label="Date" required></v-text-field>
+                            <label for="date" class="label">Date</label>
+                            <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined" placeholder="YYYY-MM-DD"/>
                         </v-col>
-
                         <v-col cols="12">
-                            <v-text-field id="description" label="Description" required></v-text-field>
+                            <v-textarea clearable label="รายละเอียด" variant="outlined" v-model="form.description"></v-textarea>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -59,18 +60,23 @@
 
 <script>
 import goalCard from "..//..//components//savinggoal//goalCard.vue";
-import { savingGoalStore } from '@/stores/counter';
-
-const goal = savingGoalStore()
-savingGoalStore.name
+import Datepicker from 'vue3-datepicker';
 export default {
     name: "SavingGoal",
     components: {
         goalCard,
+        Datepicker
     },
     data() {
         return {
-            // add a variable to store the data from the database
+
+            form: {
+                name: "",
+                amount: "",
+                date: null,
+                description: "",
+            },
+
             Goals: [
                 {
                     id: 1,
@@ -104,17 +110,13 @@ export default {
             console.log("card clicked");
         },
         onSaveGoal() {
-            let name = document.getElementById("name").value;
-            let amount = document.getElementById("amount").value;
-            let date = document.getElementById("date").value;
-            let description = document.getElementById("description").value;
-            console.log(name, amount, date, description);
+            console.log(this.form);
             let newGoal = {
                 id: this.Goals.length + 1,
-                name: name,
-                amount: amount,
-                date: date,
-                description: description,
+                name: this.form.name,
+                amount: this.form.amount,
+                date: this.form.date,
+                description: this.form.description,
             };
             this.Goals.push(newGoal);
 
@@ -124,3 +126,23 @@ export default {
     }
 };
 </script>
+
+<style>
+.text-field {
+    box-sizing: border-box;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 5px;
+    padding: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.text-field:focus {
+    border: 2px solid rgb(0, 0, 0);
+    outline: none;
+}
+</style>

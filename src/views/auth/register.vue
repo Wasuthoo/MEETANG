@@ -23,7 +23,7 @@
                 </span>
             </div>
             <div id="another-logins">
-                <v-btn class="another-login" variant="outlined">
+                <v-btn class="another-login" variant="outlined" @click="googleLogin">
                     <svg style="width:20px; height:20px;" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
                         <defs>
@@ -50,7 +50,7 @@
                             d="M948.4 880l30.267-197.333H789.333V554.609C789.333 500.623 815.78 448 900.584 448h86.083V280s-78.124-13.333-152.814-13.333c-155.936 0-257.853 94.506-257.853 265.6v150.4H402.667V880H576v477.04a687.805 687.805 0 00106.667 8.293c36.288 0 71.91-2.84 106.666-8.293V880H948.4"
                             fill="#fff" />
                     </svg>
-                    <span> &nbsp;&nbsp; SIGN WITH FACEBOOK </span>
+                    <span> &nbsp;&nbsp; SIGN WITH GUEST </span>
                 </v-btn>
             </div>
         </v-card>
@@ -61,7 +61,8 @@
 <script>
 import { ref } from "vue";
 // import form firebase
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { useRouter } from 'vue-router';
 export default {
     name: 'Register',
@@ -109,6 +110,8 @@ export default {
                         // Signed in
                         const user = userCredential.user;
                         console.log(user);
+                        // print uid
+                        console.log(user.uid);
                         this.router.push('/app/dashboard');
                     })
                     .catch((error) => {
@@ -120,6 +123,27 @@ export default {
                     });
             }
 
+        },
+        googleLogin() {
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(getAuth(), provider)
+                .then((result) => {
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    // The signed-in user info.
+                    const user = result.user;
+                    this.router.push('/app/dashboard');
+                }).catch((error) => {
+                    // Handle Errors here.
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // The email of the user's account used.
+                    const email = error.email;
+                    // The AuthCredential type that was used.
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                    alert(errorMessage);
+                });
         },
     }
 };

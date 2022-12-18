@@ -47,7 +47,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop1BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							มาดามตามสั่ง - วัดปากลมบน
 						</v-card-title>
 
@@ -55,15 +55,11 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							4.9
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
-							0.3 km
+							    0.3 km
 						</v-card-subtitle>
 
 					</v-card>
@@ -76,7 +72,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop2BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							ข้าวมันไก่ป้าน้อย
 						</v-card-title>
 
@@ -84,11 +80,7 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							4.4
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
@@ -106,7 +98,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop3BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							ก๊วยเตี๋ยวต้มยำเฮียเล้ง
 						</v-card-title>
 
@@ -114,11 +106,7 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							4.6
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
@@ -141,7 +129,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop4BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							หมูปิ้งลุงรัง
 						</v-card-title>
 
@@ -149,11 +137,7 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							3.9
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
@@ -170,7 +154,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop5BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							ส้มตำสังค์ทอง
 						</v-card-title>
 
@@ -178,11 +162,7 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							3.4
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
@@ -200,7 +180,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop6BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							สเต็กพี่โตเนื้อแน่น
 						</v-card-title>
 
@@ -208,11 +188,7 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							5.0
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
@@ -235,7 +211,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop7BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							ข้าวแกงกะหรี่พรี่คาซึยะ
 						</v-card-title>
 
@@ -243,11 +219,7 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							4.7
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
@@ -264,7 +236,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop8BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							ซูชิไข่เค็ม
 						</v-card-title>
 
@@ -272,11 +244,7 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							4.2
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
@@ -294,7 +262,7 @@
 						<v-img class="white--text align-end" height="200px" src="/shop/Shop9BG.png">
 						</v-img>
 
-						<v-card-title>
+						<v-card-title style="font-weight: 700;">
 							ชาชักกระรอกบิน
 						</v-card-title>
 
@@ -302,11 +270,7 @@
 							<br>
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2">
-							<v-icon color="orange">
-								mdi-star
-							</v-icon>
-							4.8
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
 							<v-icon color="black">
 								mdi-walk
 							</v-icon>
