@@ -22,6 +22,9 @@ export const store_account = defineStore({
 
   // Declare actions method 
   actions: {
+    clearAcc(){
+      this.user = "";
+    },
     setAcc(){
       for (let i = 0; i < this.account.length; i++) {
         if (this.account[i].uid == this.uid) {

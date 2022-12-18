@@ -9,7 +9,7 @@
       <div class="ma-1 px-5">
         <h1 class="text-center">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
         <h2 class="text-center text-white">{{fullname}}</h2>
-        <h2 class="text-center text-white">{{this.modelStore.account[0].email}}</h2>
+        <h2 class="text-center text-white">{{this.modelStore.user.email}}</h2>
       </div>
     </v-card>
 
@@ -17,13 +17,13 @@
       <v-col>
         <v-card class="pa-6 bg-green-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินเข้ารวม</h1>
-          <h1 class="text-end">{{this.modelStore.account[0].cashbook.balance}}</h1>
+          <h1 class="text-end">{{this.modelStore.user.cashbook.balance}}</h1>
         </v-card>
       </v-col>
       <v-col>
         <v-card class="pa-6 bg-red-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินออกรวม</h1>
-          <h1 class="text-end">{{this.modelStore.account[0].cashbook.balance}}</h1>
+          <h1 class="text-end">{{this.modelStore.user.cashbook.balance}}</h1>
         </v-card>
       </v-col>
     </v-row>
@@ -82,15 +82,13 @@ export default {
       console.log(this.acc);
     },
     fetchName(){
-      this.fullname = this.modelStore.account[0].Fname;
-      this.fullname = this.fullname + " " + this.modelStore.account[0].Lname;
+      this.fullname = this.modelStore.user.Fname + " " + this.modelStore.user.Lname;
     }
   },
   // In my understand this is like "Constructur method in java :)
   mounted() {
     this.QueryAcc();
     this.fetchName();
-
   },
 };
 </script>

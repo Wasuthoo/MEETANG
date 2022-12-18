@@ -94,9 +94,7 @@ export default {
                     description: "This is a description",
                 },
             ],
-
             addForm: false,
-
         };
     },
     methods: {
@@ -117,7 +115,6 @@ export default {
                 description: description,
             };
             this.Goals.push(newGoal);
-
             this.addForm = false;
         }
 
