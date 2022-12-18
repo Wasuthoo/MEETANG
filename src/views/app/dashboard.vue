@@ -46,9 +46,6 @@
         </div>
       </div>
     </v-card>
-
-    <v-btn @click="test" >push me</v-btn>
-    
   </v-container>
 </template>
 

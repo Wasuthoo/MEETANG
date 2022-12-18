@@ -12,19 +12,34 @@ export const store_account = defineStore({
   // Declare variables
   state: () => ({
     account : [],
+    user: "",
+    uid: "",
   }),
 
   // Declare Getter method
   getters: {
-    getAcc(){
-      console.log(this.account)
-      return this.account[0]
-    },
   },
 
   // Declare actions method 
   actions: {
-    
+    setAcc(){
+      for (let i = 0; i < this.account.length; i++) {
+        if (this.account[i].uid == this.uid) {
+          this.user = this.account[i];
+          console.log("User is :" + " "+this.user.Fname);
+          return this.user;
+        }
+        else 
+          return alert("I am an alert box!");
+      }
+    },
+    setUID(payload){
+      this.uid = payload;
+      console.log("User uid is :" + " "+this.uid);
+      this.setAcc();
+
+    },
+
     // get data from database and set it as variable
     async getQueryAccount() {
       try {
