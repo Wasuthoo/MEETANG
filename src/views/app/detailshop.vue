@@ -1,14 +1,27 @@
 <template>
   <div class="bg">
-    <h1 class="d-flex justify-start mb-0">มาดามตามสั่ง - วัดปากลมบน</h1>
+    <h1 class="d-flex justify-start ml-4">มาดามตามสั่ง - วัดปากลมบน</h1>
 
 
-    <div class="d-flex justify-start mb-4 bg" max-width="3000000">
+    <div class="d-flex justify-start ml-4 bg" max-width="3000000">
       <v-icon color="yellow darken-2">mdi-star</v-icon>
       4.9
       <v-icon>mdi-walk</v-icon>
       0.3 km เวลาเปิดให้บริการ 14.00 น. - 18.00 น.
     </div>
+    <v-card-subtitle class="my-2" style="font-size: 16px;">
+							<v-icon color="red">
+								mdi-map-marker
+							</v-icon>
+							โรงอาหารคณะวิศวะกรรมศาสตร์
+						</v-card-subtitle>
+
+                        <v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
+							</v-icon>
+							    09 7676 6565
+						</v-card-subtitle>
 
 
 
@@ -28,7 +41,7 @@
     </v-tabs>
 
     <!-- โปรโมชั่นพิเศษ -->
-    <h1 class="d-flex justify-start mb-4">โปรโมชั่นพิเศษ</h1>
+    <h1 class="d-flex justify-start ml-4">โปรโมชั่นพิเศษ</h1>
     <v-row>
       <v-col>
         <v-card class="pa-2" max-width="361">
@@ -47,7 +60,7 @@
     </v-row>
 
     <!-- เมนูแนะนำ -->
-    <h1 class="d-flex justify-start mb-4">เมนูแนะนำ</h1>
+    <h1 class="d-flex justify-start ml-4">เมนูแนะนำ</h1>
     <v-row>
       <v-col>
         <v-card class="pa-2" max-width="361">
@@ -150,7 +163,7 @@
     </v-row>
 
     <!-- เครื่องดื่ม -->
-    <h1 class="d-flex justify-start mb-4">เครื่องดื่ม</h1>
+    <h1 class="d-flex justify-start ml-4">เครื่องดื่ม</h1>
     <v-card class="pa-2" max-width="361">
       <v-card-item>
         <div>
@@ -165,7 +178,7 @@
     </v-card>
 
     <!-- ของหวาน -->
-    <h1 class="d-flex justify-start mb-4">ของหวาน</h1>
+    <h1 class="d-flex justify-start ml-4">ของหวาน</h1>
     <v-card class="pa-2" max-width="361">
       <v-card-item>
         <div>
