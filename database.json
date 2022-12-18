@@ -1,22 +1,19 @@
 {
   "account": [
     {
-      "uid" : "",
+      "uid": "",
       "Fname": "",
       "Lname": "",
       "email": "",
       "cashbook": {
         "cashbookId": 1,
         "balance": 0,
-        "transactions": [
-        ]
+        "transactions": []
       },
-      "goals": [
-      ]
-    }
-    ,
+      "goals": []
+    },
     {
-      "uid" : "3eDF7XuCrxZUOlML0AxVYRGATx22",
+      "uid": "3eDF7XuCrxZUOlML0AxVYRGATx22",
       "Fname": "admin",
       "Lname": "admax",
       "email": "admin@admin.com",
@@ -25,29 +22,74 @@
         "balance": 400,
         "transactions": [
           {
-            "Id": 1,
-            "Date": "2017-01-01",
-            "Description": "Salary",
-            "Type": "income",
-            "Amount": 1000,
-            "Balance": 1000
+            "id": 1,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 2000,
+            "date": "2022-12-18T00:00:00.000Z"
           },
           {
-            "Id": 2,
-            "Date": "2017-01-02",
-            "Description": "Rent",
-            "Type": "expense",
-            "Amount": 500,
-            "Balance": 500
+            "id": 2,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 1000,
+            "date": "2022-12-18T00:00:00.000Z"
           },
           {
-            "Id": 3,
-            "Date": "2017-01-03",
-            "Description": "Groceries",
-            "Type": "expense",
-            "Amount": 100,
-            "Balance": 400
+            "id": 6,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
+            "amount": 100,
+            "date": "2022-12-17T00:00:00.000Z"
+          },
+          {
+            "id": 7,
+            "type": "Save to Goal",
+            "name": "หักเข้า Goal",
+            "amount": 500,
+            "date": "2022-12-17T00:00:00.000Z"
+          },
+          {
+            "id": 8,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
+            "amount": 100,
+            "date": "2022-12-18T00:00:00.000Z"
           }
+        ]
+      },
+      "goals": [
+        {
+          "Id": 1,
+          "Name": "Holiday",
+          "Amount": 1000,
+          "Balance": 600
+        },
+        {
+          "Id": 2,
+          "Name": "Car",
+          "Amount": 10000,
+          "Balance": 5000
+        }
+      ]
+    },
+    {
+      "name": "John Smith",
+      "email": "xxxx@gmail.ac.th",
+      "password": "xxxx",
+      "cashbook": {
+        "cashbookId": 1,
+        "Tbalance": 400,
+        "transactions": [
+          [
+            {
+              "id": 1,
+              "type": "Income",
+              "name": "ออมเงิน",
+              "amount": 2000,
+              "date": "2022-12-18T00:00:00.000Z"
+            }
+          ]
         ]
       },
       "goals": [
@@ -65,55 +107,5 @@
         }
       ]
     }
-    ,
-    {
-      "name": "John Smith",
-      "email": "xxxx@gmail.ac.th",
-      "password": "xxxx",
-      "cashbook": {
-        "cashbookId": 1,
-        "Tbalance": 400,
-        "transactions": [
-          {
-            "Id": 1,
-            "Date": "2017-01-01",
-            "Description": "Salary",
-            "Type": "income",
-            "Amount": 1000,
-            "Balance": 1000
-          },
-          {
-            "Id": 2,
-            "Date": "2017-01-02",
-            "Description": "Rent",
-            "Type": "expense",
-            "Amount": 500,
-            "Balance": 500
-          },
-          {
-            "Id": 3,
-            "Date": "2017-01-03",
-            "Description": "Groceries",
-            "Type": "expense",
-            "Amount": 100,
-            "Balance": 400
-          }
-        ]
-      },
-      "goals": [
-        {
-          "Id": 1,
-          "Name": "Holiday",
-          "Amount": 1000,
-          "Balance": 600
-        },
-        {
-          "Id": 2,
-          "Name": "Car",
-          "Amount": 10000,
-          "Balance": 5000
-        }
-      ]
-    } 
   ]
 }
