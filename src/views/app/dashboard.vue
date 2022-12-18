@@ -8,26 +8,26 @@
       <img class="ma-1" src="/icon/user1.png" alt="user 1" height="120" width="120" />
       <div class="ma-1 px-5">
         <h1 class="text-center">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
-        <h2 class="text-center text-white">คุณธนวรรณ ณ กรุงเทพมหานคร</h2>
-        <h2 class="text-center text-white">64050138@kmitl.ac.th</h2>
+        <h2 class="text-center text-white">{{fullname}}</h2>
+        <h2 class="text-center text-white">{{this.modelStore.account[0].email}}</h2>
       </div>
     </v-card>
-
 
     <v-row>
       <v-col>
         <v-card class="pa-6 bg-green-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินเข้ารวม</h1>
-          <h1 class="text-end">326,000 บาท</h1>
+          <h1 class="text-end">{{this.modelStore.account[0].cashbook.balance}}</h1>
         </v-card>
       </v-col>
       <v-col>
         <v-card class="pa-6 bg-red-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินออกรวม</h1>
-          <h1 class="text-end">326,000 บาท</h1>
+          <h1 class="text-end">{{this.modelStore.account[0].cashbook.balance}}</h1>
         </v-card>
       </v-col>
     </v-row>
+
     <!-- SummaryCard -->
     <v-card class="my-6 pa-4 px-5 rounded-lg ">
       <h1>สรุปรายการความเคลื่อนไหวบัญชีประจำเดือนธันวาคม</h1>
@@ -46,9 +46,57 @@
         </div>
       </div>
     </v-card>
+
+    <v-btn @click="test" >push me</v-btn>
+    
   </v-container>
 </template>
 
+<script>
+import { store_account } from "../../stores/store";
+
+export default {
+  // Declare Vue file (View/Component) is named
+  name: "dashboard",
+
+  // Declare local variables (scoped only this file)
+  data: () => ({
+    modelStore: store_account(),
+    fullname : "",
+    acc: [],
+
+  }),
+
+  // Declare computed for get reactive data/variables
+  // In this case, use to get data from pinia
+  computed: {
+    getAccList() {
+      return this.modelStore.getAcc;
+    },
+  },
+
+  // Declare method/function
+  methods: {
+    QueryAcc() {
+      this.modelStore.getQueryAccount();
+      this.acc = this.getAccList;
+    },
+    test(){
+      console.log(this.acc);
+    },
+    fetchName(){
+      this.fullname = this.modelStore.account[0].Fname;
+      this.fullname = this.fullname + " " + this.modelStore.account[0].Lname;
+    }
+  },
+  // In my understand this is like "Constructur method in java :)
+  mounted() {
+    this.QueryAcc();
+    this.fetchName();
+
+  },
+};
+</script>
 <style scoped>
 .gradient {
   background: rgb(129, 172, 255);
