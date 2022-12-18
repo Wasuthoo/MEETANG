@@ -9,7 +9,7 @@
       <div class="ma-1 px-5">
         <h1 class="text-center">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
         <h2 class="text-center text-white">{{fullname}}</h2>
-        <h2 class="text-center text-white">{{this.modelStore.user.email}}</h2>
+        <h2 class="text-center text-white">{{this.acc.email}}</h2>
       </div>
     </v-card>
 
@@ -67,8 +67,8 @@ export default {
   // Declare computed for get reactive data/variables
   // In this case, use to get data from pinia
   computed: {
-    getAccList() {
-      return this.modelStore.getAcc;
+    getUser() {
+      return this.modelStore.getUser;
     },
   },
 
@@ -76,16 +76,17 @@ export default {
   methods: {
     QueryAcc() {
       this.modelStore.getQueryAccount();
-      this.acc = this.getAccList;
+      this.acc = this.getUser;
+      console.log(this.acc);
     },
     test(){
       console.log(this.acc);
     },
     fetchName(){
-      this.fullname = this.modelStore.user.Fname + " " + this.modelStore.user.Lname;
+      this.fullname = this.acc.Fname + " " + this.acc.Lname;
     }
   },
-  // In my understand this is like "Constructur method in java :)
+// "Constructur method" for Vue
   mounted() {
     this.QueryAcc();
     this.fetchName();

@@ -78,8 +78,9 @@ export default {
           // An error happened.
           console.log("An error happened.");
         });
-        this.modelStore.clearAcc();
         console.log("Log out user is : "+ this.modelStore.user);
+        this.modelStore.clearAcc();
+
     },
   },
   mounted() {

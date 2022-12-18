@@ -18,6 +18,9 @@ export const store_account = defineStore({
 
   // Declare Getter method
   getters: {
+    getUser: (state) => {
+      return state.user;
+    }
   },
 
   // Declare actions method 
