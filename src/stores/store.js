@@ -44,8 +44,12 @@ export const store_account = defineStore({
           this.index = i;
           return this.user;
         }
-        else 
-          return alert("I am an alert box!");
+        if (i == this.account.length - 1) {
+          this.user = "";
+          alert("User not found in database file ");
+          return 0;
+        }
+
       }
     },
     setUID(payload){
