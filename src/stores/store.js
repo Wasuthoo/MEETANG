@@ -12,7 +12,7 @@ export const store_account = defineStore({
   // Declare variables
   state: () => ({
     account : [],
-    user: "",
+    user: {},
     uid: "",
     index: "",
 
