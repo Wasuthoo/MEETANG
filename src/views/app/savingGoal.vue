@@ -1,3 +1,88 @@
+
+<script>
+import goalCard from "..//..//components//savinggoal//goalCard.vue";
+import { store_account } from "../../stores/store";
+import Datepicker from 'vue3-datepicker';
+export default {
+    name: "SavingGoal",
+    components: {
+        goalCard,
+        Datepicker
+    },
+    data() {
+        return {
+            acc: {
+                "uid": "",
+                "Fname": "",
+                "Lname": "",
+                "email": "",
+                "cashbook": {
+                    "cashbookId": 1,
+                    "balance": 0,
+                    "transactions": []
+                },
+                "goals": []
+            },
+
+            form: {
+                name: "",
+                amount: "",
+                date: null,
+                description: "",
+            },
+
+            Goals: [
+                {
+                    id: 1,
+                    name: "Saving Goal 1",
+                    saving: 100,
+                    amount: 1000,
+                    date: "2021-01-01",
+                    description: "This is a description",
+                },
+                {
+                    id: 2,
+                    name: "Saving Goal 2",
+                    saving: 0,
+                    amount: 2000,
+                    date: "2021-01-01",
+                    description: "This is a description",
+                },
+                {
+                    id: 3,
+                    name: "Saving Goal 3",
+                    saving: 3000,
+                    amount: 3000,
+                    date: "2021-01-01",
+                    description: "This is a description",
+                },
+            ],
+            addForm: false,
+        };
+    },
+    methods: {
+        onSaveGoal() {
+            console.log(this.form);
+            let newGoal = {
+                id: this.Goals.length + 1,
+                name: this.form.name,
+                amount: this.form.amount,
+                date: this.form.date,
+                description: this.form.description,
+            };
+            this.Goals.push(newGoal);
+            this.addForm = false;
+        }
+
+    },
+    mounted() {
+        const modelStore = store_account();
+        this.acc = modelStore.getUser;
+        console.log(this.acc);
+    },
+};
+</script>
+
 <template>
     <h1 class="pa-5">Saving Goal</h1>
     <hr />
@@ -9,7 +94,7 @@
         <v-card-text>{{ goal.description }}</v-card-text>
     </v-card> -->
 
-    <goalCard v-if="Goals.length > 0" :savingGoal="Goals"></goalCard>
+    <goalCard v-if="this.Goals.length > 0" :savingGoal="this.Goals"></goalCard>
     <div v-else class="bg-purple-darken-2"
         style="display:absolute; margin:auto; top:0px; bottom:0px; left:0px; right:0px;">
         <h1 class="pa-5 text-medium-emphasis ">No aGoals</h1>
@@ -31,19 +116,23 @@
                 <v-container>
                     <v-row>
                         <v-col cols="12">
-                            <v-text-field id="name" label="Name" required variant="outlined" v-model="form.name"></v-text-field>
+                            <v-text-field id="name" label="Name" required variant="outlined"
+                                v-model="form.name"></v-text-field>
                         </v-col>
 
                         <v-col cols="12">
-                            <v-text-field id="amount" label="Amount" required variant="outlined" v-model="form.amount"></v-text-field>
+                            <v-text-field id="amount" label="Amount" required variant="outlined"
+                                v-model="form.amount"></v-text-field>
                         </v-col>
 
                         <v-col cols="12">
                             <label for="date" class="label">Date end</label>
-                            <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined" placeholder="YYYY-MM-DD"/>
+                            <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined"
+                                placeholder="YYYY-MM-DD" />
                         </v-col>
                         <v-col cols="12">
-                            <v-textarea clearable label="discription" variant="outlined" v-model="form.description"></v-textarea>
+                            <v-textarea clearable label="discription" variant="outlined"
+                                v-model="form.description"></v-textarea>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -57,72 +146,6 @@
         </v-card>
     </v-dialog>
 </template>
-
-<script>
-import goalCard from "..//..//components//savinggoal//goalCard.vue";
-import Datepicker from 'vue3-datepicker';
-export default {
-    name: "SavingGoal",
-    components: {
-        goalCard,
-        Datepicker
-    },
-    data() {
-        return {
-
-            form: {
-                name: "",
-                amount: "",
-                date: null,
-                description: "",
-            },
-
-            Goals: [
-                {
-                    id: 1,
-                    name: "Saving Goal 1",
-                    amount: 1000,
-                    date: "2021-01-01",
-                    description: "This is a description",
-                },
-                {
-                    id: 2,
-                    name: "Saving Goal 2",
-                    amount: 2000,
-                    date: "2021-01-01",
-                    description: "This is a description",
-                },
-                {
-                    id: 3,
-                    name: "Saving Goal 3",
-                    amount: 3000,
-                    date: "2021-01-01",
-                    description: "This is a description",
-                },
-            ],
-            addForm: false,
-        };
-    },
-    methods: {
-        onClickCard() {
-            console.log("card clicked");
-        },
-        onSaveGoal() {
-            console.log(this.form);
-            let newGoal = {
-                id: this.Goals.length + 1,
-                name: this.form.name,
-                amount: this.form.amount,
-                date: this.form.date,
-                description: this.form.description,
-            };
-            this.Goals.push(newGoal);
-            this.addForm = false;
-        }
-
-    }
-};
-</script>
 
 <style>
 .text-field {

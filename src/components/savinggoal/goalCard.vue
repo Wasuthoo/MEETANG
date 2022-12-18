@@ -1,3 +1,44 @@
+<script>
+    export default {
+        name: "goalCard",
+        props: {
+            savingGoal: {
+                type: Array,
+                required: true,
+            },
+        },
+        methods: {
+            onClickCard(goal) {
+                this.selectedGoal = {...goal}
+                this.showdialog = true;
+            },
+            onSaveGoal() {
+                let index = this.savingGoal.findIndex(goal => goal.id === this.selectedGoal.id);
+                this.savingGoal[index] = {...this.selectedGoal};
+                this.editMode = false;
+                this.showdialog = false;
+            },
+            onCancelGoal() {
+                this.editMode = false;
+                this.showdialog = false;
+            },
+            onDeleteGoal() {
+                let index = this.savingGoal.findIndex(goal => goal.id === this.selectedGoal.id);
+                this.savingGoal.splice(index, 1);
+                this.editMode = false;
+                this.showdialog = false;
+            },
+        },
+        data() {
+            return {
+                showdialog: false,
+                editMode: false,
+                selectedGoal: {},
+            };
+        },
+    };
+</script>
+
 <template>
     <v-card class="ma-5 bg-blue-lighten-4" @click="onClickCard(goal)" v-for="goal in savingGoal" :key="goal.id">
         <v-card-title >{{ goal.name }}</v-card-title>
@@ -48,45 +89,4 @@
 
     
 </template>
-
-<script>
-    export default {
-        name: "goalCard",
-        props: {
-            savingGoal: {
-                type: Array,
-                required: true,
-            },
-        },
-        methods: {
-            onClickCard(goal) {
-                this.selectedGoal = {...goal}
-                this.showdialog = true;
-            },
-            onSaveGoal() {
-                let index = this.savingGoal.findIndex(goal => goal.id === this.selectedGoal.id);
-                this.savingGoal[index] = {...this.selectedGoal};
-                this.editMode = false;
-                this.showdialog = false;
-            },
-            onCancelGoal() {
-                this.editMode = false;
-                this.showdialog = false;
-            },
-            onDeleteGoal() {
-                let index = this.savingGoal.findIndex(goal => goal.id === this.selectedGoal.id);
-                this.savingGoal.splice(index, 1);
-                this.editMode = false;
-                this.showdialog = false;
-            },
-        },
-        data() {
-            return {
-                showdialog: false,
-                editMode: false,
-                selectedGoal: {},
-            };
-        },
-    };
-</script>
 

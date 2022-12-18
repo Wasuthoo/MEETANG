@@ -41,7 +41,7 @@
                   <li class="my-1">Balance</li>
                 </ul>
               </div>
-              <h2 class="text-green py-3">{{ totalIncome-totalExpense }} Baht</h2>
+              <h2 class="text-green py-3">{{ totalIncome - totalExpense }} Baht</h2>
             </div>
 
             <hr class="solid">
@@ -60,7 +60,7 @@
           <v-card class="mt-5 pa-2 px-5 rounded-xl ">
             <div class="d-flex justify-space-between align-center">
               <h1>Today</h1>
-              <h2>{{ (new Date()).toLocaleDateString('default', {day:'numeric', month: 'short' })}}</h2>
+              <h2>{{ (new Date()).toLocaleDateString('default', { day: 'numeric', month: 'short' }) }}</h2>
             </div>
             <hr class="solid">
             <v-card class="bg-green-lighten-4 my-3">
@@ -101,7 +101,7 @@
                 <div class="align-center d-flex">
                   <div class="px-2">
                     <a>{{ item.amount }}</a><br />
-                    <!-- <a>{{ item.date.toLocaleDateString() }}</a> -->
+                    <a>{{ new Date(item.date).toLocaleDateString() }}</a>
                   </div>
                   <v-img src="../../../public/imageDash/greenReg.png" height="65" width="10" />
                 </div>
@@ -124,7 +124,7 @@
                 <div class="align-center d-flex">
                   <div class="px-2">
                     <a>{{ item.amount }}</a><br />
-                    <!-- <a>{{ item.date.toLocaleDateString() }}</a> -->
+                    <a>{{ new Date(item.date).toLocaleDateString() }}</a>
                   </div>
                   <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
                 </div>
@@ -152,16 +152,19 @@
           <v-row>
             <v-col cols="12">
               <label for="date" class="label">Date</label>
-              <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined" placeholder="YYYY-MM-DD"/>
-          </v-col>
+              <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined"
+                placeholder="YYYY-MM-DD" />
+            </v-col>
             <v-col class="d-flex" cols="12 py-0">
-              <v-select :items="transactionsType" v-model="form.type" label="Type" variant="outlined" required></v-select>
+              <v-select :items="transactionsType" v-model="form.type" label="Type" variant="outlined"
+                required></v-select>
             </v-col>
             <v-col cols="12 py-0">
               <v-text-field v-model="form.title" label="Title" variant="outlined" required></v-text-field>
             </v-col>
             <v-col cols="12 py-0">
-              <v-text-field type="number" v-model="form.amount" label="Amount" prefix="฿"  variant="outlined" required></v-text-field>
+              <v-text-field type="number" v-model="form.amount" label="Amount" prefix="฿" variant="outlined"
+                required></v-text-field>
             </v-col>
           </v-row>
         </v-container>
@@ -193,7 +196,7 @@ export default {
       addForm: false,
       transactionsType: ['Income', 'Expense', 'Save to Goal'],
       accountType: ['Wallet', 'Goal'],
-      form:{
+      form: {
         type: 'Income',
         title: '',
         amount: 0,
@@ -217,15 +220,15 @@ export default {
     },
 
     onSaveTransaction() {
-      
+
       let newtransaction = {
-        id: this.transactions.length + 1,
+        id: Date.now(),
         type: this.form.type,
         name: this.form.title,
         amount: this.form.amount,
-        date: this.form.date,
+        date: this.form.date.toJSON(),
       };
-      this.transactions.push(newtransaction);
+      this.acc.cashbook.transactions.push(newtransaction);
 
       this.form = {
         type: 'Income',
@@ -233,10 +236,6 @@ export default {
         amount: 0,
         date: new Date(),
       }
-
-      //   ลองเพิ่มคำนวณ total ใน computed ดู
-      //   this.totalIncome = computed.totalIncome();
-      //   this.total = computed.totalIncome();
 
       this.addForm = false;
     }
@@ -246,12 +245,56 @@ export default {
     getUser() {
       return this.modelStore.getUser;
     },
-
-    incomes(){
-      return  this.transactions.filter(transaction => transaction.type === "Income")      
+    incomes: function () {
+      return this.acc.cashbook.transactions.filter((transaction) => {
+        return transaction.type === "Income";
+      });
     },
-    expenses(){
-      return  this.transactions.filter(transaction => transaction.type === "Expense" || transaction.type === "Save to Goal")      
+    expenses: function () {
+      return this.acc.cashbook.transactions.filter((transaction) => {
+        return transaction.type === "Expense" || transaction.type === "Save to Goal";
+      });
+    },
+    totalIncome: function () {
+      let total = 0;
+      this.incomes.forEach((incomes) => {
+        total += parseInt(incomes.amount);
+      });
+      return total;
+    },
+    totalExpense: function () {
+      let total = 0;
+      this.expenses.forEach((expense) => {
+        total += parseInt(expense.amount);
+      });
+      return total;
+    },
+    // totalGoal: function () {
+    //   let total = 0;
+    //   this.transactions.forEach((transaction) => {
+    //     if (transaction.account === "Goal") {
+    //       total += parseInt(transaction.amount);
+    //     }
+    //   });
+    //   return total;
+    // },
+    todayIncome: function () {
+      let total = 0;
+      this.incomes.forEach((incomes) => {
+        if (new Date(incomes.date).toDateString() === new Date().toDateString()) {
+          total += parseInt(incomes.amount);
+        }
+      });
+      return total;
+    },
+    todayExpense: function () {
+      let total = 0;
+      this.expenses.forEach((expense) => {
+        if (new Date(expense.date).toDateString() === new Date().toDateString()) {
+          total += parseInt(expense.amount);
+        }
+      });
+      return total;
     },
     // expenses: function () {
     //   return this.transactions.filter((transaction) => {
@@ -324,21 +367,21 @@ export default {
 }
 
 .text-field {
-    box-sizing: border-box;
-    border: 1px solid rgb(146, 146, 146);
-    border-radius: 5px;
-    padding: 10px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    font-size: 16px;
-    color: rgb(0, 0, 0);
-    transition: all 0.2s;
-    width: 100%;
-    margin-bottom: 12px;
+  box-sizing: border-box;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 5px;
+  padding: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  transition: all 0.2s;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 .text-field:focus {
-    border: 2px solid rgb(0, 0, 0);
-    outline: none;
+  border: 2px solid rgb(0, 0, 0);
+  outline: none;
 }
 </style>

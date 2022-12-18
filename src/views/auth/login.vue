@@ -62,7 +62,7 @@ import { ref } from "vue";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { useRouter } from 'vue-router';
-import { store_account } from '/src/stores/store';
+// import { store_account } from '/src/stores/store';
 
 export default {
     name: 'Register',
@@ -74,7 +74,7 @@ export default {
         }
 
         return {
-            modelStore : store_account(),
+            // modelStore : store_account(),
             router: useRouter(),
             valid: true,
             form: Object.assign({}, DefaultForm),
@@ -87,8 +87,8 @@ export default {
                     // Signed in
                     const user = userCredential.user;
                     console.log(user);
-                    this.modelStore.uid = user.uid;
-                    this.modelStore.setAcc();
+                    // this.modelStore.uid = user.uid;
+                    // this.modelStore.setAcc();
                     this.router.push('/app/dashboard');
                 })
                 .catch((error) => {
