@@ -59,7 +59,10 @@
 
 <script>
 import goalCard from "..//..//components//savinggoal//goalCard.vue";
+import { savingGoalStore } from '@/stores/counter';
 
+const goal = savingGoalStore()
+savingGoalStore.name
 export default {
     name: "SavingGoal",
     components: {

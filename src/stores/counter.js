@@ -1,12 +1,42 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
+export const savingGoalStore = defineStore({
+  name:'Goal',
+  state: () => ({
+    amount: 0,
+    dateStart: 0,
+    dateEnd:0,
+    description: null
+  }),
+  
+  actions: {
+    editName() {
+      this.name = document.getElementById("name").value;
+    },
+    editAmount(){
+      this.amount = document.getElementById("amount").value;
+    },
+    editDate(){
+      this.dateStart = document.getElementById("dateStart").value;
+    },
+    editDescription(){
+      this.description = document.getElementById("description").value;
+    }
+  },
 
-  return { count, doubleCount, increment }
+  getters: {
+    getname: (state) => {
+      return this.name
+    },
+    getamount: (state) => {
+      return this.amount
+    },
+    getdate: (state) => {
+      return this.dateStart
+    },
+    getdescription: (state) => {
+      return this.description
+    }
+  }
 })
