@@ -13,26 +13,6 @@
 
 			</v-col>
 
-			<v-col>
-
-				<v-form>
-
-					<v-container class="mx-auto">
-
-						<v-text-field solo label="กรุณาระบุตำแหน่งปัจจุบันของคุณ">
-
-							<template v-slot:append>
-								<v-icon color="red">mdi-map-marker</v-icon>
-							</template>
-
-						</v-text-field>
-
-					</v-container>
-
-				</v-form>
-
-			</v-col>
-
 		</v-row>
 
 		<div>
@@ -51,15 +31,18 @@
 							มาดามตามสั่ง - วัดปากลมบน
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
-						</v-card-subtitle>
-
 						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+							<v-icon color="red">
+								mdi-map-marker
 							</v-icon>
-							    0.3 km
+							    โรงอาหารคณะวิทยาศาสตร์
+						</v-card-subtitle>
+                        
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
+							</v-icon>
+							    09 8888 7777
 						</v-card-subtitle>
 
 					</v-card>
@@ -76,15 +59,18 @@
 							ข้าวมันไก่ป้าน้อย
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
-						</v-card-subtitle>
-
 						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+							<v-icon color="red">
+								mdi-map-marker
 							</v-icon>
-							0.5 km
+							โรงอาหารคณะวิศวะกรรมศาสตร์
+						</v-card-subtitle>
+                                                
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
+							</v-icon>
+							    09 7777 6666
 						</v-card-subtitle>
 
 					</v-card>
@@ -102,15 +88,18 @@
 							ก๊วยเตี๋ยวต้มยำเฮียเล้ง
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+							<v-icon color="red">
+								mdi-map-marker
+							</v-icon>
+							โรงอาหารคณะวิทยาศาสตร์
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+                        <v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
 							</v-icon>
-							0.8 km
+							    09 6666 5555
 						</v-card-subtitle>
 
 					</v-card>
@@ -133,15 +122,18 @@
 							หมูปิ้งลุงรัง
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+							<v-icon color="red">
+								mdi-map-marker
+							</v-icon>
+							โรงอาหารคณะเทคโนโลยีการเกษตร
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+                        <v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
 							</v-icon>
-							1.0 km
+							    09 5555 4444
 						</v-card-subtitle>
 
 					</v-card>
@@ -158,15 +150,18 @@
 							ส้มตำสังค์ทอง
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+							<v-icon color="red">
+								mdi-map-marker
+							</v-icon>
+							โรงอาหารคณะเทคโนโลยีสารสนเทศ
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+                        <v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
 							</v-icon>
-							1.3 km
+							    09 3333 2222
 						</v-card-subtitle>
 
 					</v-card>
@@ -184,15 +179,18 @@
 							สเต็กพี่โตเนื้อแน่น
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+							<v-icon color="red">
+								mdi-map-marker
+							</v-icon>
+							โรงอาหารคณะบริหารธุรกิจ
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+                        <v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
 							</v-icon>
-							1.4 km
+							    09 2222 1111
 						</v-card-subtitle>
 
 					</v-card>
@@ -215,15 +213,18 @@
 							ข้าวแกงกะหรี่พรี่คาซึยะ
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+							<v-icon color="red">
+								mdi-map-marker
+							</v-icon>
+							โรงอาหารคณะครุศาสตร์
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+                        <v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
 							</v-icon>
-							1.5 km
+							    09 9898 8787
 						</v-card-subtitle>
 
 					</v-card>
@@ -240,15 +241,18 @@
 							ซูชิไข่เค็ม
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+							<v-icon color="red">
+								mdi-map-marker
+							</v-icon>
+							โรงอาหารคณะวิทยาศาสตร์
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+                        <v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
 							</v-icon>
-							1.5 km
+							    09 8787 7676
 						</v-card-subtitle>
 
 					</v-card>
@@ -266,15 +270,18 @@
 							ชาชักกระรอกบิน
 						</v-card-title>
 
-						<v-card-subtitle>
-							<br>
+						<v-card-subtitle class="my-2" style="font-size: 16px;">
+							<v-icon color="red">
+								mdi-map-marker
+							</v-icon>
+							โรงอาหารคณะวิศวะกรรมศาสตร์
 						</v-card-subtitle>
 
-						<v-card-subtitle class="my-2" style="font-size: 16px;">
-							<v-icon color="black">
-								mdi-walk
+                        <v-card-subtitle class="my-2" style="font-size: 16px;">
+                            <v-icon color="blue">
+								mdi-phone
 							</v-icon>
-							1.7 km
+							    09 7676 6565
 						</v-card-subtitle>
 
 					</v-card>
