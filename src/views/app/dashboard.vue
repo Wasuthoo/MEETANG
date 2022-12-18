@@ -13,7 +13,6 @@
       </div>
     </v-card>
 
-
     <v-row>
       <v-col>
         <v-card class="pa-6 bg-green-lighten-4 rounded-lg">
@@ -28,6 +27,7 @@
         </v-card>
       </v-col>
     </v-row>
+
     <!-- SummaryCard -->
     <v-card class="my-6 pa-4 px-5 rounded-lg ">
       <h1>สรุปรายการความเคลื่อนไหวบัญชีประจำเดือนธันวาคม</h1>
@@ -46,7 +46,9 @@
         </div>
       </div>
     </v-card>
+
     <v-btn @click="test" >push me</v-btn>
+    
   </v-container>
 </template>
 
