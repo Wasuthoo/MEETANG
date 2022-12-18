@@ -31,7 +31,7 @@
           </v-card>
 
           <!-- AccountCard -->
-          <v-card class="mt-6 pa-2 px-5 rounded-xl ">
+          <v-card class="mt-6 pa-3 px-5 rounded-xl ">
             <h1>Account</h1>
             <hr class="solid">
             <div class="d-flex justify-space-between my-1">
@@ -41,16 +41,18 @@
                   <li class="my-1">Balance</li>
                 </ul>
               </div>
-              <h2 class="text-green py-3">{{ totalWallet }} Baht</h2>
+              <h2 class="text-green py-3">{{ totalIncome-totalExpense }} Baht</h2>
             </div>
+
             <hr class="solid">
-            <h3 class="">Saving goal</h3>
-            <div class="d-flex justify-space-between">
-              <ul class="px-8">
-                <li>Iphone 16 Max Ranger</li>
-                <li>Gucci Belt</li>
-              </ul>
-              <h2 class="text-green">4500 Baht</h2>
+            <div class="d-flex justify-space-between my-1">
+              <div>
+                <h3>Saving goal</h3>
+                <ul class="px-8">
+                  <li class="my-1">Main goal</li>
+                </ul>
+              </div>
+              <h2 class="text-green py-3">{{ totalGoal }}/0 Baht</h2>
             </div>
           </v-card>
 
@@ -58,7 +60,7 @@
           <v-card class="mt-5 pa-2 px-5 rounded-xl ">
             <div class="d-flex justify-space-between">
               <h1>Today</h1>
-              <h2>19 December 2022</h2>
+              <h2>{{ totalGoal }}</h2>
             </div>
             <hr class="solid">
             <v-card class="bg-green-lighten-4 my-3">
@@ -67,7 +69,7 @@
                   <h2 class="text-green px-1 py-6 pa-5">Income</h2>
                   <img class="pa-4 px-7 mx-1" src="/imageDash/moneyIncrease.png" height="80" />
                 </div>
-                <h2 class="text-green py-6 text-right ">{{ totalIncome }} Baht</h2>
+                <h2 class="text-green py-6 text-right ">0 Baht</h2>
               </div>
             </v-card>
 
@@ -77,7 +79,7 @@
                   <h2 class="text-red px-1 py-6 pa-5">Expense</h2>
                   <img class="pa-3 mx-1" src="/imageDash/moneyDecrease.png" height="80" />
                 </div>
-                <h2 class="text-red py-6 text-right ">{{ totalExpense }} Baht</h2>
+                <h2 class="text-red py-6 text-right ">0 Baht</h2>
               </div>
             </v-card>
           </v-card>
@@ -248,7 +250,7 @@ export default {
         {
           id: 1,
           type: "Income",
-          name: "ฝากเงิน",
+          name: "ออมเงิน",
           account: "Wallet",
           amount: 2000,
           date: "16/12/22",
@@ -256,15 +258,15 @@ export default {
         {
           id: 2,
           type: "Income",
-          name: "ฝากเงิน",
-          account: "Goal",
+          name: "ออมเงิน",
+          account: "Wallet",
           amount: 1000,
           date: "17/12/22",
         },
         {
           id: 3,
           type: "Income",
-          name: "ฝากเงิน",
+          name: "ออมเงิน",
           account: "Wallet",
           amount: 500,
           date: "17/12/22",
@@ -272,7 +274,7 @@ export default {
         {
           id: 4,
           type: "Income",
-          name: "ฝากเงิน",
+          name: "ออมเงิน",
           account: "Wallet",
           amount: 1000,
           date: "18/12/22",
@@ -296,8 +298,8 @@ export default {
         {
           id: 7,
           type: "Expense",
-          name: "เติมเกม",
-          account: "wallet",
+          name: "หักเข้า Goal",
+          account: "Goal",
           amount: 500,
           date: "17/12/22",
         },
@@ -367,15 +369,6 @@ export default {
       });
       return total;
     },
-    totalWallet: function () {
-      let total = 0;
-      this.transactions.forEach((transaction) => {
-        if (transaction.account === "Wallet") {
-          total += transaction.amount;
-        }
-      });
-      return total;
-    },
     totalGoal: function () {
       let total = 0;
       this.transactions.forEach((transaction) => {
@@ -386,8 +379,13 @@ export default {
       return total;
     },
   }
-
 };
+
+// var date = moment();
+
+// var currentDate = date.format('D/MM/YYYY');
+// console.log(currentDate); // "17/06/2022"
+
 </script>
 
 <style>
