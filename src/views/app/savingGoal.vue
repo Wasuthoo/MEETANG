@@ -39,11 +39,11 @@
                         </v-col>
 
                         <v-col cols="12">
-                            <label for="date" class="label">Date</label>
+                            <label for="date" class="label">Date end</label>
                             <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined" placeholder="YYYY-MM-DD"/>
                         </v-col>
                         <v-col cols="12">
-                            <v-textarea clearable label="รายละเอียด" variant="outlined" v-model="form.description"></v-textarea>
+                            <v-textarea clearable label="discription" variant="outlined" v-model="form.description"></v-textarea>
                         </v-col>
                     </v-row>
                 </v-container>
