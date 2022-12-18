@@ -57,7 +57,7 @@
       "password": "xxxx",
       "cashbook": {
         "cashbookId": 1,
-        "balance": 400,
+        "Tbalance": 400,
         "transactions": [
           {
             "Id": 1,

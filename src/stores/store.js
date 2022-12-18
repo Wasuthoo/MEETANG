@@ -24,6 +24,7 @@ export const store_account = defineStore({
 
   // Declare actions method 
   actions: {
+    
     // get data from database and set it as variable
     async getQueryAccount() {
       try {
