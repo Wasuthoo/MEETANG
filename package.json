@@ -11,6 +11,7 @@
     "@mdi/font": "5.9.55",
     "axios": "^1.2.1",
     "chart.js": "^4.1.1",
+    "firebase": "^9.15.0",
     "json-server": "^0.17.1",
     "pinia": "^2.0.23",
     "roboto-fontface": "*",
