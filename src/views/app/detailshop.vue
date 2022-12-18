@@ -42,12 +42,6 @@
               <div class="text-caption d-flex justify-center "> 60 บาท</div>
             </div>
           </v-card-item>
-
-          <v-card-actions class="d-flex justify-end mb-6">
-            <v-btn color="green darken-3" variant="tonal">
-              <v-icon icon="mdi-plus" size="large"></v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -67,11 +61,6 @@
               <div class="text-caption d-flex justify-center "> 50 บาท</div>
             </div>
           </v-card-item>
-          <v-card-actions class="d-flex justify-end mb-6">
-            <v-btn color="green darken-3" variant="tonal">
-              <v-icon icon="mdi-plus" size="large"></v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
       </v-col>
 
@@ -88,11 +77,6 @@
               <div class="text-caption d-flex justify-center "> 50 บาท</div>
             </div>
           </v-card-item>
-          <v-card-actions class="d-flex justify-end mb-6">
-            <v-btn color="green darken-3" variant="tonal">
-              <v-icon icon="mdi-plus" size="large"></v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
 
       </v-col>
@@ -109,11 +93,6 @@
               <div class="text-caption d-flex justify-center "> 50 บาท</div>
             </div>
           </v-card-item>
-          <v-card-actions class="d-flex justify-end mb-6">
-            <v-btn color="green darken-3" variant="tonal">
-              <v-icon icon="mdi-plus" size="large"></v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
 
       </v-col>
@@ -132,11 +111,6 @@
               <div class="text-caption d-flex justify-center "> 50 บาท</div>
             </div>
           </v-card-item>
-          <v-card-actions class="d-flex justify-end mb-6">
-            <v-btn color="green darken-3" variant="tonal">
-              <v-icon icon="mdi-plus" size="large"></v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
       </v-col>
 
@@ -153,11 +127,6 @@
               <div class="text-caption d-flex justify-center "> 50 บาท</div>
             </div>
           </v-card-item>
-          <v-card-actions class="d-flex justify-end mb-6">
-            <v-btn color="green darken-3" variant="tonal">
-              <v-icon icon="mdi-plus" size="large"></v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
 
       </v-col>
@@ -175,11 +144,6 @@
               <div class="text-caption d-flex justify-center "> 50 บาท</div>
             </div>
           </v-card-item>
-          <v-card-actions class="d-flex justify-end mb-6">
-            <v-btn color="green darken-3" variant="tonal">
-              <v-icon icon="mdi-plus" size="large"></v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
 
       </v-col>
@@ -198,11 +162,6 @@
           <div class="text-caption d-flex justify-center"> 20 บาท</div>
         </div>
       </v-card-item>
-      <v-card-actions class="d-flex justify-end mb-6">
-        <v-btn color="green darken-3" variant="tonal">
-          <v-icon icon="mdi-plus" size="large"></v-icon>
-        </v-btn>
-      </v-card-actions>
     </v-card>
 
     <!-- ของหวาน -->
@@ -218,11 +177,6 @@
           <div class="text-caption d-flex justify-center"> 20 บาท</div>
         </div>
       </v-card-item>
-      <v-card-actions class="d-flex justify-end mb-6">
-        <v-btn color="green darken-3" variant="tonal">
-          <v-icon icon="mdi-plus" size="large"></v-icon>
-        </v-btn>
-      </v-card-actions>
     </v-card>
 
   </div>

@@ -6,23 +6,27 @@
       <v-row>
         <v-col>
           <!-- SummaryCard -->
-          <v-card class="pa-2 px-5 rounded-xl ">
+          <v-card class="pa-2 px-5 rounded-xl">
             <h1>Summary</h1>
             <hr class="solid">
-            <v-card class="bg-green-lighten-4 my-3 d-flex justify-space-between">
-              <div class="d-flex"> 
-                  <h2 class="text-green px-3 pa-5">Income</h2>
+            <v-card class="bg-green-lighten-4 my-3">
+              <div class="px-5 d-flex justify-space-between">
+                <div class="d-flex">
+                  <h2 class="text-green px-1 py-6 pa-5">Income</h2>
                   <img class="pa-4 px-7 mx-1" src="/imageDash/moneyIncrease.png" height="80" />
+                </div>
+                <h2 class="text-green py-6 text-right ">{{ totalIncome }} Baht</h2>
               </div>
-              <h2 class="text-green py-6">{{ totalIncome }} Bath</h2>
             </v-card>
 
-            <v-card class="bg-red-lighten-4 my-3 d-flex justify-space-between">
-              <div class="d-flex"> 
-                  <h2 class="text-red px-3 pa-5">Expense</h2>
-                  <img class="pa-3 mx-1" src="/imageDash/moneyDecrease.png" height="80" />
+            <v-card class="bg-red-lighten-4 my-3">
+              <div class="px-5 d-flex justify-space-between">
+                <div class="d-flex">
+                  <h2 class="text-red px-1 py-6 pa-5">Expense</h2>
+                  <img class="pa-3  mx-1" src="/imageDash/moneyDecrease.png" height="80" />
+                </div>
+                <h2 class="text-red py-6 text-right ">{{ totalExpense }} Baht</h2>
               </div>
-              <h2 class="text-red py-6">{{ totalExpense }} Bath</h2>
             </v-card>
           </v-card>
 
@@ -37,7 +41,7 @@
                   <li class="my-1">Balance</li>
                 </ul>
               </div>
-              <h2 class="text-green py-3">{{ totalWallet }} Bath</h2>
+              <h2 class="text-green py-3">{{ totalWallet }} Baht</h2>
             </div>
             <hr class="solid">
             <h3 class="">Saving goal</h3>
@@ -51,27 +55,30 @@
           </v-card>
 
           <!-- TodayCard -->
-          <v-card class="mt-6 pa-2 px-5 rounded-xl ">
+          <v-card class="mt-5 pa-2 px-5 rounded-xl ">
             <div class="d-flex justify-space-between">
               <h1>Today</h1>
               <h2>19 December 2022</h2>
             </div>
             <hr class="solid">
-            <v-card class="bg-green-lighten-4 my-3 d-flex justify-space-between">
-              <div class="d-flex">
-                <h2 class="text-green px-3 pa-5">Income</h2>
-                <img class="pa-4 px-7 mx-1" src="/imageDash/moneyIncrease.png" height="80" />
+            <v-card class="bg-green-lighten-4 my-3">
+              <div class="px-5 d-flex justify-space-between">
+                <div class="d-flex">
+                  <h2 class="text-green px-1 py-6 pa-5">Income</h2>
+                  <img class="pa-4 px-7 mx-1" src="/imageDash/moneyIncrease.png" height="80" />
+                </div>
+                <h2 class="text-green py-6 text-right ">{{ totalIncome }} Baht</h2>
               </div>
-
-              <h2 class="text-green px-2 py-5">0 Baht</h2>
             </v-card>
-            <v-card class="bg-red-lighten-4 my-3 d-flex justify-space-between">
-              <div class="d-flex">
-                <h2 class="text-red px-3 pa-5">Expense</h2>
-                <img class="pa-3 mx-1" src="/imageDash/moneyDecrease.png" height="80" />
-              </div>
 
-              <h2 class="text-red py-5 ">0 Baht</h2>
+            <v-card class="bg-red-lighten-4 my-3">
+              <div class="px-5 d-flex justify-space-between">
+                <div class="d-flex">
+                  <h2 class="text-red px-1 py-6 pa-5">Expense</h2>
+                  <img class="pa-3 mx-1" src="/imageDash/moneyDecrease.png" height="80" />
+                </div>
+                <h2 class="text-red py-6 text-right ">{{ totalExpense }} Baht</h2>
+              </div>
             </v-card>
           </v-card>
         </v-col>
@@ -124,7 +131,7 @@
           </v-card>
 
           <!-- comment old code -->
-            <!-- component income card
+          <!-- component income card
             <v-card class="my-3 d-flex " flat>
               picture 
               <img class="ma-2 mx-3" src="/imageDash/hand-money.png" height="50" />
@@ -180,7 +187,7 @@
                 <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
               </div>
             </v-card> end of component income card -->
-          
+
         </v-col> <!-- end of first col -->
       </v-row> <!-- end of first row -->
     </v-container>
@@ -212,7 +219,7 @@
               <v-text-field id="date" label="Date (dd/mm/yy)" required></v-text-field>
             </v-col>
             <v-col cols="10">
-              <v-text-field id="amount" label="Amount" required></v-text-field>
+              <v-text-field type="number" id="amount" label="Amount" required></v-text-field>
             </v-col>
           </v-row>
         </v-container>
@@ -243,64 +250,64 @@ export default {
           type: "Income",
           name: "ฝากเงิน",
           account: "Wallet",
-          amount: 1000,
-          date: "11/04/22",
+          amount: 2000,
+          date: "16/12/22",
         },
         {
           id: 2,
           type: "Income",
           name: "ฝากเงิน",
           account: "Goal",
-          amount: 5000,
-          date: "11/04/22",
+          amount: 1000,
+          date: "17/12/22",
         },
         {
           id: 3,
           type: "Income",
           name: "ฝากเงิน",
           account: "Wallet",
-          amount: 7000,
-          date: "11/04/22",
+          amount: 500,
+          date: "17/12/22",
         },
         {
           id: 4,
           type: "Income",
           name: "ฝากเงิน",
           account: "Wallet",
-          amount: 100,
-          date: "11/04/22",
+          amount: 1000,
+          date: "18/12/22",
         },
         {
           id: 5,
           type: "Expense",
-          name: "ถอนเงิน",
+          name: "ซื้อสลากกินแบ่ง",
           account: "Wallet",
-          amount: 700,
-          date: "16/12/22",
+          amount: 160,
+          date: "17/12/22",
         },
         {
           id: 6,
           type: "Expense",
-          name: "ถอนเงิน",
+          name: "ซื้อข้าว",
           account: "Wallet",
-          amount: 2300,
-          date: "16/12/22",
+          amount: 100,
+          date: "17/12/22",
         },
         {
           id: 7,
           type: "Expense",
           name: "เติมเกม",
-          account: "Goal",
-          amount: 1600,
-          date: "16/12/22",
+          account: "wallet",
+          amount: 500,
+          date: "17/12/22",
         },
         {
           id: 8,
           type: "Expense",
-          name: "ถอนเงิน",
+          name: "ซื้อข้าว",
           account: "Wallet",
           amount: 100,
-          date: "16/12/22",
+          date: "18/12/22",
         },
       ]
     };
@@ -314,7 +321,7 @@ export default {
       let type = document.getElementById("type").value;
       let name = document.getElementById("nametransection").value;
       let account = document.getElementById("account").value;
-      let amount = document.getElementById("amount").value;
+      let amount = parseInt(document.getElementById("amount").value);
       let date = document.getElementById("date").value;
       console.log(type, name, account, amount, date);
       let newtransaction = {
@@ -327,9 +334,9 @@ export default {
       };
       this.transactions.push(newtransaction);
 
-    //   ลองเพิ่มคำนวณ total ใน computed ดู
-    //   this.totalIncome = computed.totalIncome();
-    //   this.total = computed.totalIncome();
+      //   ลองเพิ่มคำนวณ total ใน computed ดู
+      //   this.totalIncome = computed.totalIncome();
+      //   this.total = computed.totalIncome();
 
       this.addForm = false;
     }
