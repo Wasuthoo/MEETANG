@@ -236,10 +236,14 @@
 </template>
 
 <script>
+import { store_account } from "../../stores/store";
+
 export default {
   name: "cashbook",
   data() {
     return {
+      modelStore: store_account(),
+      user : "",
       addForm: false,
       transactionsType: ['Income', 'Expense'],
       accountType: ['Wallet', 'Goal'],
@@ -313,6 +317,12 @@ export default {
     };
   },
   methods: {
+    QueryAcc() {
+      this.modelStore.getQueryAccount();
+      this.acc = this.getUser;
+      console.log(this.acc);
+    },
+
     onClickCard() {
       console.log("card clicked");
     },
@@ -343,6 +353,9 @@ export default {
 
   },
   computed: {
+    getUser() {
+      return this.modelStore.getUser;
+    },
     incomes: function () {
       return this.transactions.filter((transaction) => {
         return transaction.type === "Income";
@@ -385,7 +398,11 @@ export default {
       });
       return total;
     },
-  }
+  },
+  mounted() {
+    this.QueryAcc();
+
+  },
 
 };
 </script>

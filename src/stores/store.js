@@ -14,6 +14,7 @@ export const store_account = defineStore({
     account : [],
     user: "",
     uid: "",
+
   }),
 
   // Declare Getter method
@@ -27,7 +28,9 @@ export const store_account = defineStore({
   actions: {
     clearAcc(){
       this.user = "";
+      this.uid = "";
     },
+
     setAcc(){
       for (let i = 0; i < this.account.length; i++) {
         if (this.account[i].uid == this.uid) {
@@ -62,14 +65,15 @@ export const store_account = defineStore({
       }
     },
 
-    // //add data to database
-    // async addSug(payload) {
-    //   try {
-    //     const res = await axios.post(apiUrl + subApiFeedback, payload);
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    // },
+    //add data to database
+    async UpdateDB(payload) {
+      try {
+        const res = await axios.post(apiUrl + subApiAccount, payload);
+      } catch (e) {
+        console.error(e);
+      }
+      this.getQueryAccount();
+    },
     // async updateFeedback() {
     //   for(let i = 0; i < payload.length; i++){
     //     try {

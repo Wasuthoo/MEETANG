@@ -61,6 +61,7 @@ export default {
     modelStore: store_account(),
     fullname : "",
     acc: [],
+    
 
   }),
 
