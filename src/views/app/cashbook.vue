@@ -101,7 +101,7 @@
                 <div class="align-center d-flex">
                   <div class="px-2">
                     <a>{{ item.amount }}</a><br />
-                    <a>{{ item.date.toLocaleDateString() }}</a>
+                    <!-- <a>{{ item.date.toLocaleDateString() }}</a> -->
                   </div>
                   <v-img src="../../../public/imageDash/greenReg.png" height="65" width="10" />
                 </div>
@@ -124,7 +124,7 @@
                 <div class="align-center d-flex">
                   <div class="px-2">
                     <a>{{ item.amount }}</a><br />
-                    <a>{{ item.date.toLocaleDateString() }}</a>
+                    <!-- <a>{{ item.date.toLocaleDateString() }}</a> -->
                   </div>
                   <v-img src="../../../public/imageDash/redReg.png" height="65" width="10" />
                 </div>
@@ -174,7 +174,7 @@
       </v-card-actions>
     </v-card>
   </v-dialog>
-
+  <h1>{{this.tran}}</h1>
 </template>
 
 <script>
@@ -189,7 +189,7 @@ export default {
   data() {
     return {
       modelStore: store_account(),
-      user : "",
+      acc : [],
       addForm: false,
       transactionsType: ['Income', 'Expense', 'Save to Goal'],
       accountType: ['Wallet', 'Goal'],
@@ -202,70 +202,14 @@ export default {
       
       // total: ['totalIncome', 'totalExpense'],
       transactions: [
-        {
-          id: 1,
-          type: "Income",
-          name: "ออมเงิน",
-          amount: 2000,
-          date: new Date("2022-12-18"),
-        },
-        {
-          id: 2,
-          type: "Income",
-          name: "ออมเงิน",
-          amount: 1000,
-          date: new Date("2022-12-18"),
-        },
-        {
-          id: 3,
-          type: "Income",
-          name: "ออมเงิน",
-          amount: 500,
-          date: new Date("2022-12-17"),
-        },
-        {
-          id: 4,
-          type: "Income",
-          name: "ออมเงิน",
-          amount: 1000,
-          date: new Date("2022-12-17"),
-        },
-        {
-          id: 5,
-          type: "Expense",
-          name: "ซื้อสลากกินแบ่ง",
-          amount: 160,
-          date: new Date("2022-12-17"),
-        },
-        {
-          id: 6,
-          type: "Expense",
-          name: "ซื้อข้าว",
-          amount: 100,
-          date: new Date("2022-12-17"),
-        },
-        {
-          id: 7,
-          type: "Save to Goal",
-          name: "หักเข้า Goal",
-          amount: 500,
-          date: new Date("2022-12-17"),
-        },
-        {
-          id: 8,
-          type: "Expense",
-          name: "ซื้อข้าว",
-          amount: 100,
-          date: new Date("2022-12-18"),
-        },
       ]
     };
   },
   methods: {
-    QueryAcc() {
+    async QueryAcc() {
       this.modelStore.getQueryAccount();
       this.acc = this.getUser;
-      console.log(this.acc);
+      this.transactions = this.acc.cashbook.transactions;
     },
 
     onClickCard() {
@@ -302,61 +246,62 @@ export default {
     getUser() {
       return this.modelStore.getUser;
     },
-    incomes: function () {
-      return this.transactions.filter((transaction) => {
-        return transaction.type === "Income";
-      });
+
+    incomes(){
+      return  this.transactions.filter(transaction => transaction.type === "Income")      
     },
-    expenses: function () {
-      return this.transactions.filter((transaction) => {
-        return transaction.type === "Expense" || transaction.type === "Save to Goal";
-      });
+    expenses(){
+      return  this.transactions.filter(transaction => transaction.type === "Expense" || transaction.type === "Save to Goal")      
     },
-    totalIncome: function () {
-      let total = 0;
-      this.incomes.forEach((incomes) => {
-        total += parseInt(incomes.amount);
-      });
-      return total;
-    },
-    totalExpense: function () {
-      let total = 0;
-      this.expenses.forEach((expense) => {
-        total += parseInt(expense.amount);
-      });
-      return total;
-    },
-    totalGoal: function () {
-      let total = 0;
-      this.transactions.forEach((transaction) => {
-        if (transaction.account === "Goal") {
-          total += parseInt(transaction.amount);
-        }
-      });
-      return total;
-    },
-    todayIncome: function () {
-      let total = 0;
-      this.incomes.forEach((incomes) => {
-        if (incomes.date.toDateString() === new Date().toDateString()) {
-          total += parseInt(incomes.amount);
-        }
-      });
-      return total;
-    },
-    todayExpense: function () {
-      let total = 0;
-      this.expenses.forEach((expense) => {
-        if (expense.date.toDateString() === new Date().toDateString()) {
-          total += parseInt(expense.amount);
-        }
-      });
-      return total;
-    },
+    // expenses: function () {
+    //   return this.transactions.filter((transaction) => {
+    //     return transaction.type === "Expense" || transaction.type === "Save to Goal";
+    //   });
+    // },
+    // totalIncome: function () {
+    //   let total = 0;
+    //   this.incomes.forEach((incomes) => {
+    //     total += parseInt(incomes.amount);
+    //   });
+    //   return total;
+    // },
+    // totalExpense: function () {
+    //   let total = 0;
+    //   this.expenses.forEach((expense) => {
+    //     total += parseInt(expense.amount);
+    //   });
+    //   return total;
+    // },
+    // totalGoal: function () {
+    //   let total = 0;
+    //   this.transactions.forEach((transaction) => {
+    //     if (transaction.account === "Goal") {
+    //       total += parseInt(transaction.amount);
+    //     }
+    //   });
+    //   return total;
+    // },
+    // todayIncome: function () {
+    //   let total = 0;
+    //   this.incomes.forEach((incomes) => {
+    //     if (incomes.date.toDateString() === new Date().toDateString()) {
+    //       total += parseInt(incomes.amount);
+    //     }
+    //   });
+    //   return total;
+    // },
+    // todayExpense: function () {
+    //   let total = 0;
+    //   this.expenses.forEach((expense) => {
+    //     if (expense.date.toDateString() === new Date().toDateString()) {
+    //       total += parseInt(expense.amount);
+    //     }
+    //   });
+    //   return total;
+    // },
   },
   mounted() {
     this.QueryAcc();
-
   },
 
 };
