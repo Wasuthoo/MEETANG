@@ -8,8 +8,8 @@
       <img class="ma-1" src="/icon/user1.png" alt="user 1" height="120" width="120" />
       <div class="ma-1 px-5">
         <h1 class="text-center">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
-        <h2 class="text-center text-white">{{fullname}}</h2>
-        <h2 class="text-center text-white">{{this.acc.email}}</h2>
+        <h2 class="text-center text-white">{{ fullname }}</h2>
+        <h2 class="text-center text-white">{{ this.acc.email }}</h2>
       </div>
     </v-card>
 
@@ -17,13 +17,13 @@
       <v-col>
         <v-card class="pa-6 bg-green-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินเข้ารวม</h1>
-          <h1 class="text-end">{{this.modelStore.user.cashbook.balance}}</h1>
+          <h1 class="text-end">{{ this.acc.cashbook.balance }}</h1>
         </v-card>
       </v-col>
       <v-col>
         <v-card class="pa-6 bg-red-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินออกรวม</h1>
-          <h1 class="text-end">{{this.modelStore.user.cashbook.balance}}</h1>
+          <h1 class="text-end">{{ this.acc.cashbook.balance }}</h1>
         </v-card>
       </v-col>
     </v-row>
@@ -57,41 +57,34 @@ export default {
   name: "dashboard",
 
   // Declare local variables (scoped only this file)
-  data: () => ({
-    modelStore: store_account(),
-    fullname : "",
-    acc: [],
-    
-
-  }),
-
-  // Declare computed for get reactive data/variables
-  // In this case, use to get data from pinia
-  computed: {
-    getUser() {
-      return this.modelStore.getUser;
-    },
+  data() {
+    return {
+      acc: {
+        "uid": "",
+        "Fname": "",
+        "Lname": "",
+        "email": "",
+        "cashbook": {
+          "cashbookId": 1,
+          "balance": 0,
+          "transactions": []
+        },
+        "goals": []
+      },
+    };
   },
-
-  // Declare method/function
-  methods: {
-    QueryAcc() {
-      this.modelStore.getQueryAccount();
-      this.acc = this.getUser;
-      console.log(this.acc);
-    },
-    test(){
-      console.log(this.acc);
-    },
-    fetchName(){
-      this.fullname = this.acc.Fname + " " + this.acc.Lname;
-    }
-  },
-// "Constructur method" for Vue
   mounted() {
-    this.QueryAcc();
-    this.fetchName();
+    const modelStore = store_account();
+    this.acc = modelStore.getUser;
+    console.log(this.acc);
   },
+
+  computed: {
+    fullname() {
+      return this.acc.Fname + " " + this.acc.Lname;
+    },
+  },
+  // "Constructur method" for Vue
 };
 </script>
 <style scoped>

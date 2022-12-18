@@ -60,16 +60,28 @@
       },
       "goals": [
         {
-          "Id": 1,
-          "Name": "Holiday",
-          "Amount": 1000,
-          "Balance": 600
+          "id": 1,
+          "name": "Saving Goal 1",
+          "saving": 100,
+          "amount": 1000,
+          "date": "2021-01-01T00:00:00.000Z",
+          "description": "This is a description"
         },
         {
-          "Id": 2,
-          "Name": "Car",
-          "Amount": 10000,
-          "Balance": 5000
+          "id": 2,
+          "name": "Saving Goal 2",
+          "saving": 0,
+          "amount": 2000,
+          "date": "2021-01-01T00:00:00.000Z",
+          "description": "This is a description"
+        },
+        {
+          "id": 3,
+          "name": "Saving Goal 3",
+          "saving": 3000,
+          "amount": 3000,
+          "date": "2021-01-01T00:00:00.000Z",
+          "description": "This is a description"
         }
       ]
     },
@@ -94,16 +106,28 @@
       },
       "goals": [
         {
-          "Id": 1,
-          "Name": "Holiday",
-          "Amount": 1000,
-          "Balance": 600
+          "id": 1,
+          "name": "Saving Goal 1",
+          "saving": 100,
+          "amount": 1000,
+          "date": "2021-01-01T00:00:00.000Z",
+          "description": "This is a description"
         },
         {
-          "Id": 2,
-          "Name": "Car",
-          "Amount": 10000,
-          "Balance": 5000
+          "id": 2,
+          "name": "Saving Goal 2",
+          "saving": 0,
+          "amount": 2000,
+          "date": "2021-01-01T00:00:00.000Z",
+          "description": "This is a description"
+        },
+        {
+          "id": 3,
+          "name": "Saving Goal 3",
+          "saving": 3000,
+          "amount": 3000,
+          "date": "2021-01-01T00:00:00.000Z",
+          "description": "This is a description"
         }
       ]
     }
