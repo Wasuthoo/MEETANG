@@ -74,6 +74,7 @@ export default {
         }
 
         return {
+            modelStore : store_account(),
             router: useRouter(),
             valid: true,
             form: Object.assign({}, DefaultForm),
@@ -86,11 +87,14 @@ export default {
                     // Signed in
                     const user = userCredential.user;
                     console.log(user);
+                    this.modelStore.uid = user.uid;
+                    this.modelStore.setAcc();
                     this.router.push('/app/dashboard');
                 })
                 .catch((error) => {
                     alert("Email or password is incorrect");
                 });
+               
         },
         googleLogin() {
             const provider = new GoogleAuthProvider();

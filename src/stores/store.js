@@ -14,6 +14,7 @@ export const store_account = defineStore({
     account : [],
     user: "",
     uid: "",
+    index: "",
 
   }),
 
@@ -26,6 +27,10 @@ export const store_account = defineStore({
 
   // Declare actions method 
   actions: {
+    updateAcc(){
+      this.account[this.index] = this.user;
+      this.UpdateDB(this.account);
+    },
     clearAcc(){
       this.user = "";
       this.uid = "";
@@ -36,6 +41,7 @@ export const store_account = defineStore({
         if (this.account[i].uid == this.uid) {
           this.user = this.account[i];
           console.log("User is :" + " "+this.user.Fname);
+          this.index = i;
           return this.user;
         }
         else 
@@ -64,7 +70,6 @@ export const store_account = defineStore({
         console.error(e);
       }
     },
-
     //add data to database
     async UpdateDB(payload) {
       try {
@@ -74,24 +79,5 @@ export const store_account = defineStore({
       }
       this.getQueryAccount();
     },
-    // async updateFeedback() {
-    //   for(let i = 0; i < payload.length; i++){
-    //     try {
-    //       this.feedback[i].timestamp = payload[i].status;
-    //       const res = await axios.put(apiUrl + subApiFeedback + "/" + payload[i].id, payload[i]);
-    //     } catch (e) {
-    //       console.error(e);
-    //     }
-    //   }
-      
-    //   try {
-    //     await axios.patch(apiUrl + subApiFeedback + "/"+ payload.id), {
-    //       status: close,
-    //     };
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    // }
-
   },
 });
