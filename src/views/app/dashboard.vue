@@ -17,13 +17,13 @@
       <v-col>
         <v-card class="pa-6 bg-green-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินเข้ารวม</h1>
-          <h1 class="text-end">{{ this.acc.cashbook.balance }}</h1>
+          <h1 class="text-end">4100</h1>
         </v-card>
       </v-col>
       <v-col>
         <v-card class="pa-6 bg-red-lighten-4 rounded-lg">
           <h1 class="my-n2">ยอดเงินออกรวม</h1>
-          <h1 class="text-end">{{ this.acc.cashbook.balance }}</h1>
+          <h1 class="text-end">2050</h1>
         </v-card>
       </v-col>
     </v-row>
@@ -98,11 +98,11 @@
         <div class="pa-3">
           <v-card class="bg-green-lighten-5 pa-2 ma-3 rounded-lg" width="320">
             <h3>ยอดเงินเข้ารวม</h3>
-            <h1 class="text-end px-2">1,000 Baht</h1>
+            <h1 class="text-end px-2">4100 Baht</h1>
           </v-card>
           <v-card class="bg-red-lighten-5 pa-2 ma-3 rounded-lg" width="320">
             <h3>ยอดเงินออกรวม</h3>
-            <h1 class="text-end px-2">3,000 Baht</h1>
+            <h1 class="text-end px-2">2050 Baht</h1>
           </v-card>
         </div>
       </div>

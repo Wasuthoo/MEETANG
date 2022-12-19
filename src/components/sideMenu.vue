@@ -108,6 +108,7 @@ export default {
   width: 98px;
   margin-left: 8px;
   margin-right: 8px;
+  margin-top: 300px;
   border-radius: 10px;
   padding-top: 8px;
   padding-bottom: 8px;

@@ -52,7 +52,7 @@
                   <li class="my-1">Main goal</li>
                 </ul>
               </div>
-              <h2 class="text-green py-3">{{ totalGoal }}/0 Baht</h2>
+              <h2 class="text-green py-3">{{ this.totalGoal }}/ 1000 Baht</h2>
             </div>
           </v-card>
 
@@ -258,6 +258,13 @@ export default {
         return new Date(b.date) - new Date(a.date);
       });
     },
+    goals: function () {
+      return this.acc.cashbook.transactions.filter((transaction) => {
+        return transaction.type === "Save to Goal";
+      }).sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      });
+    },
     totalIncome: function () {
       let total = 0;
       this.incomes.forEach((incomes) => {
@@ -272,9 +279,16 @@ export default {
       });
       return total;
     },
+    totalGoal: function () {
+      let total = 0;
+      this.goals.forEach((goal) => {
+        total += parseInt(goal.amount);
+      });
+      return total;
+    },
     // totalGoal: function () {
     //   let total = 0;
-    //   this.transactions.forEach((transaction) => {
+    //   this.goal.forEach((goal) => {
     //     if (transaction.account === "Goal") {
     //       total += parseInt(transaction.amount);
     //     }

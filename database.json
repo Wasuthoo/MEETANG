@@ -1,16 +1,154 @@
 {
   "account": [
     {
-      "uid": "",
-      "Fname": "",
-      "Lname": "",
-      "email": "",
+      "uid": "rLC9PN5gTZbVe93TLs57qecNnaE3",
+      "Fname": "Wasuthorn",
+      "Lname": "Watcharakul",
+      "email": "63050185@gmail.com",
       "cashbook": {
         "cashbookId": 1,
-        "balance": 0,
-        "transactions": []
+        "balance": 2050,
+        "transactions": [
+          {
+            "id": 1,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 1500,
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 2,
+            "type": "Income",
+            "name": "กำไรจากการลงทุน",
+            "amount": 1000,
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 3,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 500,
+            "date": "2022-12-15T00:00:00.000Z"
+          },
+          {
+            "id": 4,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 200,
+            "date": "2022-12-16T00:00:00.000Z"
+          },
+          {
+            "id": 5,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 300,
+            "date": "2022-12-17T00:00:00.000Z"
+          },
+          {
+            "id": 6,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 400,
+            "date": "2022-12-18T00:00:00.000Z"
+          },
+          {
+            "id": 7,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 200,
+            "date": "2022-12-18T00:00:00.000Z"
+          },
+          {
+            "id": 8,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
+            "amount": 50,
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 9,
+            "type": "Save to Goal",
+            "name": "เก็บเข้า Goal",
+            "amount": 400,
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 10,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
+            "amount": 100,
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 11,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
+            "amount": 100,
+            "date": "2022-12-15T00:00:00.000Z"
+          },
+          {
+            "id": 12,
+            "type": "Expense",
+            "name": "เติมเกม",
+            "amount": 500,
+            "date": "2022-12-15T00:00:00.000Z"
+          },
+          {
+            "id": 13,
+            "type": "Expense",
+            "name": "ซื้อของใช้ส่วนตัว",
+            "amount": 300,
+            "date": "2022-12-16T00:00:00.000Z"
+          },
+          {
+            "id": 14,
+            "type": "Expense",
+            "name": "กินชาบู",
+            "amount": 300,
+            "date": "2022-12-16T00:00:00.000Z"
+          },
+          {
+            "id": 15,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
+            "amount": 100,
+            "date": "2022-12-17T00:00:00.000Z"
+          },
+          {
+            "id": 16,
+            "type": "Save to Goal",
+            "name": "เก็บเข้า Goal",
+            "amount": 200,
+            "date": "2022-12-18T00:00:00.000Z"
+          }
+        ]
       },
-      "goals": []
+      "goals": [
+        {
+          "id": 1,
+          "name": "Saving Goal 1",
+          "saving": 100,
+          "amount": 1000,
+          "date": "2023-01-01T00:00:00.000Z",
+          "description": "This is a description"
+        },
+        {
+          "id": 2,
+          "name": "Saving Goal 2",
+          "saving": 0,
+          "amount": 2000,
+          "date": "2023-02-01T00:00:00.000Z",
+          "description": "This is a description"
+        },
+        {
+          "id": 3,
+          "name": "Saving Goal 3",
+          "saving": 3000,
+          "amount": 3000,
+          "date": "2022-01-01T00:00:00.000Z",
+          "description": "This is a description"
+        }
+      ]
     },
     {
       "uid": "3eDF7XuCrxZUOlML0AxVYRGATx22",

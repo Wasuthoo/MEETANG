@@ -10,7 +10,12 @@
             <v-card-text>
                 <v-form ref="form" @submit.prevent="login">
                     <v-text-field label="Email" v-model="form.email" required />
-                    <v-text-field label="Password" v-model="form.password" required/>
+                    <v-text-field
+            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+
+            :type="show1 ? 'text' : 'password'"
+            @click:append="show1 = !show1"
+                    label="Password" v-model="form.password" required/>
                     <span>forget password</span>
                     <v-btn id="summit-btn" type="submit">LOGIN</v-btn>
                 </v-form>
@@ -62,6 +67,11 @@ export default {
         }
 
         return {
+            show1: false,
+        show2: true,
+        show3: false,
+        show4: false,
+        password: 'Password',
             // modelStore : store_account(),
             router: useRouter(),
             valid: true,
