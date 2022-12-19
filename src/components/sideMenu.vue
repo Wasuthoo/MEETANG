@@ -4,7 +4,7 @@
     <v-list-item class="pa-4 my-3 mx-4" nav prepend-avatar="../m.png"></v-list-item>
 
     <v-divider></v-divider>
-
+  
     <v-list density="compact" nav>
       <v-list-item value="cashbook" class="text-center my-5" to="/app/dashboard">
         <v-img src="/icon/Chart.png" height="20" class="mt-1">
@@ -29,7 +29,7 @@
     </v-list>
 
     <div class="text-center my-5">
-      <button id="logout-btn" @click="logout">
+      <button id="logout-btn" @click="logout" style="margin-top: 430px;">
         <v-icon X-large>
           mdi-logout
         </v-icon>
