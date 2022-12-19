@@ -41,7 +41,7 @@
                   <li class="my-1">Balance</li>
                 </ul>
               </div>
-              <h2 class="text-green py-3">{{ totalIncome - totalExpense }} Baht</h2>
+              <h2 class="text-green py-3">{{ this.acc.cashbook.balance }} Baht</h2>
             </div>
 
             <hr class="solid">
@@ -226,6 +226,11 @@ export default {
         date: this.form.date.toJSON(),
       };
       this.acc.cashbook.transactions.push(newtransaction);
+      if (this.form.type === 'Income') {
+        this.acc.cashbook.balance += parseInt(this.form.amount);
+      } else {
+        this.acc.cashbook.balance -= parseInt(this.form.amount);
+      }
 
       this.form = {
         type: 'Income',
@@ -242,11 +247,15 @@ export default {
     incomes: function () {
       return this.acc.cashbook.transactions.filter((transaction) => {
         return transaction.type === "Income";
+      }).sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
       });
     },
     expenses: function () {
       return this.acc.cashbook.transactions.filter((transaction) => {
         return transaction.type === "Expense" || transaction.type === "Save to Goal";
+      }).sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
       });
     },
     totalIncome: function () {

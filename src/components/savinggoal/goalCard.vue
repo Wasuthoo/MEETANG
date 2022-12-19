@@ -14,6 +14,7 @@ export default {
     methods: {
         onClickCard(goal) {
             this.selectedGoal = { ...goal }
+            this.selectedGoal.date = new Date(this.selectedGoal.date);
             this.showdialog = true;
         },
         onSaveGoal() {
@@ -38,12 +39,6 @@ export default {
             showdialog: false,
             editMode: false,
             selectedGoal: {},
-            form: {
-                name: "",
-                amount: "",
-                date: null,
-                description: "",
-            },
         };
     },
 };
@@ -71,23 +66,23 @@ export default {
                 <v-container>
                     <v-row>
                         <v-col cols="12">
-                            <v-text-field id="name" label="Name" required variant="outlined"
-                                v-model="form.name"></v-text-field>
+                            <v-text-field id="name" label="Name" required variant="outlined" :readonly="!editMode"
+                                v-model="selectedGoal.name"></v-text-field>
                         </v-col>
 
                         <v-col cols="12">
-                            <v-text-field id="amount" label="Amount" required variant="outlined"
-                                v-model="form.amount"></v-text-field>
+                            <v-text-field id="amount" label="Amount" required variant="outlined" :readonly="!editMode"
+                                v-model="selectedGoal.amount"></v-text-field>
                         </v-col>
 
                         <v-col cols="12">
                             <label for="date" class="label">Date end</label>
-                            <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined"
+                            <Datepicker class="text-field" label="Date" variant="outlined" v-model="selectedGoal.date"
                                 placeholder="YYYY-MM-DD" />
                         </v-col>
                         <v-col cols="12">
-                            <v-textarea clearable label="discription" variant="outlined"
-                                v-model="form.description"></v-textarea>
+                            <v-textarea label="discription" variant="outlined" :readonly="!editMode"
+                                v-model="selectedGoal.description"></v-textarea>
                         </v-col>
                     </v-row>
                 </v-container>

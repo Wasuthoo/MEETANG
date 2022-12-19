@@ -19,41 +19,118 @@
       "email": "admin@admin.com",
       "cashbook": {
         "cashbookId": 1,
-        "balance": 400,
+        "balance": 2050,
         "transactions": [
           {
             "id": 1,
             "type": "Income",
             "name": "ออมเงิน",
-            "amount": 2000,
-            "date": "2022-12-18T00:00:00.000Z"
+            "amount": 1500,
+            "date": "2022-12-14T00:00:00.000Z"
           },
           {
             "id": 2,
             "type": "Income",
-            "name": "ออมเงิน",
+            "name": "กำไรจากการลงทุน",
             "amount": 1000,
-            "date": "2022-12-18T00:00:00.000Z"
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 3,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 500,
+            "date": "2022-12-15T00:00:00.000Z"
+          },
+          {
+            "id": 4,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 200,
+            "date": "2022-12-16T00:00:00.000Z"
+          },
+          {
+            "id": 5,
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 300,
+            "date": "2022-12-17T00:00:00.000Z"
           },
           {
             "id": 6,
-            "type": "Expense",
-            "name": "ซื้อข้าว",
-            "amount": 100,
-            "date": "2022-12-17T00:00:00.000Z"
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 400,
+            "date": "2022-12-18T00:00:00.000Z"
           },
           {
             "id": 7,
-            "type": "Save to Goal",
-            "name": "หักเข้า Goal",
-            "amount": 500,
-            "date": "2022-12-17T00:00:00.000Z"
+            "type": "Income",
+            "name": "ออมเงิน",
+            "amount": 200,
+            "date": "2022-12-18T00:00:00.000Z"
           },
           {
             "id": 8,
             "type": "Expense",
             "name": "ซื้อข้าว",
+            "amount": 50,
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 9,
+            "type": "Save to Goal",
+            "name": "เก็บเข้า Goal",
+            "amount": 400,
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 10,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
             "amount": 100,
+            "date": "2022-12-14T00:00:00.000Z"
+          },
+          {
+            "id": 11,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
+            "amount": 100,
+            "date": "2022-12-15T00:00:00.000Z"
+          },
+          {
+            "id": 12,
+            "type": "Expense",
+            "name": "เติมเกม",
+            "amount": 500,
+            "date": "2022-12-15T00:00:00.000Z"
+          },
+          {
+            "id": 13,
+            "type": "Expense",
+            "name": "ซื้อของใช้ส่วนตัว",
+            "amount": 300,
+            "date": "2022-12-16T00:00:00.000Z"
+          },
+          {
+            "id": 14,
+            "type": "Expense",
+            "name": "กินชาบู",
+            "amount": 300,
+            "date": "2022-12-16T00:00:00.000Z"
+          },
+          {
+            "id": 15,
+            "type": "Expense",
+            "name": "ซื้อข้าว",
+            "amount": 100,
+            "date": "2022-12-17T00:00:00.000Z"
+          },
+          {
+            "id": 16,
+            "type": "Save to Goal",
+            "name": "เก็บเข้า Goal",
+            "amount": 200,
             "date": "2022-12-18T00:00:00.000Z"
           }
         ]
