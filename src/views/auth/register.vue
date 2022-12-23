@@ -9,7 +9,7 @@
       </v-card-title>
       <v-card-text>
         <v-form ref="form" v-model="valid" lazy-validation @submit.prevent="register">
-          <v-text-field label="Username" v-model="form.name" :rules="rules.name" :counter="25" required />
+          <!-- <v-text-field label="Username" v-model="form.name" :rules="rules.name" :counter="25" required /> -->
           <v-text-field label="Email" v-model="form.email" :rules="rules.email" required />
           <v-text-field label="Password" v-model="form.password" :rules="rules.password" required />
           <v-text-field label="Confirm Password" v-model="form.confirmPassword" :rules="rules.confirmPassword"

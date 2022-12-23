@@ -29,7 +29,7 @@
     </v-list>
 
     <div class="text-center my-5">
-      <button id="logout-btn" @click="logout" style="margin-top: 430px;">
+      <button id="logout-btn" @click="logout" style="margin-top: 100px;">
         <v-icon X-large>
           mdi-logout
         </v-icon>
@@ -108,7 +108,7 @@ export default {
   width: 98px;
   margin-left: 8px;
   margin-right: 8px;
-  margin-top: 300px;
+  margin-top: 20px;
   border-radius: 10px;
   padding-top: 8px;
   padding-bottom: 8px;
