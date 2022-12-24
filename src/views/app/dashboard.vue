@@ -15,13 +15,13 @@
 
     <v-row>
       <v-col>
-        <v-card class="pa-6 bg-green-lighten-4 rounded-lg">
+        <v-card class="pa-6 bg-green-lighten-3 rounded-lg">
           <h1 class="my-n2">ยอดเงินเข้ารวม</h1>
           <h1 class="text-end">4100</h1>
         </v-card>
       </v-col>
       <v-col>
-        <v-card class="pa-6 bg-red-lighten-4 rounded-lg">
+        <v-card class="pa-6 bg-red-lighten-3 rounded-lg">
           <h1 class="my-n2">ยอดเงินออกรวม</h1>
           <h1 class="text-end">2050</h1>
         </v-card>
