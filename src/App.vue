@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main>
+    <v-main class="bg-blue-lighten-5">
       <router-view/>
     </v-main>
   </v-app>

@@ -127,6 +127,7 @@
       "goals": [
         {
           "id": 1,
+          "image":0,
           "name": "Saving Goal 1",
           "saving": 100,
           "amount": 1000,
@@ -135,6 +136,7 @@
         },
         {
           "id": 2,
+          "image":2,
           "name": "Saving Goal 2",
           "saving": 0,
           "amount": 2000,
@@ -143,6 +145,7 @@
         },
         {
           "id": 3,
+          "image":1,
           "name": "Saving Goal 3",
           "saving": 3000,
           "amount": 3000,
@@ -278,6 +281,7 @@
       "goals": [
         {
           "id": 1,
+          "image":1,
           "name": "Saving Goal 1",
           "saving": 100,
           "amount": 1000,
@@ -286,6 +290,7 @@
         },
         {
           "id": 2,
+          "image":2,
           "name": "Saving Goal 2",
           "saving": 0,
           "amount": 2000,
@@ -294,6 +299,7 @@
         },
         {
           "id": 3,
+          "image":0,
           "name": "Saving Goal 3",
           "saving": 3000,
           "amount": 3000,
@@ -325,6 +331,7 @@
       "goals": [
         {
           "id": 1,
+          "image":0,
           "name": "Saving Goal 1",
           "saving": 100,
           "amount": 1000,
@@ -333,6 +340,7 @@
         },
         {
           "id": 2,
+          "image":0,
           "name": "Saving Goal 2",
           "saving": 0,
           "amount": 2000,
@@ -341,6 +349,7 @@
         },
         {
           "id": 3,
+          "image":0,
           "name": "Saving Goal 3",
           "saving": 3000,
           "amount": 3000,
