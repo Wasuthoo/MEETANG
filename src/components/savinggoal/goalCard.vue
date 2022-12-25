@@ -91,7 +91,7 @@ export default {
                         year: 'numeric', month: 'short', day: 'numeric'
                     })
                 }}
-                คงเหลืออีก {{ Math.floor((new Date(goal.date) - new Date()) / (1000 * 3600 * 24)) }} วัน.
+                คงเหลืออีก {{ Math.floor((new Date(goal.date) - new Date()) / (1000 * 3600 * 24)) + 1  }} วัน.
             </v-card-subtitle>
             <div style="display:flex; justify-content:space-between; padding:1rem; padding-bottom: 0;">
                 <span class="text-h6 "> ออมไปแล้ว

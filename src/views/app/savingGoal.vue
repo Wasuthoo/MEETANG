@@ -111,7 +111,7 @@ export default {
         selectedImage: 0,
         name: "",
         amount: "",
-        date: null,
+        date: new Date(),
         description: "",
       },
       addForm: false,
