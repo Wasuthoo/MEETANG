@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid class="bg-blue-lighten-5 pa-12" width="100%" height="100%">
-    <h1>Food near me </h1>
-    <hr class="solid">
+  <v-container fluid class="bg-blue-lighten-5 pa-12" width="100%">
+    <h1 class="pa-5">Food near me </h1>
+    <hr />
     <v-row col="6">
       <v-col>
         <h2 class="pa-6" style="color: dodgerblue;">
@@ -217,7 +217,6 @@
         </v-btn>
       </v-container>
     </div>
-
   </v-container>
 </template>
 
@@ -231,6 +230,11 @@ export default {
 }
 </script>
 
+<style>
+.bg {
+  background-color: #EEF7FF;
+}
+</style>
 
 <style>
 .ct {

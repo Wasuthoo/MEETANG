@@ -177,7 +177,7 @@
       </v-card-actions>
     </v-card>
   </v-dialog>
-  <h1>{{this.tran}}</h1>
+
 </template>
 
 <script>
@@ -191,8 +191,6 @@ export default {
   },
   data() {
     return {
-      modelStore: store_account(),
-      acc : [],
       addForm: false,
       transactionsType: ['Income', 'Expense', 'Save to Goal'],
       accountType: ['Wallet', 'Goal'],
@@ -202,23 +200,22 @@ export default {
         amount: 0,
         date: new Date(),
       },
-      
-      // total: ['totalIncome', 'totalExpense'],
-      transactions: [
-      ]
+
+      acc: {
+        "uid": "",
+        "Fname": "",
+        "Lname": "",
+        "email": "",
+        "cashbook": {
+          "cashbookId": 1,
+          "balance": 0,
+          "transactions": []
+        },
+        "goals": []
+      },
     };
   },
   methods: {
-    async QueryAcc() {
-      this.modelStore.getQueryAccount();
-      this.acc = this.getUser;
-      this.transactions = this.acc.cashbook.transactions;
-    },
-
-    onClickCard() {
-      console.log("card clicked");
-    },
-
     onSaveTransaction() {
 
       let newtransaction = {
@@ -247,9 +244,6 @@ export default {
 
   },
   computed: {
-    getUser() {
-      return this.modelStore.getUser;
-    },
     incomes: function () {
       return this.acc.cashbook.transactions.filter((transaction) => {
         return transaction.type === "Income";
@@ -319,55 +313,11 @@ export default {
       });
       return total;
     },
-    // expenses: function () {
-    //   return this.transactions.filter((transaction) => {
-    //     return transaction.type === "Expense" || transaction.type === "Save to Goal";
-    //   });
-    // },
-    // totalIncome: function () {
-    //   let total = 0;
-    //   this.incomes.forEach((incomes) => {
-    //     total += parseInt(incomes.amount);
-    //   });
-    //   return total;
-    // },
-    // totalExpense: function () {
-    //   let total = 0;
-    //   this.expenses.forEach((expense) => {
-    //     total += parseInt(expense.amount);
-    //   });
-    //   return total;
-    // },
-    // totalGoal: function () {
-    //   let total = 0;
-    //   this.transactions.forEach((transaction) => {
-    //     if (transaction.account === "Goal") {
-    //       total += parseInt(transaction.amount);
-    //     }
-    //   });
-    //   return total;
-    // },
-    // todayIncome: function () {
-    //   let total = 0;
-    //   this.incomes.forEach((incomes) => {
-    //     if (incomes.date.toDateString() === new Date().toDateString()) {
-    //       total += parseInt(incomes.amount);
-    //     }
-    //   });
-    //   return total;
-    // },
-    // todayExpense: function () {
-    //   let total = 0;
-    //   this.expenses.forEach((expense) => {
-    //     if (expense.date.toDateString() === new Date().toDateString()) {
-    //       total += parseInt(expense.amount);
-    //     }
-    //   });
-    //   return total;
-    // },
   },
   mounted() {
-    this.QueryAcc();
+    const modelStore = store_account();
+    this.acc = modelStore.getUser;
+    console.log(this.acc);
   },
 
 };
