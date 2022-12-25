@@ -148,7 +148,7 @@ export default {
                   
                   <v-col cols="12 py-0">
                       <label for="date" class="label">Date end</label>
-                      <Datepicker v-model="selectedGoal.date" class="text-field" label="Date" variant="outlined" :disabled="!editMode" 
+                      <Datepicker v-model="selectedGoal.date" class="text-field" label="Date" variant="outlined" :disabled="!editMode" :lower-limit="new Date()"
                       :style="[editMode? {'color':'black'}: {'color':'#888888', 'border-color':'#dddddd'}]"
                       placeholder="YYYY-MM-DD" />
                     </v-col>

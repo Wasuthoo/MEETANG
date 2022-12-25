@@ -4,31 +4,46 @@
     <hr class="solid">
     <v-container fluid class="my-6">
       <v-card class="pa-3 px-5 rounded-lg">
-        <div class="d-flex d-flex justify-space-between">
-          <div class="mx-2">
-          <h2>บัญชีรายรับรายจ่าย</h2>
-          <p class="text-grays">วันนี้</p>
+        <div class="d-flex justify-space-between">
+          <div class="mx-2 d-flex align-center">
+            <h2 class="mr-2">บัญชีรายรับรายจ่าย</h2>
+            <v-select v-model="selectedItem" :items="['ทั้งหมด', 'วันนี้', 'กำหนดเอง']" variant="underlined" required
+              @update:modelValue="changeDateFilter"></v-select>
           </div>
           <div class="d-flex align-center ">
-            <p class="mx-2 text-green">รายรับทั้งหมด : 5000</p>
-            <p class="mx-2 text-red">รายจ่ายทั้งหมด : 2500</p>
-            <p class="mx-2">คงเหลือ : 2500</p>
+            <v-btn class="px-0" style="font-size:1rem" @click="onIncomeChange" variant="flat"
+              v-bind:color="filter.expense ? 'white' : 'green'">
+              <p class="mx-2" v-bind:style="[filter.expense ? { 'color': 'green' } : { 'color': 'white' }]">
+                รายรับทั้งหมด :
+                {{ numberWithCommas(totalIncome) }}</p>
+            </v-btn>
+            <v-btn class="px-0" @click="onExpenseChange" variant="flat" v-bind:color="filter.income ? 'white' : 'red'">
+              <p class="mx-2" style="font-size:1rem"
+                v-bind:style="[filter.income ? { 'color': 'red' } : { 'color': 'white' }]">
+                รายจ่ายทั้งหมด : {{ numberWithCommas(totalExpense) }}</p>
+            </v-btn>
+            <p class="mx-2" style="font-size:1rem">คงเหลือ : {{ numberWithCommas(balance) }}</p>
             <v-icon class="ml-2">mdi-magnify</v-icon>
           </div>
         </div>
-        
+        <Datepicker v-model="filter.startDate" :upper-limit="filter.endDate" class="text-field" label="Start Date"
+          variant="outlined" placeholder="YYYY-MM-DD" v-if="customDate" />
+        <Datepicker v-model="filter.endDate" :lower-limit="filter.startDate" class="text-field" label="End Date"
+          variant="outlined" placeholder="YYYY-MM-DD" v-if="customDate" />
+
         <hr class="solid">
         <div class="parent">
-          <v-card class="my-3 d-flex " flat v-for="item in acc.cashbook.transactions" :key="item.id">
-            <img class="ma-2 mx-3" src="/imageCash/incomeRise.png" height="50" />
+          <v-card class="my-3 d-flex " flat v-for="item in displayTransaction" :key="item.id">
+            <img v-if="item.type === 'Income'" class="ma-2 mx-3" src="/imageCash/incomeRise.png" height="50" />
+            <img v-else class="ma-2 mx-3" src="/imageCash/expenseFall.png" height="50" />
             <div class="pa-2 mr-auto">
               <h3>{{ item.name }}</h3>
               <a> {{ item.type }}</a>
             </div>
             <div class="align-center d-flex">
-              <div class="px-2">
-                <a>{{ item.amount }}</a><br />
-                <a>{{ new Date(item.date).toLocaleDateString() }}</a>
+              <div class="px-2 " style="text-align: right;">
+                <span>{{ numberWithCommas(item.amount) }} บาท</span><br />
+                <span>{{ new Date(item.date).toLocaleDateString() }}</span>
               </div>
               <v-img v-if="item.type === 'Income'" src="../../../public/imageDash/greenReg.png" height="65"
                 width="10" />
@@ -41,7 +56,7 @@
     </v-container>
   </v-container>
 
-  <v-btn @click="addForm = !addForm" style="position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="primary"
+  <v-btn @click="addForm = !addForm" style="color: white;position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="#4181fd"
     size="large">
   </v-btn>
 
@@ -59,8 +74,10 @@
               <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined"
                 placeholder="YYYY-MM-DD" />
             </v-col>
-            <v-col class="d-flex" cols="12 py-0">
+            <v-col class="" cols="12 py-0">
               <v-select :items="transactionsType" v-model="form.type" label="Type" variant="outlined"
+                required></v-select>
+              <v-select  v-if="form.type === 'Save to Goal'" label="Select your goal" variant="outlined" :items="getGoal" item-title="name" item-value="id" v-model="form.goalId"
                 required></v-select>
             </v-col>
             <v-col cols="12 py-0">
@@ -93,6 +110,9 @@ export default {
   components: {
     Datepicker
   },
+  setup() {
+    return { selectedItem: "ทุกวัน" };
+  },
   data() {
     return {
       addForm: false,
@@ -100,10 +120,19 @@ export default {
       accountType: ['Wallet', 'Goal'],
       form: {
         type: 'Income',
+        goalId: '',
         title: '',
         amount: 0,
         date: new Date(),
       },
+
+      filter: {
+        startDate: new Date(0),
+        endDate: new Date(),
+        income: true,
+        expense: true,
+      },
+      customDate: false,
 
       acc: {
         "uid": "",
@@ -119,103 +148,158 @@ export default {
     };
   },
   methods: {
+    onIncomeChange() {
+      this.filter.income = true;
+      this.filter.expense = !this.filter.expense;
+    },
+    onExpenseChange() {
+      this.filter.expense = true;
+      this.filter.income = !this.filter.income;
+    },
+    changeDateFilter(a) {
+      switch (a) {
+        case 'วันนี้':
+          this.customDate = false;
+          this.filter = {
+            startDate: new Date(),
+            endDate: new Date(),
+            income: true,
+            expense: true,
+          }
+          break;
+        case 'กำหนดเอง':
+          let now = new Date();
+          this.filter = {
+            startDate: new Date(now.getFullYear(), now.getMonth(), 1),
+            endDate: new Date(),
+            income: true,
+            expense: true,
+          }
+          this.customDate = true;
+          break;
+
+        default:
+          this.customDate = false;
+          this.filter = {
+            startDate: new Date(0),
+            endDate: new Date(),
+            income: true,
+            expense: true,
+          }
+          break;
+      }
+    },
     onSaveTransaction() {
+      let amount = Number(this.form.amount);
+      if(amount === 0) return;
+
+      if(this.form.type === 'Save to Goal'){
+        let goal = this.acc.goals.find(goal => goal.id === this.form.goalId);
+        goal.saving += amount;
+        if(amount < 0) alert('You stole money from your goal!');
+      }
+
+      if(amount < 0){
+        amount = -amount;
+        if(this.form.type === 'Income'){
+          this.form.type = 'Expense';
+        }else{
+          this.form.type = 'Income';
+        }
+      }
 
       let newtransaction = {
         id: Date.now(),
         type: this.form.type,
         name: this.form.title,
-        amount: this.form.amount,
+        amount: amount,
         date: this.form.date.toJSON(),
       };
       this.acc.cashbook.transactions.push(newtransaction);
       if (this.form.type === 'Income') {
-        this.acc.cashbook.balance += parseInt(this.form.amount);
+        this.acc.cashbook.balance += amount;
       } else {
-        this.acc.cashbook.balance -= parseInt(this.form.amount);
+        this.acc.cashbook.balance -= amount;
       }
 
       this.form = {
         type: 'Income',
+        goalId: '',
         title: '',
         amount: 0,
         date: new Date(),
       }
 
       this.addForm = false;
-    }
-
+    },
+    numberWithCommas(x) {
+      // phase x to number
+      x = Number(x);
+      if (x % 1 === 0)
+        return x.toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        })
+      else
+        return x.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        })
+    },
   },
   computed: {
-    incomes: function () {
-      return this.acc.cashbook.transactions.filter((transaction) => {
-        return transaction.type === "Income";
-      }).sort((a, b) => {
-        return new Date(b.date) - new Date(a.date);
-      });
+    getGoal() {
+      return this.acc.goals
+      .filter(goal => goal.amount > goal.saving)
+      .map(goal => { 
+        return {
+          name: goal.name,
+          id: goal.id,
+        }
+       });
     },
-    expenses: function () {
+    getTransactions: function () {
+      this.filter.startDate.setHours(0, 0, 0, 0);
+      this.filter.endDate.setHours(0, 0, 0, 0);
       return this.acc.cashbook.transactions.filter((transaction) => {
-        return transaction.type === "Expense" || transaction.type === "Save to Goal";
-      }).sort((a, b) => {
-        return new Date(b.date) - new Date(a.date);
-      });
+        let date = new Date(transaction.date);
+        date.setHours(0, 0, 0, 0);
+        return date >= this.filter.startDate && date <= this.filter.endDate;
+      })
     },
-    goals: function () {
-      return this.acc.cashbook.transactions.filter((transaction) => {
-        return transaction.type === "Save to Goal";
+    displayTransaction: function () {
+      let transactions = this.getTransactions;
+      return transactions.filter((transaction) => {
+        if (this.filter.income && this.filter.expense) return true;
+        else if (this.filter.income) return transaction.type === "Income";
+        else if (this.filter.expense) return transaction.type === "Expense" || transaction.type === "Save to Goal";
+        else return false;
       }).sort((a, b) => {
         return new Date(b.date) - new Date(a.date);
       });
     },
     totalIncome: function () {
       let total = 0;
-      this.incomes.forEach((incomes) => {
-        total += parseInt(incomes.amount);
+      this.getTransactions.forEach((transaction) => {
+        if (transaction.type === "Income") {
+          total += Number(transaction.amount);
+        }
       });
       return total;
     },
     totalExpense: function () {
       let total = 0;
-      this.expenses.forEach((expense) => {
-        total += parseInt(expense.amount);
-      });
-      return total;
-    },
-    totalGoal: function () {
-      let total = 0;
-      this.goals.forEach((goal) => {
-        total += parseInt(goal.amount);
-      });
-      return total;
-    },
-    // totalGoal: function () {
-    //   let total = 0;
-    //   this.goal.forEach((goal) => {
-    //     if (transaction.account === "Goal") {
-    //       total += parseInt(transaction.amount);
-    //     }
-    //   });
-    //   return total;
-    // },
-    todayIncome: function () {
-      let total = 0;
-      this.incomes.forEach((incomes) => {
-        if (new Date(incomes.date).toDateString() === new Date().toDateString()) {
-          total += parseInt(incomes.amount);
+      this.getTransactions.forEach((transaction) => {
+        if (transaction.type === "Expense") {
+          total += Number(transaction.amount);
         }
       });
       return total;
     },
-    todayExpense: function () {
-      let total = 0;
-      this.expenses.forEach((expense) => {
-        if (new Date(expense.date).toDateString() === new Date().toDateString()) {
-          total += parseInt(expense.amount);
-        }
-      });
-      return total;
-    },
+    balance: function () {
+      return this.totalIncome - this.totalExpense;
+    }
+
   },
   mounted() {
     const modelStore = store_account();
@@ -234,7 +318,7 @@ export default {
 
 <style>
 .parent {
-  max-height: 400px;
+  height: 55vh;
   overflow-y: auto;
 }
 

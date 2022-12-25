@@ -60,7 +60,7 @@
 
               <v-col cols="12 py-0">
                 <label for="date" class="label">Date end</label>
-                <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined"
+                <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined" :lower-limit="new Date()"
                   placeholder="YYYY-MM-DD" />
               </v-col>
               <v-col cols="12 ">
@@ -135,6 +135,16 @@ export default {
       };
     },
     onSaveGoal() {
+      if (Number(this.form.amount) <= 0) {
+        this.addForm = false;
+        return;
+      }
+      if (this.form.name == "") {
+        alert("Please enter a name for your goal");
+        this.addForm = false;
+        return;
+      }
+
       console.log(this.form);
       let newGoal = {
         id: new Date().getTime(),
