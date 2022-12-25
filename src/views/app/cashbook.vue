@@ -3,30 +3,32 @@
     <h1>CashBook</h1>
     <hr class="solid">
     <v-container fluid class="my-6">
-          <v-card class="pa-2 px-5 rounded-lg">
-            <div>
-              <h2>บัญชี รายรับ รายจ่าย</h2>
-              <h3>เก่ากว่า 09/11/22</h3>
+      <v-card class="pa-2 px-5 rounded-lg">
+        <div>
+          <h2>บัญชี รายรับ รายจ่าย</h2>
+          <h3>เก่ากว่า 09/11/22</h3>
+        </div>
+        <hr class="solid">
+        <div class="parent">
+          <v-card class="my-3 d-flex " flat v-for="item in acc.cashbook.transactions" :key="item.id">
+            <img class="ma-2 mx-3" src="/imageCash/incomeRise.png" height="50" />
+            <div class="pa-2 mr-auto">
+              <h3>{{ item.name }}</h3>
+              <a> {{ item.type }}</a>
+            </div>
+            <div class="align-center d-flex">
+              <div class="px-2">
+                <a>{{ item.amount }}</a><br />
+                <a>{{ new Date(item.date).toLocaleDateString() }}</a>
+              </div>
+              <v-img v-if="item.type === 'Income'" src="../../../public/imageDash/greenReg.png" height="65"
+                width="10" />
+              <v-img v-else src="../../../public/imageDash/redReg.png" height="65" width="10" />
 
             </div>
-            <hr class="solid">
-            <div class="parent">
-              <v-card class="my-3 d-flex " flat v-for="item in incomes" :key="item.id">
-                <img class="ma-2 mx-3" src="/imageCash/incomeRise.png" height="50" />
-                <div class="pa-2 mr-auto">
-                  <h3>{{ item.name }}</h3>
-                  <a> {{ item.type }}</a>
-                </div>
-                <div class="align-center d-flex">
-                  <div class="px-2">
-                    <a>{{ item.amount }}</a><br />
-                    <a>{{ new Date(item.date).toLocaleDateString() }}</a>
-                  </div>
-                  <v-img src="../../../public/imageDash/greenReg.png" height="65" width="10" />
-                </div>
-              </v-card>
-            </div>
           </v-card>
+        </div>
+      </v-card>
     </v-container>
   </v-container>
 
@@ -224,7 +226,7 @@ export default {
 
 <style>
 .parent {
-  max-height: 320px;
+  max-height: 400px;
   overflow-y: auto;
 }
 
