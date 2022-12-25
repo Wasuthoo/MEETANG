@@ -177,3 +177,10 @@ export default {
 
 </template>
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&display=swap');
+*{
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+</style>
+

@@ -29,11 +29,10 @@ export default {
 
 <style>
 
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&display=swap');
 *{
-  font-family: 'Poppins';
   font-family: 'Noto Sans Thai', sans-serif;
 }
 

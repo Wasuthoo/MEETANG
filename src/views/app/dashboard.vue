@@ -1,5 +1,6 @@
 <template>
   <v-container fluid class="bg-blue-lighten-5 pa-12" width="100%">
+
     <h1>Dashboard</h1>
     <hr class="solid">
 
@@ -15,15 +16,15 @@
 
     <v-row>
       <v-col>
-        <v-card class="pa-4 bg-green-lighten-3 rounded-lg">
-          <h2 class="my-n2">ยอดเงินเข้ารวม</h2>
-          <h2 class="text-end">4100 บาท</h2>
+        <v-card class="pa-4  rounded-lg" style="background-color: #58B99C;">
+          <h2 class="mb-n4">ยอดเงินเข้ารวม</h2>
+          <h1 class="text-end font-weight-bold">4100 บาท</h1>
         </v-card>
       </v-col>
       <v-col>
-        <v-card class="pa-4 bg-red-lighten-3 rounded-lg">
-          <h2 class="my-n2">ยอดเงินออกรวม</h2>
-          <h2 class="text-end">2050  บาท</h2>
+        <v-card class="pa-4  rounded-lg" style="background-color: #B95858;">
+          <h2 class="mb-n4">ยอดเงินออกรวม</h2>
+          <h1 class="text-end">2050  บาท</h1>
         </v-card>
       </v-col>
     </v-row>
@@ -49,22 +50,23 @@
         </v-card>
         <v-row>
       <v-col>
-        <v-card class="pa-4 bg-green-lighten-3 rounded-lg">
+        <v-card class="pa-4 my-2 rounded-lg" style="background-color: #58B99C;">
           <h2 class="my-n2">ยอดเงินเข้ารวม</h2>
           <h2 class="text-end">28000 บาท</h2>
         </v-card>
       </v-col>
       <v-col>
-        <v-card class="pa-4 bg-red-lighten-3 rounded-lg">
+        <v-card class="pa-4 my-2 rounded-lg" style="background-color: #B95858;">
           <h2 class="my-n2">ยอดเงินออกรวม</h2>
           <h2 class="text-end">23000  บาท</h2>
         </v-card>
       </v-col>
     </v-row>
-        <v-card>
+     <div>
+        
           <v-img class="d-flex justify-center mx-auto" src="../../../public/imageDash/MgMay.png" height="550" width="800" />
 
-        </v-card>
+     </div>
       </v-container >
     </v-card>
   </v-container>
@@ -111,6 +113,7 @@ export default {
   mounted() {
     this.getAccount();
     console.log(this.acc);
+    this.show = true
   },
 
   computed: {

@@ -3,11 +3,20 @@
     <h1>CashBook</h1>
     <hr class="solid">
     <v-container fluid class="my-6">
-      <v-card class="pa-2 px-5 rounded-lg">
-        <div>
-          <h2>บัญชี รายรับ รายจ่าย</h2>
-          <h3>เก่ากว่า 09/11/22</h3>
+      <v-card class="pa-3 px-5 rounded-lg">
+        <div class="d-flex d-flex justify-space-between">
+          <div class="mx-2">
+          <h2>บัญชีรายรับรายจ่าย</h2>
+          <p class="text-grays">วันนี้</p>
+          </div>
+          <div class="d-flex align-center ">
+            <p class="mx-2 text-green">รายรับทั้งหมด : 5000</p>
+            <p class="mx-2 text-red">รายจ่ายทั้งหมด : 2500</p>
+            <p class="mx-2">คงเหลือ : 2500</p>
+            <v-icon class="ml-2">mdi-magnify</v-icon>
+          </div>
         </div>
+        
         <hr class="solid">
         <div class="parent">
           <v-card class="my-3 d-flex " flat v-for="item in acc.cashbook.transactions" :key="item.id">
