@@ -85,16 +85,16 @@ export default {
                 :aspect-ratio="1 / 1" :width="150"></v-img>
         </div>
         <div style="width:100%">
-            <v-card-title class="text-h4">{{ goal.name }}</v-card-title>
-            <v-card-subtitle class="text-h6" style="padding-top:1rem">
+            <v-card-title style="font-size: 2em;">{{ goal.name }}</v-card-title>
+            <v-card-subtitle  class="" style="font-size: 1.2em; padding-top:1rem;">
                 สิ้นสุด {{ new Date(goal.date).toLocaleString('th-TH', {
                         year: 'numeric', month: 'short', day: 'numeric'
                     })
                 }}
                 คงเหลืออีก {{ Math.floor((new Date(goal.date) - new Date()) / (1000 * 3600 * 24)) + 1  }} วัน.
             </v-card-subtitle>
-            <div style="display:flex; justify-content:space-between; padding:1rem; padding-bottom: 0;">
-                <span class="text-h6 "> ออมไปแล้ว
+            <div style="display:flex; justify-content:space-between; padding:1rem; padding-bottom: 0; font-size: 1.2em;">
+                <span class=""> ออมไปแล้ว
                     <span
                         :style="[goal.amount - goal.saving > 0 ? { 'color': 'blue', 'font-weight': 'bold' } : { 'color': 'black', 'font-weight': 'normal' }]">{{
                                 numberWithCommas(goal.saving)
@@ -104,7 +104,7 @@ export default {
                                 numberWithCommas(goal.amount)
                         }}</span> บาท
                 </span>
-                <span class="text-h6 " v-if="goal.amount - goal.saving > 0"> ต้องเก็บอีก
+                <span class=" " v-if="goal.amount - goal.saving > 0"> ต้องเก็บอีก
                     <span style="color:blue; font-weight: bold;">{{ numberWithCommas(goal.amount - goal.saving) }}
                     </span> บาท
                 </span>
