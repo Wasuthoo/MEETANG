@@ -38,9 +38,6 @@
     </div>
 
   </v-navigation-drawer>
-  <!-- <v-main></v-main> -->
-  <!-- </v-layout> -->
-  <!-- </v-card> -->
 </template>
 
 <script>
@@ -52,7 +49,7 @@ export default {
   name: "sideMenu",
   data() {
     return {
-      modelStore: store_account(),
+      
     }
   },
   setup() {
@@ -78,8 +75,6 @@ export default {
           // An error happened.
           console.log("An error happened.");
         });
-        console.log("Log out user is : "+ this.modelStore.user);
-        this.modelStore.clearAcc();
 
     },
   },
@@ -93,7 +88,7 @@ export default {
       } else {
         // User is signed out
         // ...
-        this.router.push("/login");
+        this.router.push("/");
       }
     });
   },

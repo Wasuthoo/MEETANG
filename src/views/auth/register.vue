@@ -23,7 +23,7 @@
         </span>
       </div>
       <div id="another-logins">
-        <v-btn class="another-login" variant="outlined" @click="googleLogin">
+        <v-btn class="another-login" variant="outlined" @click="googleSignup">
           <svg style="width:20px; height:20px;" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
             <defs>
@@ -49,7 +49,7 @@
 <script>
 import { ref } from "vue";
 // import form firebase
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { useRouter } from 'vue-router';
 import { store_account } from '/src/stores/store';
@@ -96,27 +96,37 @@ export default {
       if (!this.valid) {
         return
       } else {
-        this.router.push('/login');
-        // createUserWithEmailAndPassword(getAuth(), this.form.email, this.form.password)
-        //   .then((userCredential) => {
-        //     // Signed in
-        //     const user = userCredential.user;
-        //     console.log(user);
-        //     // print uid
-        //     console.log(user.uid);
-        //     this.router.push('/app/dashboard');
-        //   })
-        //   .catch((error) => {
-        //     console.log(error);
-        //     const errorCode = error.code;
-        //     const errorMessage = error.message;
+        createUserWithEmailAndPassword(getAuth(), this.form.email, this.form.password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            const userdata = {
+              uid: user.uid,
+              displayName: this.form.name,
+              email: this.form.email,
+              cashbook:{
+                cashbook_id: Math.floor(Math.random() * 1000000000)+new Date().getTime(),
+                balance: 0,
+                transactions: [],
+              },
+              goals: [],
+            }
+            console.log(userdata);
+            store_account().addUser(userdata);
+            this.router.push('/login');
 
-        //     alert(errorMessage);
-        //   });
+          })
+          .catch((error) => {
+            console.log(error);
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            alert(errorMessage);
+          });
       }
 
     },
-    googleLogin() {
+    googleSignup() {
       const provider = new GoogleAuthProvider();
       signInWithPopup(getAuth(), provider)
         .then((result) => {
@@ -125,7 +135,9 @@ export default {
           const token = credential.accessToken;
           // The signed-in user info.
           const user = result.user;
-          this.router.push('/app/dashboard');
+          // this.router.push('/login');
+          store_account().googleLogin(user)
+          this.router.push('/login');
         }).catch((error) => {
           // Handle Errors here.
           const errorCode = error.code;
@@ -137,7 +149,21 @@ export default {
           alert(errorMessage);
         });
     },
-  }
+  },
+  mounted() {
+        onAuthStateChanged(getAuth(), (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                store_account().setUser(user.uid);
+                this.router.push("/app/dashboard");
+                // ...
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
+    }
 };
 
 </script>

@@ -8,7 +8,7 @@
       <img class="ma-1" src="/icon/user1.png" alt="user 1" height="120" width="120" />
       <div class="ma-1 px-5">
         <h1 class="text-center">สรุปรายการความเคลื่อนไหวบัญชีประจำปี</h1>
-        <h2 class="text-center text-white">{{ fullname }}</h2>
+        <h2 class="text-center text-white">{{ this.acc.displayName }}</h2>
         <h2 class="text-center text-white">{{ this.acc.email }}</h2>
       </div>
     </v-card>
@@ -201,8 +201,7 @@ export default {
       modelStore: store_account(),
       acc: {
         "uid": "",
-        "Fname": "",
-        "Lname": "",
+        "displayName": "",
         "email": "",
         "cashbook": {
           "cashbookId": 1,
@@ -228,12 +227,6 @@ export default {
   mounted() {
     this.getAccount();
     console.log(this.acc);
-  },
-
-  computed: {
-    fullname() {
-      return this.acc.Fname + " " + this.acc.Lname;
-    },
   },
   // "Constructur method" for Vue
 };

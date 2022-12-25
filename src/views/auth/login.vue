@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid style="height:100%;" class="bg-blue-lighten-5">
-    <img style="position:fixed;top:-300px; left:-470px; height:2500PX; z-index:1;"
-      src="..//..//assets//bgLoginSignup.svg">
+    <v-container fluid style="height:100%;" class="bg-blue-lighten-5">
+        <img style="position:fixed;top:-300px; left:-470px; height:2500PX; z-index:1;"
+            src="..//..//assets//bgLoginSignup.svg">
 
         <v-card id="register-form" style="z-index: 2;">
             <v-card-title class="pa-5">
@@ -10,12 +10,8 @@
             <v-card-text>
                 <v-form ref="form" @submit.prevent="login">
                     <v-text-field label="Email" v-model="form.email" required />
-                    <v-text-field
-            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-
-            :type="show1 ? 'text' : 'password'"
-            @click:append="show1 = !show1"
-                    label="Password" v-model="form.password" required/>
+                    <v-text-field :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" :type="show1 ? 'text' : 'password'"
+                        @click:append="show1 = !show1" label="Password" v-model="form.password" required />
                     <span>forget password</span>
                     <v-btn id="summit-btn" type="submit">LOGIN</v-btn>
                 </v-form>
@@ -52,9 +48,10 @@
 <script>
 import { ref } from "vue";
 // import form firebase
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, } from "firebase/auth";
 import { useRouter } from 'vue-router';
+import { store_account } from '/src/stores/store';
 // import { store_account } from '/src/stores/store';
 
 export default {
@@ -68,10 +65,10 @@ export default {
 
         return {
             show1: false,
-        show2: true,
-        show3: false,
-        show4: false,
-        password: 'Password',
+            show2: true,
+            show3: false,
+            show4: false,
+            password: 'Password',
             // modelStore : store_account(),
             router: useRouter(),
             valid: true,
@@ -87,12 +84,13 @@ export default {
                     console.log(user);
                     // this.modelStore.uid = user.uid;
                     // this.modelStore.setAcc();
+                    store_account().setUser(user.uid);
                     this.router.push('/app/dashboard');
                 })
                 .catch((error) => {
                     alert("Email or password is incorrect");
                 });
-               
+
         },
         googleLogin() {
             const provider = new GoogleAuthProvider();
@@ -103,7 +101,9 @@ export default {
                     const token = credential.accessToken;
                     // The signed-in user info.
                     const user = result.user;
-                    this.router.push('/app/dashboard');
+                    // this.router.push('/login');
+                    store_account().googleLogin(user)
+                    this.router.push('/login');
                 }).catch((error) => {
                     // Handle Errors here.
                     const errorCode = error.code;
@@ -115,42 +115,55 @@ export default {
                     alert(errorMessage);
                 });
         },
-
     },
+    mounted() {
+        onAuthStateChanged(getAuth(), (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                store_account().setUser(user.uid);
+                this.router.push("/app/dashboard");
+                // ...
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
+    }
 };
 
 </script>
 
 <style>
 #register-form {
-  max-width: 600px;
-  margin: 0 auto;
-  margin-top: 100px;
-  left: 0;
-  right: 0;
-  padding: 5px 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+    left: 0;
+    right: 0;
+    padding: 5px 50px;
 }
 
 #summit-btn {
-  margin: 20px auto;
-  left: 0;
-  right: 0;
-  width: 40%;
-  display: block;
-  background-color: #77ADFF;
-  color: white;
+    margin: 20px auto;
+    left: 0;
+    right: 0;
+    width: 40%;
+    display: block;
+    background-color: #77ADFF;
+    color: white;
 }
 
 #another-logins {
-  display: flex;
+    display: flex;
 }
 
 .another-login {
-  margin: 20px auto;
-  padding: 10px auto;
-  display: block;
-  background-color: #77ADFF;
-  color: white;
-  width: 80%;
+    margin: 20px auto;
+    padding: 10px auto;
+    display: block;
+    background-color: #77ADFF;
+    color: white;
+    width: 80%;
 }
 </style>

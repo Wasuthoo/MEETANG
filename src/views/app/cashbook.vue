@@ -96,8 +96,7 @@ export default {
 
       acc: {
         "uid": "",
-        "Fname": "",
-        "Lname": "",
+        "displayName": "",
         "email": "",
         "cashbook": {
           "cashbookId": 1,
