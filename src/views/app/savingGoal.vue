@@ -18,7 +18,7 @@
 
 
     <!-- add a circle button to bottom right-->
-    <v-btn @click="addForm = !addForm" style="position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="primary"
+    <v-btn @click="addForm = !addForm" style="color: white; position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="#4181fd"
       size="large">
     </v-btn>
 
@@ -137,11 +137,13 @@ export default {
     onSaveGoal() {
       if (Number(this.form.amount) <= 0) {
         this.addForm = false;
+        this.resetForm();
         return;
       }
       if (this.form.name == "") {
         alert("Please enter a name for your goal");
         this.addForm = false;
+        this.resetForm();
         return;
       }
 
