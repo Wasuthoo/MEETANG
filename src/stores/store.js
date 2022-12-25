@@ -18,8 +18,8 @@ export const store_account = defineStore({
 
   // Declare Getter method
   getters: {
-    getUser(){
-      return this.user;
+    getUser: (state) => {
+      return state.user;
     },
     getTransaction: (state) => {
       return state.user.cashbook.transactions;
@@ -32,10 +32,10 @@ export const store_account = defineStore({
     //   this.account[this.index] = this.user;
     //   this.UpdateDB(this.account);
     // },
-    clearAcc(){
-      this.user = "";
-      this.uid = "";
-    },
+    // clearAcc(){
+    //   this.user = "";
+    //   this.uid = "";
+    // },
 
     // setAcc(){
     //   for (let i = 0; i < this.account.length; i++) {
@@ -59,7 +59,7 @@ export const store_account = defineStore({
     //   this.setAcc();
     // },
 
-    async setUser(uid) {
+    setUser(uid) {
       if (this.account.length == 0) {
         console.log("Account is empty");
         return 0;

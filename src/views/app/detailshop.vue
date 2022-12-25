@@ -1,9 +1,9 @@
 <template>
   <v-container fluid class="bg-blue-lighten-5 pa-12" width="100%" height="100%">
     <h1 class="d-flex justify-start ml-4">มาดามตามสั่ง - วัดปากลมบน</h1>
-
-    <div class="d-flex justify-start ml-4" max-width="3000000">
-      <v-icon color="yellow darken-2">mdi-star</v-icon> 4.9
+    <div class="d-flex justify-start ml-4 bg" max-width="3000000">
+      <v-icon color="yellow darken-2">mdi-star</v-icon>
+      4.9
       <v-icon>mdi-walk</v-icon>
       0.3 km เวลาเปิดให้บริการ 14.00 น. - 18.00 น.
     </div>
@@ -20,8 +20,6 @@
       </v-icon>
       09 7676 6565
     </v-card-subtitle>
-
-
 
     <v-tabs fixed-tabs bg-color="indigo-darken-5" class="mb-5">
       <v-tab>
@@ -89,7 +87,6 @@
             </div>
           </v-card-item>
         </v-card>
-
       </v-col>
 
       <v-col>
@@ -105,7 +102,6 @@
             </div>
           </v-card-item>
         </v-card>
-
       </v-col>
     </v-row>
 
@@ -139,7 +135,6 @@
             </div>
           </v-card-item>
         </v-card>
-
       </v-col>
 
       <v-col>
@@ -156,7 +151,6 @@
             </div>
           </v-card-item>
         </v-card>
-
       </v-col>
     </v-row>
 
@@ -189,6 +183,7 @@
         </div>
       </v-card-item>
     </v-card>
+
   </v-container>
 </template>
 
