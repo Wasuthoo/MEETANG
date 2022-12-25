@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="bg-red-lighten-5 pa-12" width="100%" height="100%">
+  <v-container fluid class="bg-blue-lighten-5 pa-12" width="100%" height="100%">
     <h1>CashBook</h1>
     <hr class="solid">
     <v-container fluid class="my-6">
