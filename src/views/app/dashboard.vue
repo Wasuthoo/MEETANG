@@ -18,13 +18,13 @@
       <v-col>
         <v-card class="pa-4  rounded-lg" style="background-color: #58B99C;">
           <h2 class="mb-n4">ยอดเงินเข้ารวม</h2>
-          <h1 class="text-end font-weight-bold">4000 บาท</h1>
+          <h1 class="text-end font-weight-bold">120000 บาท</h1>
         </v-card>
       </v-col>
       <v-col>
         <v-card class="pa-4  rounded-lg" style="background-color: #B95858;">
           <h2 class="mb-n4">ยอดเงินออกรวม</h2>
-          <h1 class="text-end">2050  บาท</h1>
+          <h1 class="text-end">870000  บาท</h1>
         </v-card>
       </v-col>
     </v-row>

@@ -191,6 +191,15 @@ export default {
     },
     onSaveTransaction() {
       let amount = Number(this.form.amount);
+      if(this.form.type === 'Expense'&& amount > this.acc.cashbook.balance){
+        alert('Balance insufficient');
+      }
+      
+      if(amount < 0){
+        alert('Amount must be positive');
+        return;
+      }
+
       if(amount === 0) return;
 
       if(this.form.type === 'Save to Goal'){
