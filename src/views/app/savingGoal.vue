@@ -30,7 +30,7 @@
         <div style="padding:24px 40px;">
 
           <label>
-            <center>ภาพปลากรอบ</center>
+            <center>ภาพประกอบ</center>
           </label>
           <div style="display:flex; align-items:center;">
             <v-btn @click="form.selectedImage = (form.selectedImage + 1) % images.length"><v-icon dark right>
@@ -64,7 +64,7 @@
                   placeholder="YYYY-MM-DD" />
               </v-col>
               <v-col cols="12 ">
-                <v-textarea clearable label="discription" variant="outlined" v-model="form.description"></v-textarea>
+                <v-textarea clearable label="description" variant="outlined" v-model="form.description"></v-textarea>
               </v-col>
             </v-row>
           </v-container>
@@ -136,12 +136,14 @@ export default {
     },
     onSaveGoal() {
       if (Number(this.form.amount) <= 0) {
+        alert("Please check the correctness.");
         this.addForm = false;
         this.resetForm();
         return;
       }
       if (this.form.name == "") {
-        alert("Please enter a name for your goal");
+        alert("Please check the correctness.");
+
         this.addForm = false;
         this.resetForm();
         return;
