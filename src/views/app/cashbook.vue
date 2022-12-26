@@ -194,7 +194,12 @@ export default {
       if(this.form.type === 'Expense'&& amount > this.acc.cashbook.balance){
         alert('Balance insufficient');
       }
-      
+
+      if(this.form.title === ''){
+        alert('Please enter your title');
+        return;
+      }
+
       if(amount < 0){
         alert('Amount must be positive');
         return;
