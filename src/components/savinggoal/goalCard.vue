@@ -47,6 +47,9 @@ export default {
             this.editMode = false;
             this.showdialog = false;
         },
+        dateLeft(goal) {
+            return Math.floor((new Date(goal.date) - new Date()) / (1000 * 3600 * 24)) + 1;
+        },
     },
     data() {
         return {
@@ -68,7 +71,7 @@ export default {
                 else return 1;
             });
 
-        }
+        },
     }
 };
 </script>
@@ -89,7 +92,7 @@ export default {
                         year: 'numeric', month: 'short', day: 'numeric'
                     })
                 }}
-                คงเหลืออีก {{ Math.floor((new Date(goal.date) - new Date()) / (1000 * 3600 * 24)) + 1 }} วัน.
+                คงเหลืออีก {{ dateLeft(goal) }} วัน.
             </v-card-subtitle>
             <div
                 style="display:flex; justify-content:space-between; padding:1rem; padding-bottom: 0; font-size: 1.2em;">
@@ -104,7 +107,7 @@ export default {
                         }}</span> บาท
                 </span>
                 <div>
-                    <p style="color : gray">ควรเก็บ {{ numberWithCommas(goal.amount - goal.saving)/ (Math.floor((new Date(goal.date) - new Date()) / (1000 * 3600 * 24)) + 1) }} บาท/วัน</p>
+                    <p v-if="goal.amount - goal.saving > 0" style="color : gray">ควรเก็บ {{ numberWithCommas((goal.amount - goal.saving)/ dateLeft(goal)) }} บาท/วัน</p>
                     <span class=" " v-if="goal.amount - goal.saving > 0"> ต้องเก็บอีก
                         <span style="color:blue; font-weight: bold;">{{ numberWithCommas(goal.amount - goal.saving) }}
                         </span> บาท
