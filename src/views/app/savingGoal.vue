@@ -18,7 +18,7 @@
 
 
     <!-- add a circle button to bottom right-->
-    <v-btn @click="addForm = !addForm" style="position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="primary"
+    <v-btn @click="addForm = !addForm" style="color: white; position: fixed; bottom: 5vh; right: 5vw;" icon="mdi-plus" color="#4181fd"
       size="large">
     </v-btn>
 
@@ -30,7 +30,7 @@
         <div style="padding:24px 40px;">
 
           <label>
-            <center>ภาพปลากรอบ</center>
+            <center>ภาพประกอบ</center>
           </label>
           <div style="display:flex; align-items:center;">
             <v-btn @click="form.selectedImage = (form.selectedImage + 1) % images.length"><v-icon dark right>
@@ -60,11 +60,11 @@
 
               <v-col cols="12 py-0">
                 <label for="date" class="label">Date end</label>
-                <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined"
+                <Datepicker v-model="form.date" class="text-field" label="Date" variant="outlined" :lower-limit="new Date()"
                   placeholder="YYYY-MM-DD" />
               </v-col>
               <v-col cols="12 ">
-                <v-textarea clearable label="discription" variant="outlined" v-model="form.description"></v-textarea>
+                <v-textarea clearable label="description" variant="outlined" v-model="form.description"></v-textarea>
               </v-col>
             </v-row>
           </v-container>
@@ -135,6 +135,20 @@ export default {
       };
     },
     onSaveGoal() {
+      if (Number(this.form.amount) <= 0) {
+        alert("Please check the correctness.");
+        this.addForm = false;
+        this.resetForm();
+        return;
+      }
+      if (this.form.name == "") {
+        alert("Please check the correctness.");
+
+        this.addForm = false;
+        this.resetForm();
+        return;
+      }
+
       console.log(this.form);
       let newGoal = {
         id: new Date().getTime(),
